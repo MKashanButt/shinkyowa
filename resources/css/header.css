@@ -1,0 +1,120 @@
+/* HEADER */
+header .upp-header {
+    padding: 10px 0;
+    background: var(--primary-color);
+    color: white;
+    font-weight: bold;
+}
+
+header .info .item {
+    margin-right: 10px;
+}
+
+
+header .time {
+    width: 34%;
+    margin-right: 10px;
+    text-align: right;
+}
+
+header .socials {
+    width: 9%;
+    text-align: right;
+}
+
+header .socials i {
+    font-size: 18px;
+    display: inline-flex;
+    height: 100%;
+    text-align: right;
+}
+
+header .main-header {
+    background: var(--secondary-color);
+    padding: 10px 0;
+}
+
+header .main-header .logo {
+    width: 25%;
+}
+
+header .main-header .logo img {
+    width: 50%;
+}
+
+header .main-header .search {
+    width: 42%;
+    margin: auto;
+}
+
+header .main-header .search form {
+    width: 70%;
+    height: 30px;
+    margin: auto;
+}
+
+header .main-header .search input {
+    width: 90%;
+    height: 100%;
+    border: 1px solid var(--primary-color);
+    outline: none;
+    color: black;
+    padding-left: 8px;
+    border-radius: 5px 0 0 5px;
+}
+
+header .main-header .search button {
+    width: 10%;
+    height: 100%;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    border-radius: 0 5px 5px 0;
+}
+
+header .main-header .options {
+    width: 32%;
+    margin: auto;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+header .main-header .options .item {
+    width: 33%;
+    align-items: center;
+    justify-content: center;
+    /* margin: 0 5px; */
+}
+
+header .main-header .options .item p {
+    display: flex;
+    gap: 10px;
+}
+
+header .main-header .options .item i {
+    font-size: 18px;
+}
+
+header nav {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: bold;
+}
+
+header nav ul {
+    display: flex;
+    gap: 43px;
+    align-items: center;
+    justify-content: center;
+}
+
+header nav li {
+    background: var(--primary-color);
+    padding: 20px;
+}
+
+header nav li:hover {
+    filter: brightness(0.6);
+}

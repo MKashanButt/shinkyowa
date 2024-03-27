@@ -1,0 +1,34 @@
+models:
+  Vehicle:
+    id: integer:100 primary
+    make: string:100
+    model: string:100 
+    year: integer:4
+    fob: integer:10
+    currency: string:5
+    location: string:10
+    timestamp: timestamp curent_timestamp
+    relationships:
+      hasOne: VehicleInfo
+      hasMany: VehicleImage
+
+  VehicleInfo:
+    id: autoincrement
+    mileage: integer:7
+    engine: string:20
+    doors: int:1
+    transmission: string:10
+    type: string:10
+    fuel: string:10
+    extras: text
+    buy_link: string:200
+    timestamp: timestamp current_timestamp
+    relationships:
+      belongsTo: Vehicle
+
+  VehicleImage:
+    id: autoincrement
+    url: string
+    relationships:
+      belongsTo: Vehicle
+  
