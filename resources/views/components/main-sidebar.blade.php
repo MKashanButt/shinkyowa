@@ -28,7 +28,7 @@
     <div class="make">
         <h2 class="heading">Search By Make</h2>
         <ul>
-            <li><a href="/"><img src="https://www.carjunction.com/make_image/34/Toyota.gif" alt="">
+            <li><a href="/make/toyota"><img src="https://www.carjunction.com/make_image/34/Toyota.gif" alt="">
                     <span>Toyota(15)</span></a></li>
             <li><a href="/"><img src="https://www.carjunction.com/make_image/27/Nissan.gif" alt="">
                     <span>Nissan(12)</span></a></li>
@@ -38,7 +38,7 @@
                     <span>Mazda(78)</span></a></li>
             <li><a href="/"><img src="https://www.carjunction.com/make_image/47/Suzuki.gif" alt="">
                     <span>Suzuki(46)</span></a></li>
-            <li><a href="/"><img src="https://www.shinkyowa.com/images/brand12.png" alt="">
+            <li><a href="/make/BMW"><img src="https://www.shinkyowa.com/images/brand12.png" alt="">
                     <span>BMW(89)</span></a></li>
             <li><a href="/"><img src="https://www.carjunction.com/make_image/14/Isuzu.gif" alt="">
                     <span>Isuzu(4)</span></a></li>
@@ -53,9 +53,9 @@
     <div class="type">
         <h2 class="heading">Search By Type</h2>
         <ul>
-            <li><a href="/"><img src="https://www.carjunction.com/category_image/6/Hatchback-Icn-Blue.png"
+            <li><a href="/type/"><img src="https://www.carjunction.com/category_image/6/Hatchback-Icn-Blue.png"
                         alt=""> <span>Hatchback(15)</span></a></li>
-            <li><a href="/"><img src="https://www.carjunction.com/category_image/2/Sedan-Icn-Blue.png"
+            <li><a href="/type/coupe"><img src="https://www.carjunction.com/category_image/2/Sedan-Icn-Blue.png"
                         alt=""> <span>Sedan(12)</span></a></li>
             <li><a href="/"><img src="https://www.carjunction.com/category_image/7/Trucks-Icn-Blue.png"
                         alt=""> <span>Truck(5)</span></a></li>

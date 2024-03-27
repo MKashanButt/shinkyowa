@@ -40,28 +40,6 @@ class VehicleController extends Controller
         ]);
     }
 
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
     /**
      * Display the specified resource.
      *
@@ -81,38 +59,39 @@ class VehicleController extends Controller
             'title' => 'Vehicle Info'
         ]);
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function filter(Request $request)
     {
-        //
+        $searchTerm = $request->input('search');
+        $result = Vehicle::search($searchTerm)->get();
+
+        // Pass the results to the view
+        return view('stock.index', [
+            'vehicles' => $result,
+            'title' => ''
+        ]);
     }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    public function filterMake(string $make)
     {
-        //
+        $vehicles = Vehicle::join('vehicle_infos', 'vehicles.id', '=', 'vehicle_infos.vehicle_id')
+            ->join('vehicle_images', 'vehicles.id', '=', 'vehicle_images.vehicle_id')
+            ->where('vehicles.make', $make)
+            ->paginate(5, ['vehicles.*', 'vehicle_infos.*', 'vehicle_images.thumbnail']);
+
+        return view('stock.index', [
+            'vehicles' => $vehicles,
+            'title' => 'Car Stock'
+        ]);
     }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+    public function filterType(string $type)
     {
-        //
+        $vehicles = Vehicle::join('vehicle_infos', 'vehicles.id', '=', 'vehicle_infos.vehicle_id')
+            ->join('vehicle_images', 'vehicles.id', '=', 'vehicle_images.vehicle_id')
+            ->where('vehicle_infos.type', $type)
+            ->paginate(5, ['vehicles.*', 'vehicle_infos.*', 'vehicle_images.thumbnail']);
+
+        return view('stock.index', [
+            'vehicles' => $vehicles,
+            'title' => 'Car Stock'
+        ]);
     }
 }

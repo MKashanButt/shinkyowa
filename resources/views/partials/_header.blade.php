@@ -28,7 +28,7 @@
                 <img src="/logo.jpg" alt="">
             </div>
             <div class="search">
-                <form action="" method="get" class="flex">
+                <form action="/filter" method="get" class="flex">
                     <input type="search" name="search" id="search" placeholder="Search by Name....">
                     <button><i class='bx bx-search'></i></button>
                 </form>
