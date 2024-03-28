@@ -12,9 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('vehicle_images', function (Blueprint $table) {
-            $table->string('id')->autoIncrement();
-            $table->string('url');
+            $table->id();
             $table->foreignId('vehicle_id');
+            $table->string('url');
             $table->timestamps();
         });
     }

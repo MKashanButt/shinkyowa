@@ -30,7 +30,6 @@ class VehicleInfoFactory extends Factory
             'fuel' => $this->faker->regexify('[A-Za-z0-9]{10}'),
             'extras' => $this->faker->text(),
             'buy_link' => $this->faker->regexify('[A-Za-z0-9]{200}'),
-            'timestamp' => $this->faker->dateTime(),
             'vehicle_id' => Vehicle::factory(),
         ];
     }

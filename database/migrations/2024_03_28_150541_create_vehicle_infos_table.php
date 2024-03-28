@@ -12,7 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('vehicle_infos', function (Blueprint $table) {
-            $table->string('id')->autoIncrement();
+            $table->id();
+            $table->foreignId('vehicle_id');
             $table->integer('mileage');
             $table->string('engine', 20);
             $table->string('doors');
@@ -21,8 +22,6 @@ return new class extends Migration
             $table->string('fuel', 10);
             $table->text('extras');
             $table->string('buy_link', 200);
-            $table->timestamp('timestamp');
-            $table->foreignId('vehicle_id');
             $table->timestamps();
         });
     }

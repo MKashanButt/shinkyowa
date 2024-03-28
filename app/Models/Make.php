@@ -4,15 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class VehicleImage extends Model
+class Make extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'url',
-        'vehicle_id',
+        'make',
     ];
 
     /**
@@ -22,11 +21,10 @@ class VehicleImage extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'vehicle_id' => 'integer',
     ];
 
-    public function vehicle(): BelongsTo
+    public function vechicles(): HasMany
     {
-        return $this->belongsTo(Vehicle::class);
+        return $this->hasMany(Vehicle::class);
     }
 }

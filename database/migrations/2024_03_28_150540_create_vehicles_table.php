@@ -13,13 +13,10 @@ return new class extends Migration
     {
         Schema::create('vehicles', function (Blueprint $table) {
             $table->integer('id')->primary();
-            $table->string('make', 100);
+            $table->foreignId('make_id');
             $table->string('model', 100);
             $table->integer('year');
             $table->integer('fob');
-            $table->string('currency', 5);
-            $table->string('location', 10);
-            $table->timestamp('timestamp');
             $table->timestamps();
         });
     }

@@ -2,14 +2,18 @@ created:
     - database/factories/VehicleFactory.php
     - database/factories/VehicleInfoFactory.php
     - database/factories/VehicleImageFactory.php
-    - database/migrations/2024_03_26_201540_create_vehicles_table.php
-    - database/migrations/2024_03_26_201541_create_vehicle_infos_table.php
-    - database/migrations/2024_03_26_201542_create_vehicle_images_table.php
+    - database/factories/MakeFactory.php
+    - database/migrations/2024_03_28_150540_create_vehicles_table.php
+    - database/migrations/2024_03_28_150541_create_vehicle_infos_table.php
+    - database/migrations/2024_03_28_150542_create_vehicle_images_table.php
+    - database/migrations/2024_03_28_150543_create_makes_table.php
     - app/Models/Vehicle.php
     - app/Models/VehicleInfo.php
     - app/Models/VehicleImage.php
+    - app/Models/Make.php
 models:
     User: { name: string, email: string, email_verified_at: 'timestamp nullable default:NULL', password: string, remember_token: 'string:100 nullable default:NULL' }
-    Vehicle: { id: 'integer:100 primary', make: 'string:100', model: 'string:100', year: 'integer:4', fob: 'integer:10', currency: 'string:5', location: 'string:10', timestamp: 'timestamp curent_timestamp', relationships: { hasOne: VehicleInfo, hasMany: VehicleImage } }
-    VehicleImage: { id: autoincrement, url: string, relationships: { belongsTo: Vehicle } }
-    VehicleInfo: { id: autoincrement, mileage: 'integer:7', engine: 'string:20', doors: 'int:1', transmission: 'string:10', type: 'string:10', fuel: 'string:10', extras: text, buy_link: 'string:200', timestamp: 'timestamp current_timestamp', relationships: { belongsTo: Vehicle } }
+    Vehicle: { id: 'integer:100 primary', model: 'string:100', year: 'integer:4', fob: 'integer:10', relationships: { hasOne: VehicleInfo, hasMany: VehicleImage, belongsTo: make } }
+    VehicleInfo: { mileage: 'integer:7', engine: 'string:20', doors: 'int:1', transmission: 'string:10', type: 'string:10', fuel: 'string:10', extras: text, buy_link: 'string:200', relationships: { belongsTo: Vehicle } }
+    VehicleImage: { url: string, relationships: { belongsTo: Vehicle } }
+    Make: { make: 'string:20', relationships: { hasMany: Vechicle } }

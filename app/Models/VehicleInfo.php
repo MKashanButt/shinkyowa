@@ -28,6 +28,7 @@ class VehicleInfo extends Model
      * @var array
      */
     protected $casts = [
+        'id' => 'integer',
         'vehicle_id' => 'integer',
     ];
 

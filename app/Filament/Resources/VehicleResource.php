@@ -24,11 +24,10 @@ class VehicleResource extends Resource
         return $form
             ->schema([
                 Forms\Components\TextInput::make('id')
-                    ->required()
-                    ->maxLength(100),
-                Forms\Components\TextInput::make('make')
-                    ->required()
-                    ->maxLength(100),
+                    ->required(),
+                Forms\Components\Select::make('make_id')
+                    ->relationship('make', 'id')
+                    ->required(),
                 Forms\Components\TextInput::make('model')
                     ->required()
                     ->maxLength(100),
@@ -38,9 +37,6 @@ class VehicleResource extends Resource
                 Forms\Components\TextInput::make('fob')
                     ->required()
                     ->numeric(),
-                Forms\Components\TextInput::make('currency')
-                    ->required()
-                    ->maxLength(5),
             ]);
     }
 
@@ -52,8 +48,9 @@ class VehicleResource extends Resource
                     ->label('ID')
                     ->numeric()
                     ->sortable(),
-                Tables\Columns\TextColumn::make('make')
-                    ->searchable(),
+                Tables\Columns\TextColumn::make('make.id')
+                    ->numeric()
+                    ->sortable(),
                 Tables\Columns\TextColumn::make('model')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('year')
@@ -62,8 +59,6 @@ class VehicleResource extends Resource
                 Tables\Columns\TextColumn::make('fob')
                     ->numeric()
                     ->sortable(),
-                Tables\Columns\TextColumn::make('currency')
-                    ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

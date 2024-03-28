@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
@@ -13,11 +14,10 @@ class Vehicle extends Model
 
     protected $fillable = [
         'id',
-        'make',
         'model',
         'year',
         'fob',
-        'currency',
+        'make_id',
     ];
 
     /**
@@ -26,7 +26,7 @@ class Vehicle extends Model
      * @var array
      */
     protected $casts = [
-        'timestamp' => 'timestamp',
+        'make_id' => 'integer',
     ];
 
     public function vehicleInfo(): HasOne
@@ -37,5 +37,10 @@ class Vehicle extends Model
     public function vehicleImages(): HasMany
     {
         return $this->hasMany(VehicleImage::class);
+    }
+
+    public function make(): BelongsTo
+    {
+        return $this->belongsTo(Make::class);
     }
 }
