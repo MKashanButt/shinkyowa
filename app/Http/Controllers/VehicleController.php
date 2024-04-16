@@ -94,4 +94,34 @@ class VehicleController extends Controller
             'title' => 'Car Stock'
         ]);
     }
+
+    public function sidebar_options()
+    {
+        $allMake = Vehicle::select('make')->distinct()->get();
+        return [
+            'allmake' => $allMake
+        ];
+    }
+
+    public function home()
+    {
+        $vehicle = Vehicle::take(12)
+            ->join('vehicle_images', 'vehicles.id', '=', 'vehicle_images.vehicle_id')
+            ->orderByDesc('vehicles.id')
+            ->get(['vehicles.*', 'vehicle_images.thumbnail']);
+
+        $allMake = Vehicle::select('make')->distinct()->get();
+
+        return view('home.index', [
+            'vehicle' => $vehicle,
+            'allmake' => $allMake,
+            'title' => 'Japanese Used Car Exporter'
+        ]);
+    }
+    public function getModels(Request $request)
+    {
+        $make = $request->input('make');
+        $models = Vehicle::where('make', $make)->pluck('model');
+        return response()->json($models);
+    }
 }

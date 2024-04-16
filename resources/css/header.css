@@ -5,7 +5,6 @@ header{
 }
 header .upp-header {
     padding: 10px 0;
-    /* background: var(--primary-color); */
     color: var(--black);
     font-weight: bold;
 }
@@ -39,7 +38,7 @@ header .main-header {
 }
 
 header .main-header .logo {
-    width: 25%;
+    width: 35%;
     display: flex;
     align-items: center;
     justify-self: center;
@@ -51,13 +50,13 @@ header .main-header .logo img {
 }
 
 header .main-header .search {
-    width: 63%;
+    width: 60%;
     margin: auto;
 }
 
 header .main-header .search form {
     width: 80%;
-    height: 30px;
+    height: 40px;
     margin: auto;
 }
 
@@ -73,6 +72,8 @@ header .main-header .search input {
 header .main-header .search button {
     width: 10%;
     height: 100%;
+    background-color: var(--black);
+    color: white;
     border: none;
     display: flex;
     align-items: center;
@@ -81,7 +82,7 @@ header .main-header .search button {
 }
 
 header .main-header .options {
-    width: 12%;
+    width: 5%;
     margin: auto;
     color: white;
     font-weight: bold;
@@ -91,7 +92,7 @@ header .main-header .options .item {
     width: 33%;
     align-items: center;
     justify-content: center;
-    /* margin: 0 5px; */
+    cursor: pointer;
 }
 
 header .main-header .options .item p {
@@ -104,7 +105,6 @@ header .main-header .options .item i {
 }
 
 header nav {
-    /* background-color: var(--primary-color); */
     color: var(--black);
     font-weight: bold;
 }
@@ -117,7 +117,6 @@ header nav ul {
 }
 
 header nav li {
-    /* background: var(--primary-color); */
     padding: 20px;
 }
 

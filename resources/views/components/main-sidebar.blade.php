@@ -6,16 +6,15 @@
                 <label for="make">Make:</label>
                 <select name="make" id="make">
                     <option disabled selected>Select Make</option>
-                    <option value="toyota">Toyota</option>
-                    <option value="honda">Honda</option>
-                    <option value="nissan">Nissan</option>
+                    @foreach ($make as $item)
+                        <option value="{{ $item->make }}">{{ $item->make }}</option>
+                    @endforeach
                 </select>
             </div>
             <div class="item">
                 <label for="model">Model:</label>
                 <select name="model" id="model">
                     <option disabled selected>Select Model</option>
-                    <option value="corolla">Corolla</option>
                 </select>
             </div>
             <div class="item">
@@ -74,3 +73,30 @@
         </ul>
     </div>
 </aside>
+<script>
+    // Add event listener to the 'make' dropdown
+    document.getElementById('make').addEventListener('change', function() {
+        var make = this.value; // Get the selected make
+
+        // Make an AJAX request to fetch models based on the selected make
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', '/get-models?make=' + make, true);
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+                // Parse the response JSON
+                var models = JSON.parse(xhr.responseText);
+
+                // Populate the 'model' dropdown with fetched models
+                var modelDropdown = document.getElementById('model');
+                modelDropdown.innerHTML = '<option disabled selected>Select Model</option>';
+                models.forEach(function(model) {
+                    var option = document.createElement('option');
+                    option.value = model;
+                    option.text = model;
+                    modelDropdown.appendChild(option);
+                });
+            }
+        };
+        xhr.send();
+    });
+</script>

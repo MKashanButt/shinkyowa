@@ -23,14 +23,9 @@
     </div>
     <hr>
     <div class="offers">
-        <img src="https://www.carjunction.com/logo_images/381/land-cruiser-2022-small-banner-2.jpg" alt="offers">
         <img src="https://www.carjunction.com/logo_images/192/Hilux-Revo-Small-Banner-For-.gif" alt="">
         <img src="https://www.carjunction.com/logo_images/202/2022-Brand-Ne-Vehicle-Small-Banner%20(1).gif"
             alt="">
-        <img src="https://www.carjunction.com/logo_images/191/CommercialVehicles-CJC-SmallBanner2018.gif"
-            alt="">
         <img src="https://www.carjunction.com/logo_images/277/Isuzu-D-Max.gif" alt="">
-        <img src="https://www.carjunction.com/logo_images/307/Toyota-Crown.gif" alt="">
-        <img src="https://www.carjunction.com/logo_images/194/Machinery-CJC-SmallBanner2018.gif" alt="">
     </div>
 </aside>
