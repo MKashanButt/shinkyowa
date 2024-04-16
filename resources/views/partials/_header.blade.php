@@ -25,7 +25,7 @@
     <div class="main-header">
         <div class="container flex">
             <div class="logo">
-                <img src="/logo.jpg" alt="">
+                <img src="/logo.png" alt="">
             </div>
             <div class="search">
                 <form action="/filter" method="get" class="flex">
@@ -34,12 +34,6 @@
                 </form>
             </div>
             <div class="options flex">
-                <div class="item flex">
-                    <p><i class='bx bxs-phone'></i> <span>Call Request</span></p>
-                </div>
-                <div class="item flex">
-                    <p><i class='bx bx-message-rounded-dots'></i> <span>Live Chat</span></p>
-                </div>
                 <div class="item flex">
                     <p><i class='bx bxs-user'></i> <span>Login/Register</span></p>
                 </div>

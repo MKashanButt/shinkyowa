@@ -73,19 +73,4 @@
                         alt=""> <span>Mini Buses(10)</span></a></li>
         </ul>
     </div>
-    <div class="region">
-        <h2 class="heading">Search By Region</h2>
-        <ul>
-            <li><a href="/"><img src="https://www.carjunction.com/images/japan.png" alt="">
-                    <span>Japan(15)</span></a></li>
-            <li><a href="/"><img src="https://www.carjunction.com/images/thailand.png" alt="">
-                    <span>Thailand(12)</span></a></li>
-            <li><a href="/"><img src="https://www.carjunction.com/images/pakistan.png" alt="">
-                    <span>Pakistan(5)</span></a></li>
-            <li><a href="/"><img src="https://www.carjunction.com/images/zambia.png" alt="">
-                    <span>Zambia(78)</span></a></li>
-            <li><a href="/"><img src="https://www.carjunction.com/images/harare.png" alt="">
-                    <span>Harare(46)</span></a></li>
-        </ul>
-    </div>
 </aside>

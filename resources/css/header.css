@@ -1,8 +1,12 @@
 /* HEADER */
+header{
+    box-shadow: 0 -8px 26px 2px;
+    margin-bottom: 1rem;
+}
 header .upp-header {
     padding: 10px 0;
-    background: var(--primary-color);
-    color: white;
+    /* background: var(--primary-color); */
+    color: var(--black);
     font-weight: bold;
 }
 
@@ -30,25 +34,29 @@ header .socials i {
 }
 
 header .main-header {
-    background: var(--secondary-color);
+    background: var(--primary-color);
     padding: 10px 0;
 }
 
 header .main-header .logo {
     width: 25%;
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    height: 80px;
 }
 
 header .main-header .logo img {
-    width: 50%;
+    width: 80%;
 }
 
 header .main-header .search {
-    width: 42%;
+    width: 63%;
     margin: auto;
 }
 
 header .main-header .search form {
-    width: 70%;
+    width: 80%;
     height: 30px;
     margin: auto;
 }
@@ -56,11 +64,10 @@ header .main-header .search form {
 header .main-header .search input {
     width: 90%;
     height: 100%;
-    border: 1px solid var(--primary-color);
+    border: 1px solid white;
     outline: none;
     color: black;
     padding-left: 8px;
-    border-radius: 5px 0 0 5px;
 }
 
 header .main-header .search button {
@@ -71,13 +78,12 @@ header .main-header .search button {
     align-items: center;
     justify-content: center;
     font-size: 18px;
-    border-radius: 0 5px 5px 0;
 }
 
 header .main-header .options {
-    width: 32%;
+    width: 12%;
     margin: auto;
-    color: var(--primary-color);
+    color: white;
     font-weight: bold;
 }
 
@@ -98,8 +104,8 @@ header .main-header .options .item i {
 }
 
 header nav {
-    background-color: var(--primary-color);
-    color: white;
+    /* background-color: var(--primary-color); */
+    color: var(--black);
     font-weight: bold;
 }
 
@@ -111,7 +117,7 @@ header nav ul {
 }
 
 header nav li {
-    background: var(--primary-color);
+    /* background: var(--primary-color); */
     padding: 20px;
 }
 

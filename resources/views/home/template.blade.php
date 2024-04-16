@@ -14,6 +14,9 @@
 
 <body>
     @include('partials._header')
+    <div class="slider">
+        <img src="https://www.carjunction.com/logo_images/383/lexus_lx_600_main.gif" alt="slider-image">
+    </div>
     <div class="content">
         <x-main-sidebar />
         @yield('content')
