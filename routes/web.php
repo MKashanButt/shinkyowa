@@ -5,8 +5,9 @@ use App\Http\Controllers\VehicleController;
 
 Route::get('/', [VehicleController::class, 'home']);
 Route::get('/get-models', [VehicleController::class, 'getModels']);
+
 Route::get('/vehicle-info/{sno}', [VehicleController::class, 'show']);
-Route::get('/stock', [VehicleController::class, 'index']);
+Route::get('/stock', [VehicleController::class, 'stock']);
 
 // Filter Methods
 Route::get('/filter', [VehicleController::class, 'filter']);

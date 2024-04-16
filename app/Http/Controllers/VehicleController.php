@@ -48,17 +48,18 @@ class VehicleController extends Controller
      */
     public function show(int $id)
     {
-        $vehicle = Vehicle::where("id", $id)->firstOrFail();
+        $vehicle = Vehicle::findOrFail($id);
         $vehicle_info = VehicleInfo::where("vehicle_id", $id)->firstOrFail();
-        $vehicle_image = VehicleImage::where("vehicle_id", $id)->pluck('url');
+        $vehicle_images = VehicleImage::where("vehicle_id", $id)->pluck('url')->toArray();
 
         return view('vehicle-info.index', [
             'vehicle' => $vehicle,
             'vehicle_info' => $vehicle_info,
-            'vehicle_image' => $vehicle_image,
+            'vehicle_image' => $vehicle_images,
             'title' => 'Vehicle Info'
         ]);
     }
+
     public function filter(Request $request)
     {
         $searchTerm = $request->input('search');
@@ -116,6 +117,21 @@ class VehicleController extends Controller
             'vehicle' => $vehicle,
             'allmake' => $allMake,
             'title' => 'Japanese Used Car Exporter'
+        ]);
+    }
+    public function stock()
+    {
+        $vehicles = Vehicle::join('vehicle_infos', 'vehicles.id', '=', 'vehicle_infos.vehicle_id')
+            ->join('vehicle_images', 'vehicles.id', '=', 'vehicle_images.vehicle_id')
+            ->orderByDesc('vehicles.id')
+            ->paginate(5, ['vehicles.*', 'vehicle_infos.*', 'vehicle_images.*']);
+
+        $allMake = Vehicle::select('make')->distinct()->get();
+
+        return view('stock.index', [
+            'vehicles' => $vehicles,
+            'allmake' => $allMake,
+            'title' => 'Used Cars Stock'
         ]);
     }
     public function getModels(Request $request)
