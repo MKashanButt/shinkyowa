@@ -8,10 +8,9 @@
         </div>
         <div class="budget-vehicle">
             @foreach ($vehicle as $item)
-                {{-- <x-home-vehicle-card :img="$item->thumbnail" :id="$item->id" :make="$item->make" :model="$item->model"
-                    :fob="$item->fob" :currency="$item->currency" /> --}}
-                <x-home-vehicle-card :id="$item->id" :make="$item->make" :model="$item->model" :fob="$item->fob"
-                    :currency="$item->currency" />
+                @dd($item)
+                <x-home-vehicle-card :img="$item->thumbnail" :id="$item->id" :make="$item->make" :model="$item->model"
+                    :fob="$item->fob" :currency="$item->currency" />
             @endforeach
             <a href="/stock"><button>View All</button></a>
         </div>
