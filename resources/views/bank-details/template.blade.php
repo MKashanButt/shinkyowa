@@ -25,6 +25,9 @@
     <a href="https://wa.me/817015241308" target="__blank"><button class="whatsapp"><i
                 class='bx bxl-whatsapp'></i></button></a>
     <script src="{{ asset('/js/app.js') }}"></script>
+    <a href="https://wa.me/817015241308" target="__blank"><button class="whatsapp"><i
+                class='bx bxl-whatsapp'></i></button></a>
+    <script src="{{ asset('/js/app.js') }}"></script>
 </body>
 
 </html>
