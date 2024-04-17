@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shinkyowa International | {{ $title }} </title>
     <link rel="stylesheet" href="{{ asset('css/root.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/home.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/bank-details.css') }}">
 
     {{-- Box Icons --}}
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -17,9 +17,6 @@
 
 <body>
     @include('partials._header')
-    <div id="slider">
-        <img src="https://www.carjunction.com/logo_images/383/lexus_lx_600_main.gif" alt="slider-image">
-    </div>
     <div class="content">
         <x-main-sidebar :make="$allmake" :count="$count" />
         @yield('content')

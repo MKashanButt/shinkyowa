@@ -15,7 +15,7 @@
 <body>
     @include('partials._header')
     <div class="content">
-        <x-main-sidebar :make="$allmake" />
+        <x-main-sidebar :make="$allmake" :count="$count" />
         @yield('content')
     </div>
     @include('partials._footer')

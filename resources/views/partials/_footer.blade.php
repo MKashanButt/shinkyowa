@@ -1,7 +1,7 @@
 <footer>
     <div class="container flex">
         <div class="item">
-            <img src="images/logo.png" alt="">
+            <img src="/logo.png" alt="">
             <p>Head office, Gunma ken Maebashi shi Komagata Machi 150-2 <br>
                 Post Code: 379-2122<br>
                 Tell & Fax: +8127 212 9973, +8127 212 9986<br>

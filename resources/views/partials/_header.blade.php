@@ -6,14 +6,14 @@
                     <p>Email : <span>info@shinkyowa.com</span></p>
                 </div>
                 <div class="item">
-                    <p>Phone : <span>+8190 9685 6566, +8180 1389 9048</span></p>
+                    <p>Phone : <span>+8127 212 9973, +8127 212 9986</span></p>
                 </div>
                 <div class="item">
-                    <p>Total Stock : <span>45</span></p>
+                    <p>Total Stock : <span>{{ $total }}</span></p>
                 </div>
             </div>
             <div class="time">
-                <p>Japan Time : <span>{{ date('h:m:s') }} AM</span></p>
+                <p>Japan Time : <span id="current-time"></span></p>
             </div>
             <div class="socials">
                 <i class='bx bxl-facebook'></i>
@@ -44,13 +44,22 @@
         <div class="container">
             <ul>
                 <li><a href="/">Home</a></li>
-                <li><a href="/about-us">About Us</a></li>
+                <li>About Us
+                    <ul class="submenu">
+                        <li><a href="/about-us/company-profile">Company Profile</a></li>
+                        <li><a href="/about-us/why-choose-us">Why Choose Us</a></li>
+                    </ul>
+                </li>
+                <li>Services
+                    <ul class="submenu">
+                        <li><a href="/services/shipping">Shipping</a></li>
+                        <li><a href="/services/inspection-services">Inspection Services</a></li>
+                    </ul>
+                </li>
                 <li><a href="/stock">Browse Stock</a></li>
+                <li><a href="/sales-and-bank-details">Sales & Bank Details</a></li>
+                <li><a href="/blogs">Blogs</a></li>
                 <li><a href="/contact-us">Contact Us</a></li>
-                <li><a href="/testimonials">Testimonials</a></li>
-                <li><a href="/sales-terms">Sales Terms</a></li>
-                <li><a href="/bank-details">Bank Details</a></li>
-                <li><a href="/faqs">Faqs</a></li>
             </ul>
         </div>
     </nav>

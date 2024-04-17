@@ -1,10 +1,11 @@
 /* HEADER */
-header{
+header {
     box-shadow: 0 -8px 26px 2px;
     margin-bottom: 1rem;
 }
+
 header .upp-header {
-    padding: 10px 0;
+    padding: 5px 0;
     color: var(--black);
     font-weight: bold;
 }
@@ -34,15 +35,15 @@ header .socials i {
 
 header .main-header {
     background: var(--primary-color);
-    padding: 10px 0;
+    padding: 0px 0;
 }
 
 header .main-header .logo {
-    width: 35%;
+    width: 25%;
     display: flex;
     align-items: center;
     justify-self: center;
-    height: 80px;
+    height: 60px;
 }
 
 header .main-header .logo img {
@@ -51,13 +52,15 @@ header .main-header .logo img {
 
 header .main-header .search {
     width: 60%;
-    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 1rem;
 }
 
 header .main-header .search form {
-    width: 80%;
-    height: 40px;
-    margin: auto;
+    width: 50%;
+    height: 30px;
 }
 
 header .main-header .search input {
@@ -117,9 +120,18 @@ header nav ul {
 }
 
 header nav li {
-    padding: 20px;
+    padding: 10px;
 }
 
-header nav li:hover {
-    filter: brightness(0.6);
+header nav ul li ul {
+    all: unset;
+    flex-direction: column;
+    position: absolute;
+    background-color: white;
+    margin-top: 10px;
+    display: none;
+}
+header nav ul li:hover .submenu{
+    display: block;
+    display: flex;
 }

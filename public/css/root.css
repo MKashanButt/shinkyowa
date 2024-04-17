@@ -40,3 +40,19 @@ aside {
 button {
     cursor: pointer;
 }
+
+.whatsapp{
+    font-size: 40px;
+    border: 2px solid #24CC63;
+    outline: none;
+    padding: 5px;
+    position: fixed;
+    right: 20px;
+    bottom: 15px;
+    border-radius: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: #24CC63;
+}

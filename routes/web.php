@@ -13,3 +13,5 @@ Route::get('/stock', [VehicleController::class, 'stock']);
 Route::get('/filter', [VehicleController::class, 'filter']);
 Route::get('/make/{make}', [VehicleController::class, 'filterMake']);
 Route::get('/type/{type}', [VehicleController::class, 'filterType']);
+
+Route::get('/sales-and-bank-details', [VehicleController::class, 'sales_and_bank_details']);

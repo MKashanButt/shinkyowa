@@ -6,12 +6,9 @@
             {{ $vehicle_info->fuel }} for Sale</h2>
         <div class="stage flex">
             <div class="item">
-                @foreach ($vehicle_image as $image)
-                    @for ($i = 0; $i < 5; $i++)
-                        {{-- {{ var_dump($image['1']) }} --}}
-                        <img src="{{ asset('storage/' . $image[0]) }}" alt="vehicle-image" class="main-image">
-                    @endfor
-                @endforeach
+                {{-- @foreach ($vehicle_image as $image) --}}
+                <img src="" alt="vehicle-image" class="main-image">
+                {{-- @endforeach --}}
             </div>
             <div class="item">
                 <div class="tabs">
