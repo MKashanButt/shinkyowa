@@ -24,6 +24,7 @@ class VehicleImage extends Model
     protected $casts = [
         'id' => 'integer',
         'vehicle_id' => 'integer',
+        'url' => 'array'
     ];
 
     public function vehicle(): BelongsTo
