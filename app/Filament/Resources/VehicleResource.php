@@ -26,7 +26,7 @@ class VehicleResource extends Resource
                 Forms\Components\TextInput::make('id')
                     ->required(),
                 Forms\Components\Select::make('make_id')
-                    ->relationship('make', 'id')
+                    ->relationship('make', 'makes')
                     ->required(),
                 Forms\Components\TextInput::make('model')
                     ->required()
