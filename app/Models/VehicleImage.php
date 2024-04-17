@@ -11,6 +11,7 @@ class VehicleImage extends Model
     use HasFactory;
 
     protected $fillable = [
+        'thumbnail',
         'url',
         'vehicle_id',
     ];
