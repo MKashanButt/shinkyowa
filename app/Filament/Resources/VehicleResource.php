@@ -36,7 +36,6 @@ class VehicleResource extends Resource
                     ->numeric(),
                 Forms\Components\TextInput::make('fob')
                     ->required()
-                    ->numeric(),
             ]);
     }
 
@@ -48,7 +47,7 @@ class VehicleResource extends Resource
                     ->label('ID')
                     ->numeric()
                     ->sortable(),
-                Tables\Columns\TextColumn::make('make.id')
+                Tables\Columns\TextColumn::make('makes.makes')
                     ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('model')
