@@ -46,8 +46,7 @@ class VehicleResource extends Resource
                     ->label('ID')
                     ->numeric()
                     ->sortable(),
-                Tables\Columns\TextColumn::make('makes.makes')
-                    ->numeric()
+                Tables\Columns\TextColumn::make('makes')
                     ->sortable(),
                 Tables\Columns\TextColumn::make('model')
                     ->searchable(),
