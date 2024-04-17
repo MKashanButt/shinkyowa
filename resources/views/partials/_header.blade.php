@@ -44,19 +44,19 @@
         <div class="container">
             <ul>
                 <li><a href="/">Home</a></li>
-                <li>About Us
-                    <ul class="submenu">
-                        <li><a href="/about-us/company-profile">Company Profile</a></li>
-                        <li><a href="/about-us/why-choose-us">Why Choose Us</a></li>
-                    </ul>
-                </li>
+                <li><a href="/stock">Browse Stock</a></li>
                 <li>Services
                     <ul class="submenu">
                         <li><a href="/services/shipping">Shipping</a></li>
                         <li><a href="/services/inspection-services">Inspection Services</a></li>
                     </ul>
                 </li>
-                <li><a href="/stock">Browse Stock</a></li>
+                <li>About Us
+                    <ul class="submenu">
+                        <li><a href="/about-us/company-profile">Company Profile</a></li>
+                        <li><a href="/about-us/why-choose-us">Why Choose Us</a></li>
+                    </ul>
+                </li>
                 <li><a href="/sales-and-bank-details">Sales & Bank Details</a></li>
                 <li><a href="/blogs">Blogs</a></li>
                 <li><a href="/contact-us">Contact Us</a></li>

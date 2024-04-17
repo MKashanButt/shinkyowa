@@ -75,8 +75,7 @@
 }
 
 .main-sidebar .make li img {
-    width: 34px;
-    height: 20px;
+    width: 14px;
 }
 
 .main-sidebar .type li img,
@@ -92,12 +91,15 @@
     font-size: 12px;
     margin-bottom: 20px;
 }
-.second-sidebar .testimonials{
+
+.second-sidebar .testimonials {
     display: grid;
 }
-.second-sidebar .testimonials .item{
+
+.second-sidebar .testimonials .item {
     margin-bottom: 1rem;
 }
+
 .second-sidebar .vehicle-of-day .stage .item {
     width: 80%;
     margin: auto;

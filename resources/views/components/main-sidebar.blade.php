@@ -31,21 +31,29 @@
                     <span>Toyota({{ $count['toyota'] }})</span></a></li>
             <li><a href="/make/nissan"><img src="https://www.carjunction.com/make_image/27/Nissan.gif" alt="">
                     <span>Nissan({{ $count['nissan'] }})</span></a></li>
-            <li><a href="/make/honda"><img src="https://www.carjunction.com/make_image/11/Honda.gif" alt="">
-                    <span>Honda({{ $count['honda'] }})</span></a></li>
             <li><a href="/make/mazda"><img src="https://www.carjunction.com/make_image/22/Mazda.gif" alt="">
                     <span>Mazda({{ $count['mazda'] }})</span></a></li>
-            <li><a href="/make/suzuki"><img src="https://www.carjunction.com/make_image/47/Suzuki.gif" alt="">
-                    <span>Suzuki({{ $count['suzuki'] }})</span></a></li>
-            <li><a href="/make/BMW"><img src="https://www.shinkyowa.com/images/brand12.png" alt="">
-                    <span>BMW({{ $count['BMW'] }})</span></a></li>
-            <li><a href="/make/isuzu"><img src="https://www.carjunction.com/make_image/14/Isuzu.gif" alt="">
-                    <span>Isuzu({{ $count['isuzu'] }})</span></a></li>
-            <li><a href="/make/hino"><img src="https://www.carjunction.com/make_image/49/Hino.gif" alt="">
-                    <span>Hino({{ $count['hino'] }})</span></a></li>
             <li><a href="/make/mitsubishi"><img src="https://www.carjunction.com/make_image/26/Mitsubishi.gif"
                         alt="">
                     <span>Mitsubishi({{ $count['mitsubishi'] }})</span></a></li>
+            <li><a href="/make/honda"><img src="https://www.carjunction.com/make_image/11/Honda.gif" alt="">
+                    <span>Honda({{ $count['honda'] }})</span></a></li>
+            <li><a href="/make/suzuki"><img src="https://www.carjunction.com/make_image/47/Suzuki.gif" alt="">
+                    <span>Suzuki({{ $count['suzuki'] }})</span></a></li>
+            <li><a href="/make/subaru"><img src="https://www.carjunction.com/make_image/47/Suzuki.gif" alt="">
+                    <span>Subaru({{ $count['subaru'] }})</span></a></li>
+            <li><a href="/make/isuzu"><img src="https://www.carjunction.com/make_image/14/Isuzu.gif" alt="">
+                    <span>Isuzu({{ $count['isuzu'] }})</span></a></li>
+            <li><a href="/make/daihatsu"><img src="https://www.carjunction.com/make_image/14/Isuzu.gif" alt="">
+                    <span>Daihatsu({{ $count['daihatsu'] }})</span></a></li>
+            <li><a href="/make/mitsuoka"><img src="https://www.carjunction.com/make_image/14/Isuzu.gif" alt="">
+                    <span>Mitsuoka({{ $count['mitsuoka'] }})</span></a></li>
+            <li><a href="/make/lexus"><img src="https://www.carjunction.com/make_image/14/Isuzu.gif" alt="">
+                    <span>Lexus({{ $count['lexus'] }})</span></a></li>
+            <li><a href="/make/BMW"><img src="https://www.shinkyowa.com/images/brand12.png" alt="">
+                    <span>BMW({{ $count['BMW'] }})</span></a></li>
+            <li><a href="/make/hino"><img src="https://www.carjunction.com/make_image/49/Hino.gif" alt="">
+                    <span>Hino({{ $count['hino'] }})</span></a></li>
             <li><a href="/make/volkswagen"><img src="https://www.shinkyowa.com/images/brand8.png" alt="">
                     <span>Volkswagen({{ $count['volkswagen'] }})</span></a></li>
         </ul>
@@ -71,6 +79,19 @@
                         alt=""> <span>Buses(40)</span></a></li>
             <li><a href="/"><img src="https://www.carjunction.com/category_image/4/Bus-Icn-Blue.png"
                         alt=""> <span>Mini Buses(10)</span></a></li>
+        </ul>
+    </div>
+    <div class="region">
+        <h2 class="heading">Search By Region</h2>
+        <ul>
+            <li><a href="/region/"><img src="https://www.carjunction.com/images/japan.png" alt="region">Japan</a></li>
+            <li><a href="/region/"><img src="https://www.carjunction.com/images/thailand.png"
+                        alt="region">Thailand</a>
+            </li>
+            <li><a href="/region/"><img src="images/uk-flag.png" alt="region">UK</a></li>
+            <li><a href="/region/"><img src="https://www.carjunction.com/images/pakistan.png"
+                        alt="region">Pakistan</a>
+            </li>
         </ul>
     </div>
 </aside>

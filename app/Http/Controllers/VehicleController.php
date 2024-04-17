@@ -83,13 +83,17 @@ class VehicleController extends Controller
         $allMake = Vehicle::select('make')->distinct()->get();
         $toyota = Vehicle::where('make', 'toyota')->count();
         $nissan = Vehicle::where('make', 'nissan')->count();
-        $honda = Vehicle::where('make', 'honda')->count();
         $mazda = Vehicle::where('make', 'mazda')->count();
-        $suzuki = Vehicle::where('make', 'suzuki')->count();
-        $BMW = Vehicle::where('make', 'BMW')->count();
-        $isuzu = Vehicle::where('make', 'isuzu')->count();
-        $hino = Vehicle::where('make', 'hino')->count();
         $mitsubishi = Vehicle::where('make', 'mitsubishi')->count();
+        $honda = Vehicle::where('make', 'honda')->count();
+        $suzuki = Vehicle::where('make', 'suzuki')->count();
+        $subaru = Vehicle::where('make', 'subaru')->count();
+        $isuzu = Vehicle::where('make', 'isuzu')->count();
+        $daihatsu = Vehicle::where('make', 'daihatsu')->count();
+        $mitsuoka = Vehicle::where('make', 'mitsuoka')->count();
+        $lexus = Vehicle::where('make', 'lexus')->count();
+        $BMW = Vehicle::where('make', 'BMW')->count();
+        $hino = Vehicle::where('make', 'hino')->count();
         $volkswagen = Vehicle::where('make', 'volkswagen')->count();
 
         $total = Vehicle::select('vehicles')->count();
@@ -111,6 +115,10 @@ class VehicleController extends Controller
             'hino' => $hino,
             'mitsubishi' => $mitsubishi,
             'volkswagen' => $volkswagen,
+            'daihatsu' => $daihatsu,
+            'mitsuoka' => $mitsuoka,
+            'lexus' => $lexus,
+            'subaru' => $subaru
         ];
         return view('stock.index', [
             'vehicles' => $vehicles,
@@ -181,13 +189,17 @@ class VehicleController extends Controller
         $allMake = Vehicle::select('make')->distinct()->get();
         $toyota = Vehicle::where('make', 'toyota')->count();
         $nissan = Vehicle::where('make', 'nissan')->count();
-        $honda = Vehicle::where('make', 'honda')->count();
         $mazda = Vehicle::where('make', 'mazda')->count();
-        $suzuki = Vehicle::where('make', 'suzuki')->count();
-        $BMW = Vehicle::where('make', 'BMW')->count();
-        $isuzu = Vehicle::where('make', 'isuzu')->count();
-        $hino = Vehicle::where('make', 'hino')->count();
         $mitsubishi = Vehicle::where('make', 'mitsubishi')->count();
+        $honda = Vehicle::where('make', 'honda')->count();
+        $suzuki = Vehicle::where('make', 'suzuki')->count();
+        $subaru = Vehicle::where('make', 'subaru')->count();
+        $isuzu = Vehicle::where('make', 'isuzu')->count();
+        $daihatsu = Vehicle::where('make', 'daihatsu')->count();
+        $mitsuoka = Vehicle::where('make', 'mitsuoka')->count();
+        $lexus = Vehicle::where('make', 'lexus')->count();
+        $BMW = Vehicle::where('make', 'BMW')->count();
+        $hino = Vehicle::where('make', 'hino')->count();
         $volkswagen = Vehicle::where('make', 'volkswagen')->count();
 
         $total = Vehicle::select('vehicles')->count();
@@ -203,6 +215,10 @@ class VehicleController extends Controller
             'hino' => $hino,
             'mitsubishi' => $mitsubishi,
             'volkswagen' => $volkswagen,
+            'daihatsu' => $daihatsu,
+            'mitsuoka' => $mitsuoka,
+            'lexus' => $lexus,
+            'subaru' => $subaru
         ];
         return view('home.index', [
             'vehicle' => $vehicle,
@@ -222,16 +238,26 @@ class VehicleController extends Controller
         $allMake = Vehicle::select('make')->distinct()->get();
         $toyota = Vehicle::where('make', 'toyota')->count();
         $nissan = Vehicle::where('make', 'nissan')->count();
-        $honda = Vehicle::where('make', 'honda')->count();
         $mazda = Vehicle::where('make', 'mazda')->count();
-        $suzuki = Vehicle::where('make', 'suzuki')->count();
-        $BMW = Vehicle::where('make', 'BMW')->count();
-        $isuzu = Vehicle::where('make', 'isuzu')->count();
-        $hino = Vehicle::where('make', 'hino')->count();
         $mitsubishi = Vehicle::where('make', 'mitsubishi')->count();
+        $honda = Vehicle::where('make', 'honda')->count();
+        $suzuki = Vehicle::where('make', 'suzuki')->count();
+        $subaru = Vehicle::where('make', 'subaru')->count();
+        $isuzu = Vehicle::where('make', 'isuzu')->count();
+        $daihatsu = Vehicle::where('make', 'daihatsu')->count();
+        $mitsuoka = Vehicle::where('make', 'mitsuoka')->count();
+        $lexus = Vehicle::where('make', 'lexus')->count();
+        $BMW = Vehicle::where('make', 'BMW')->count();
+        $hino = Vehicle::where('make', 'hino')->count();
         $volkswagen = Vehicle::where('make', 'volkswagen')->count();
 
         $total = Vehicle::select('vehicles')->count();
+        $totalVehicles = Vehicle::select('vehicles')->count();
+        $msg = null;
+
+        if ($totalVehicles == 0) {
+            $msg = "No Vehicles Present";
+        }
 
         $count = [
             'toyota' => $toyota,
@@ -244,6 +270,10 @@ class VehicleController extends Controller
             'hino' => $hino,
             'mitsubishi' => $mitsubishi,
             'volkswagen' => $volkswagen,
+            'daihatsu' => $daihatsu,
+            'mitsuoka' => $mitsuoka,
+            'lexus' => $lexus,
+            'subaru' => $subaru
         ];
 
         return view('stock.index', [
@@ -251,6 +281,8 @@ class VehicleController extends Controller
             'allmake' => $allMake,
             'count' => $count,
             'total' => $total,
+            'totalvehicles' => $totalVehicles,
+            'msg' => $msg,
             'title' => 'Used Cars Stock'
         ]);
     }
