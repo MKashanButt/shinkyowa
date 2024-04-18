@@ -68,12 +68,12 @@ button {
     width: 78%;
 }
 
-.content-divide {
-    width: 70%;
-}
-
 .sub-content {
     width: 100%;
+}
+
+.content-divide {
+    width: 70%;
 }
 
 .second-sidebar {
