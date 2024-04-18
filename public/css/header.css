@@ -121,6 +121,7 @@ header nav ul {
 
 header nav li {
     padding: 10px;
+    cursor: pointer;
 }
 
 header nav ul li ul {
@@ -131,7 +132,8 @@ header nav ul li ul {
     margin-top: 10px;
     display: none;
 }
-header nav ul li:hover .submenu{
+
+header nav ul li:hover .submenu {
     display: block;
     display: flex;
 }

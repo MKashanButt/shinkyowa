@@ -48,7 +48,7 @@
                 <li>Services
                     <ul class="submenu">
                         <li><a href="/services/shipping">Shipping</a></li>
-                        <li><a href="/services/inspection-services">Inspection Services</a></li>
+                        <li><a href="/services/inspection">Inspection</a></li>
                     </ul>
                 </li>
                 <li>About Us
@@ -59,7 +59,7 @@
                 </li>
                 <li><a href="/sales-and-bank-details">Sales & Bank Details</a></li>
                 <li><a href="/blogs">Blogs</a></li>
-                <li><a href="/contact-us">Contact Us</a></li>
+                <li id="contact-us" onclick="toggleDisplay()">Contact Us</li>
             </ul>
         </div>
     </nav>

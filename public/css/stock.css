@@ -1,25 +1,11 @@
-.content {
-    width: 90%;
-    margin: 10px auto;
-    display: flex;
-    gap: 10px;
-}
-
-.stock-content {
-    width: 56%;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.stock-content .filter {
+.pageContent .sub-content .filter {
     display: flex;
     flex-direction: column;
     gap: 10px;
     border: 1px solid grey;
 }
 
-.stock-content .filter h2 {
+.pageContent .sub-content .filter h2 {
     width: 100%;
     padding: 0.2% 1%;
     background: var(--primary-color);
@@ -28,28 +14,28 @@
     font-weight: 400;
 }
 
-.stock-content .filter form {
+.pageContent .sub-content .filter form {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-self: center;
 }
 
-.stock-content .filter form .row {
+.pageContent .sub-content .filter form .row {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
 }
 
-.stock-content .filter select {
+.pageContent .sub-content .filter select {
     width: 22%;
     height: 25px;
     border: 1px solid grey;
     outline: none;
 }
 
-.stock-content .filter button {
+.pageContent .sub-content .filter button {
     margin: 3% 0;
     padding: 1% 5%;
     display: flex;
@@ -60,7 +46,7 @@
     color: white;
 }
 
-.stock-content .sort-filter {
+.pageContent .sub-content .sort-filter {
     width: 100%;
     padding: 2% 1%;
     background: rgba(236, 236, 236, 1);
@@ -69,49 +55,49 @@
     align-items: center;
 }
 
-.stock-content .sort-filter p {
+.pageContent .sub-content .sort-filter p {
     width: 70%;
 }
 
-.stock-content .sort-filter span {
+.pageContent .sub-content .sort-filter span {
     color: var(--primary-color);
     font-weight: bold;
 }
 
-.stock-content .sort-filter form {
+.pageContent .sub-content .sort-filter form {
     width: 30%;
     display: flex;
     align-items: center;
 }
 
-.stock-content .sort-filter form label {
+.pageContent .sub-content .sort-filter form label {
     width: 30%;
 }
 
-.stock-content .sort-filter form select {
+.pageContent .sub-content .sort-filter form select {
     width: 65%;
     outline: none;
     border: 1px solid grey;
 }
 
-.stock-content .listing {
+.pageContent .sub-content .listing {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-.stock-content .item {
+.pageContent .sub-content .item {
     border-top: 0.5px solid grey;
     border-bottom: 1px solid grey;
     gap: 10px;
     padding: 15px 0 15px 0;
 }
 
-.stock-content .item img {
+.pageContent .sub-content .item img {
     width: 30%;
 }
 
-.stock-content .item .content {
+.pageContent .sub-content .item .content {
     width: 52%;
     display: flex;
     flex-direction: column;
@@ -119,31 +105,31 @@
     margin: 0;
 }
 
-.stock-content .item .content .text {
+.pageContent .sub-content .item .content .text {
     display: flex;
     flex-wrap: wrap;
     font-size: 14px;
     gap: 5px;
 }
 
-.stock-content .item .content .text p {
+.pageContent .sub-content .item .content .text p {
     width: 49%;
     display: flex;
     flex-wrap: wrap;
 }
 
-.stock-content .item .content .text span {
+.pageContent .sub-content .item .content .text span {
     font-weight: bold;
     margin-left: 5px;
 }
 
-.stock-content .item .action {
+.pageContent .sub-content .item .action {
     width: 18%;
     display: flex;
     align-items: center;
 }
 
-.stock-content .item .action button {
+.pageContent .sub-content .item .action button {
     padding: 5% 20%;
     border: 1px solid var(--primary-color);
     color: white;
@@ -153,14 +139,14 @@
     justify-content: center;
 }
 
-.stock-content .pagination {
+.pageContent .sub-content .pagination {
     width: 100%;
     margin: 10px 0;
     display: flex;
     justify-content: center;
 }
 
-.stock-content .pagination .btn {
+.pageContent .sub-content .pagination .btn {
     width: 30%;
     padding: 10px 0;
     display: flex;
@@ -170,7 +156,7 @@
     border-bottom: 1px solid grey;
 }
 
-.stock-content .pagination button {
+.pageContent .sub-content .pagination button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -182,6 +168,6 @@
     color: white;
 }
 
-.stock-content .pagination button i {
+.pageContent .sub-content .pagination button i {
     font-size: 18px;
 }

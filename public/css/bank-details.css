@@ -1,51 +1,46 @@
-.content {
-    width: 90%;
-    margin: 10px auto;
-    display: flex;
-    gap: 10px;
+.w-100 {
+    width: 78%;
+}
+.sub-content {
+    width: 100%;
 }
 
-.bank-details {
-    width: 72%;
-    gap: 10px;
-}
-
-.bank-details h1 {
+.sub-content h1 {
     padding: 0 0 1rem;
 }
 
-.bank-details h1:nth-of-type(2) {
+.sub-content h1:nth-of-type(2) {
     padding: 1rem 0;
 }
 
-.bank-details span {
+.sub-content span {
     font-weight: bold;
 }
 
-.bank-details ul {
+.sub-content ul {
     margin-left: 1.5rem;
 }
 
-.bank-details ul>li {
+.sub-content ul>li {
     list-style: circle;
 }
 
-.bank-details ul li ol {
+.sub-content ul li ol {
     margin: 1rem 3rem;
 }
 
-.bank-details table {
+.sub-content table {
     width: 100%;
     display: inline-flex;
     text-align: left;
 }
 
-.bank-details table tr {
+.sub-content table tr {
     display: flex;
     margin: 10px 0;
 }
 
-.bank-details table th {
+.sub-content table th {
     width: 150px;
     display: inline-flex;
     background-color: var(--secondary-color);
@@ -53,7 +48,7 @@
     color: white;
 }
 
-.bank-details table td {
+.sub-content table td {
     width: 400px;
     padding: .5rem;
     border: 1px solid;
