@@ -25,7 +25,7 @@
     <div class="main-header">
         <div class="container flex">
             <div class="logo">
-                <img src="/logo.png" alt="">
+                <a href="/"><img src="/logo.png" alt=""></a>
             </div>
             <div class="search">
                 <form action="/filter" method="get" class="flex">
