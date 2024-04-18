@@ -238,14 +238,6 @@ class VehicleController extends Controller
             'stylesheet' => 'shipping.css'
         ]);
     }
-    public function inspection()
-    {
-        return $this->load_view('inspection', [
-            'title' => 'Inspection Service',
-            'sidebar' => null,
-            'stylesheet' => 'inspection.css'
-        ]);
-    }
     public function company_profile()
     {
         return $this->load_view('company-profile', [
