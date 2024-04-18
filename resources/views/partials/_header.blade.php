@@ -48,7 +48,6 @@
                 <li>Services
                     <ul class="submenu">
                         <li><a href="/services/shipping">Shipping</a></li>
-                        <li><a href="/services/inspection">Inspection</a></li>
                     </ul>
                 </li>
                 <li>About Us
