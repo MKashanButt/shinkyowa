@@ -1,7 +1,7 @@
 <aside class="main-sidebar">
     <div class="search">
         <h2 class="heading">Search</h2>
-        <form action="get">
+        <form action="filter" method="GET">
             <div class="item">
                 <label for="make">Make:</label>
                 <select name="make" id="make">

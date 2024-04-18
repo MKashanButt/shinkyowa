@@ -101,13 +101,31 @@ class VehicleController extends Controller
 
     public function filter(Request $request)
     {
-        $searchTerm = $request->input('search');
-        $result = Vehicle::search($searchTerm)->get();
+        $make = $request->input('make');
+        $model = $request->input('model');
+        $stock = $request->input('stock');
 
-        // Pass the results to the view
-        return view('stock.index', [
-            'vehicles' => $result,
-            'title' => ''
+        $query = Vehicle::query();
+
+        if ($make) {
+            $query->where('make', $make);
+        }
+        if ($model) {
+            $query->where('model', $model);
+        }
+        if ($stock) {
+            $query->where('id', $stock);
+        }
+        $vehicles = $query->get();
+        $totalcount = $query->count();
+
+        return $this->load_view('stock', [
+            'title' => 'Filter Results',
+            'totalvehicles' => $totalcount,
+            'msg' => $totalcount == 0 && 'No Vehicles Found',
+            'stylesheet' => 'stock.css',
+            'sidebar' => true,
+            'vehicles' => $vehicles
         ]);
     }
     public function filterMake(string $make)
