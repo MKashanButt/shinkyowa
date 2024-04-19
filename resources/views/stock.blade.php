@@ -4,21 +4,21 @@
         <h2>Filter Results</h2>
         <form action="" method="get">
             <div class="row">
-                <select name="filtermake" id="filtermake">
+                <select name="make" id="filtermake">
                     <option value="" disabled selected>Select Make</option>
                     @foreach ($filteroptions['make'] as $item)
                         <option value="{{ $item->make }}">{{ $item->make }}</option>
                     @endforeach
                 </select>
-                <select name="filtermodel" id="filtermodel">
+                <select name="model" id="filtermodel">
                     <option value="" disabled selected>Select Model</option>
                 </select>
-                <select name="filtercategory" id="filtercategory">
+                <select name="category" id="filtercategory">
                     <option value="" disabled selected>Select Category</option>
                     <option value="commercial">New Arrival</option>
                     <option value="commercial">Discounted</option>
                 </select>
-                <select name="filterfueltype" id="filterfueltype">
+                <select name="fueltype" id="filterfueltype">
                     <option value="" disabled selected>Select Fuel Type</option>
                 </select>
                 <select name="transmission" id="transmission">
@@ -26,23 +26,11 @@
                     <option value="manual">Manual</option>
                     <option value="automatic">Automatic</option>
                 </select>
-                <select name="filtercolor" id="filtercolor">
-                    <option value="" disabled selected>Color</option>
-                    <option value="Toyota">Toyota</option>
-                    <option value="Honda">Honda</option>
-                    <option value="Mitsubishi">Mitsubishi</option>
-                </select>
                 <select name="yearfrom" id="yearfrom">
                     <option value="" disabled selected>Year From</option>
-                    <option value="Toyota">Toyota</option>
-                    <option value="Honda">Honda</option>
-                    <option value="Mitsubishi">Mitsubishi</option>
                 </select>
                 <select name="yearto" id="yearto">
                     <option value="" disabled selected>Year To</option>
-                    <option value="Toyota">Toyota</option>
-                    <option value="Honda">Honda</option>
-                    <option value="Mitsubishi">Mitsubishi</option>
                 </select>
             </div>
             <button type="submit">Filter</button>
@@ -68,7 +56,7 @@
             <p>{{ $msg }}</p>
         @endif
         @foreach ($vehicles as $item)
-            <x-vehicle-listing-card :img="$item->thumbnail" :id="$item->vehicle_id" :make="$item->make" :model="$item->model"
+            <x-vehicle-listing-card :img="$item->thumbnail" :id="$item->id" :make="$item->make" :model="$item->model"
                 :year="$item->year" :mileage="$item->mileage" :engine="$item->engine" :doors="$item->doors" :transmission="$item->transmission" />
         @endforeach
     </div>

@@ -8,8 +8,9 @@ Route::get('/', [VehicleController::class, 'limited'])->name('home');
 
 // Stock Page Filter
 Route::get('/get-models', [VehicleController::class, 'getModels'])->name('get-models');
-Route::get('/get-category', [VehicleController::class, 'getCategory'])->name('get-category');
 Route::get('/get-fueltype', [VehicleController::class, 'getFueltype'])->name('get-fueltype');
+Route::get('/get-years', [VehicleController::class, 'getYears'])->name('get-years');
+Route::get('/remove-year', [VehicleController::class, 'yearRemove'])->name('remove-year');
 
 Route::get('/stock', [VehicleController::class, 'index'])->name('stock');
 Route::get('/vehicle-info/{sno}', [VehicleController::class, 'show'])->name('vehicle-info');

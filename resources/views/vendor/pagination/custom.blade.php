@@ -1,8 +1,6 @@
 @if ($paginator->hasPages())
     <div class="btn">
-        @if ($paginator->onFirstPage())
-            <button><i class='bx bx-chevron-left'></i></button>
-        @else
+        @if (!$paginator->onFirstPage())
             <button>
                 <a href="{{ $paginator->previousPageUrl() }}">
                     <i class='bx bx-chevron-left'></i>
@@ -34,8 +32,6 @@
                     <i class='bx bx-chevron-right'></i>
                 </a>
             </button>
-        @else
-            <button><i class='bx bx-chevron-right'></i></button>
         @endif
     </div>
 @endif

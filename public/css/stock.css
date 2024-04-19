@@ -15,21 +15,21 @@
 }
 
 .pageContent .sub-content .filter form {
+    width: 98%;
+    margin: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-self: center;
 }
 
 .pageContent .sub-content .filter form .row {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    justify-content: center;
 }
 
 .pageContent .sub-content .filter select {
-    width: 22%;
+    width: 22.5%;
     height: 25px;
     border: 1px solid grey;
     outline: none;

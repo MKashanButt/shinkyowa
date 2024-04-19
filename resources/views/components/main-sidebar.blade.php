@@ -5,7 +5,11 @@
             <div class="item">
                 <label for="make">Make:</label>
                 <select name="make" id="make">
-                    <option disabled selected>Select Make</option>
+                    @if (Request::get('make'))
+                        <option disabled selected>{{ Request::get('make') }}</option>
+                    @else
+                        <option disabled selected>Select Make</option>
+                    @endif
                     @foreach ($make as $item)
                         <option value="{{ $item->make }}">{{ $item->make }}</option>
                     @endforeach
@@ -14,7 +18,11 @@
             <div class="item">
                 <label for="model">Model:</label>
                 <select name="model" id="model">
-                    <option disabled selected>Select Model</option>
+                    @if (Request::get('model'))
+                        <option disabled selected>{{ Request::get('model') }}</option>
+                    @else
+                        <option disabled selected>Select Model</option>
+                    @endif
                 </select>
             </div>
             <div class="item">

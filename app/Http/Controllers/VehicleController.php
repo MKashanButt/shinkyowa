@@ -23,7 +23,7 @@ class VehicleController extends Controller
             'honda' => Vehicle::where('make', 'honda')->count(),
             'mazda' => Vehicle::where('make', 'mazda')->count(),
             'suzuki' => Vehicle::where('make', 'suzuki')->count(),
-            'BMW' => Vehicle::where('make', 'nissan')->count(),
+            'BMW' => Vehicle::where('make', 'BMW')->count(),
             'isuzu' => Vehicle::where('make', 'isuzu')->count(),
             'hino' => Vehicle::where('make', 'hino')->count(),
             'mitsubishi' => Vehicle::where('make', 'mitsubishi')->count(),
@@ -51,7 +51,7 @@ class VehicleController extends Controller
         $vehicles = Vehicle::join('vehicle_infos', 'vehicles.id', '=', 'vehicle_infos.vehicle_id')
             ->join('vehicle_images', 'vehicles.id', '=', 'vehicle_images.vehicle_id')
             ->orderByDesc('vehicles.id')
-            ->paginate(5, ['vehicles.*', 'vehicle_infos.*', 'vehicle_images.*']);
+            ->paginate(6, ['vehicles.*', 'vehicle_infos.*', 'vehicle_images.*']);
 
         $filterOptions = [
             "make" => Vehicle::select('make')->distinct()->get(),
@@ -82,12 +82,6 @@ class VehicleController extends Controller
         ]);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show(int $id)
     {
         $vehicle = Vehicle::findOrFail($id);
@@ -110,6 +104,12 @@ class VehicleController extends Controller
         $model = $request->input('model');
         $stock = $request->input('stock');
 
+        $category = $request->input('category');
+        $fueltype = $request->input('fueltype');
+        $transmission = $request->input('transmission');
+        $yearfrom = $request->input('yearfrom');
+        $yearto = $request->input('yearto');
+
         $query = Vehicle::query();
 
         if ($make) {
@@ -120,6 +120,21 @@ class VehicleController extends Controller
         }
         if ($stock) {
             $query->where('id', $stock);
+        }
+        if ($category) {
+            $query->where('category', $category);
+        }
+        if ($fueltype) {
+            $query->where('fuel', $fueltype);
+        }
+        if ($transmission) {
+            $query->where('transmission', $transmission);
+        }
+        if ($yearfrom) {
+            $query->where('year', $yearfrom);
+        }
+        if ($yearto) {
+            $query->where('year', $yearto);
         }
         $vehicles = $query->paginate(5);
         $totalcount = $query->count();
@@ -295,19 +310,10 @@ class VehicleController extends Controller
         }
         return response()->json($result);
     }
-    public function getColor(Request $request)
+    public function getYears(Request $request)
     {
-        $model = $request->input('color');
-        $id = Vehicle::where('model', $model)->pluck('id');
-        $result = [];
-
-        foreach ($id as $elemId) {
-            $color = VehicleInfo::where('vehicle_id', $elemId)->pluck('color');
-            if (in_array($color, $result)) {
-                array_push($result, $color);
-            }
-        }
-
+        $model = $request->input('model');
+        $result = Vehicle::where('model', $model)->orderBy('year', 'ASC')->distinct()->pluck('year');
         return response()->json($result);
     }
 }
