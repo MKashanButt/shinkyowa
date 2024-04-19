@@ -22,6 +22,7 @@ class VehicleFactory extends Factory
     {
         return [
             'stock_id' => $this->faker->regexify('[A-Za-z0-9]{50}'),
+            'make' => $this->faker->regexify('[A-Za-z0-9]{40}'),
             'model' => $this->faker->regexify('[A-Za-z0-9]{100}'),
             'year' => $this->faker->numberBetween(-10000, 10000),
             'fob' => $this->faker->numberBetween(-10000, 10000),

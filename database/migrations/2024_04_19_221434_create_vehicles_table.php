@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('vehicles', function (Blueprint $table) {
             $table->integer('id')->primary();
             $table->string('stock_id', 50);
+            $table->string('make', 40);
             $table->string('model', 100);
             $table->integer('year');
             $table->integer('fob');

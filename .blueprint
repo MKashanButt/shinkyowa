@@ -3,17 +3,17 @@ created:
     - database/factories/VehicleImageFactory.php
     - database/factories/MakeFactory.php
     - database/factories/ModelFactory.php
-    - database/migrations/2024_04_19_215313_create_vehicles_table.php
-    - database/migrations/2024_04_19_215314_create_vehicle_images_table.php
-    - database/migrations/2024_04_19_215315_create_makes_table.php
-    - database/migrations/2024_04_19_215316_create_models_table.php
+    - database/migrations/2024_04_19_221434_create_vehicles_table.php
+    - database/migrations/2024_04_19_221435_create_vehicle_images_table.php
+    - database/migrations/2024_04_19_221436_create_makes_table.php
+    - database/migrations/2024_04_19_221437_create_models_table.php
     - app/Models/Vehicle.php
     - app/Models/VehicleImage.php
     - app/Models/Make.php
     - app/Models/Model.php
 models:
-    User: {  }
-    Vehicle: { id: 'integer primary', stock_id: 'string:50', model: 'string:100', year: 'integer:4', fob: 'integer:10', currency: 'string:1', mileage: 'integer:7', engine: 'string:20', doors: 'int:1', transmission: 'string:10', type: 'string:10', fuel: 'string:10', category: 'string:10', extras: text, buy_link: 'string:200' }
+    User: { name: string, email: string, email_verified_at: 'timestamp nullable default:NULL', password: string, remember_token: 'string:100 nullable default:NULL' }
+    Vehicle: { id: 'integer primary', stock_id: 'string:50', make: 'string:40', model: 'string:100', year: 'integer:4', fob: 'integer:10', currency: 'string:1', mileage: 'integer:7', engine: 'string:20', doors: 'int:1', transmission: 'string:10', type: 'string:10', fuel: 'string:10', category: 'string:10', extras: text, buy_link: 'string:200' }
     VehicleImage: { id: 'integer primary', vehicle_id: 'string:50', thumbnail: 'string:50', image: 'string:100' }
     Make: { id: 'integer primary', make: 'string:20' }
     Model: { id: 'integer primary', model: 'string:20' }

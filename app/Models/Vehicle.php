@@ -11,6 +11,7 @@ class Vehicle extends Model
 
     protected $fillable = [
         'stock_id',
+        'make',
         'model',
         'year',
         'fob',
