@@ -4,29 +4,22 @@
         <h2>Filter Results</h2>
         <form action="" method="get">
             <div class="row">
-                <select name="make" id="make">
+                <select name="filtermake" id="filtermake">
                     <option value="" disabled selected>Select Make</option>
-                    <option value="Toyota">Toyota</option>
-                    <option value="Honda">Honda</option>
-                    <option value="Mitsubishi">Mitsubishi</option>
+                    @foreach ($filteroptions['make'] as $item)
+                        <option value="{{ $item->make }}">{{ $item->make }}</option>
+                    @endforeach
                 </select>
-                <select name="model" id="model">
+                <select name="filtermodel" id="filtermodel">
                     <option value="" disabled selected>Select Model</option>
-                    <option value="Toyota">Toyota</option>
-                    <option value="Honda">Honda</option>
-                    <option value="Mitsubishi">Mitsubishi</option>
                 </select>
-                <select name="category" id="category">
-                    <option value="" disabled selected>Select Model</option>
-                    <option value="Toyota">Toyota</option>
-                    <option value="Honda">Honda</option>
-                    <option value="Mitsubishi">Mitsubishi</option>
+                <select name="filtercategory" id="filtercategory">
+                    <option value="" disabled selected>Select Category</option>
+                    <option value="commercial">New Arrival</option>
+                    <option value="commercial">Discounted</option>
                 </select>
-                <select name="fueltype" id="fueltype">
-                    <option value="" disabled selected>Fuel Type</option>
-                    <option value="Toyota">Toyota</option>
-                    <option value="Honda">Honda</option>
-                    <option value="Mitsubishi">Mitsubishi</option>
+                <select name="filterfueltype" id="filterfueltype">
+                    <option value="" disabled selected>Select Fuel Type</option>
                 </select>
                 <select name="transmission" id="transmission">
                     <option value="" disabled selected>Transmission</option>
@@ -83,34 +76,9 @@
     <div class="pagination">
         @if (!$msg)
             <div class="btn">
-                <button><i class='bx bx-chevron-left'></i></button>
-                <button>1</button>
-                <button>2</button>
-                <button>3</button>
-                <button><i class='bx bx-chevron-right'></i></button>
+                {{ $vehicles->links('vendor.pagination.custom') }}
             </div>
         @endif
-        {{-- {{ $vehicles->links() }} --}}
     </div>
 @endsection
-<script>
-    document.getElementById('make').addEventListener('change', function() {
-        var make = this.value;
-        var xhr = new XMLHttpRequest();
-        xhr.open('GET', '/get-models?make=' + make, true);
-        xhr.onload = function() {
-            if (xhr.status === 200) {
-                var models = JSON.parse(xhr.responseText);
-                var modelDropdown = document.getElementById('model');
-                modelDropdown.innerHTML = '<option disabled selected>Select Model</option>';
-                models.forEach(function(model) {
-                    var option = document.createElement('option');
-                    option.value = model;
-                    option.text = model;
-                    modelDropdown.appendChild(option);
-                });
-            }
-        };
-        xhr.send();
-    });
-</script>
+<script src="{{ asset('js/ajax.js') }}"></script>

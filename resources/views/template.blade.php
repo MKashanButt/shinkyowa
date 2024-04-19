@@ -30,7 +30,7 @@
             <div class="sub-content {{ $sidebar ? 'content-divide' : '' }}">
                 @yield('content')
             </div>
-            @if (Request::path() == '/' || Request::path() == 'stock')
+            @if (Request::path() == '/' || Request::path() == 'stock' || Request::path() == 'filter')
                 <x-second-sidebar />
             @endif
         </div>

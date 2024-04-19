@@ -7,6 +7,7 @@ use App\Models\Vehicle;
 use App\Models\VehicleInfo;
 use App\Models\VehicleImage;
 use Illuminate\Support\Facades\DB;
+use LDAP\Result;
 
 class VehicleController extends Controller
 {
@@ -52,11 +53,15 @@ class VehicleController extends Controller
             ->orderByDesc('vehicles.id')
             ->paginate(5, ['vehicles.*', 'vehicle_infos.*', 'vehicle_images.*']);
 
+        $filterOptions = [
+            "make" => Vehicle::select('make')->distinct()->get(),
+        ];
         return $this->load_view('stock', [
             'vehicles' => $vehicles,
             'stylesheet' => 'stock.css',
             'totalvehicles' => Vehicle::count(),
             'msg' => Vehicle::count() == 0 && 'No Vehicles Found',
+            'filteroptions' => $filterOptions,
             'sidebar' => true,
             'title' => 'Japanese Used Car Exporter'
         ]);
@@ -119,11 +124,16 @@ class VehicleController extends Controller
         $vehicles = $query->get();
         $totalcount = $query->count();
 
+        $filterOptions = [
+            "make" => Vehicle::select('make')->distinct()->get(),
+        ];
+
         return $this->load_view('stock', [
             'title' => 'Filter Results',
             'totalvehicles' => $totalcount,
-            'msg' => $totalcount == 0 && 'No Vehicles Found',
+            'msg' => $totalcount == 0 ?? 'No Vehicles Found',
             'stylesheet' => 'stock.css',
+            'filteroptions' => $filterOptions,
             'sidebar' => true,
             'vehicles' => $vehicles
         ]);
@@ -234,12 +244,6 @@ class VehicleController extends Controller
         ];
     }
 
-    public function getModels(Request $request)
-    {
-        $make = $request->input('make');
-        $models = Vehicle::where('make', $make)->distinct()->pluck('model');
-        return response()->json($models);
-    }
     public function sales_and_bank_details()
     {
         return $this->load_view('bank-details', [
@@ -271,5 +275,38 @@ class VehicleController extends Controller
             'sidebar' => null,
             'stylesheet' => 'why-choose-us.css'
         ]);
+    }
+    public function getModels(Request $request)
+    {
+        $make = $request->input('make');
+        $models = Vehicle::where('make', $make)->distinct()->pluck('model');
+        return response()->json($models);
+    }
+    public function getCategory(Request $request)
+    {
+        $model = $request->input('model');
+        $id = Vehicle::where('model', $model)->distinct()->pluck('id');
+        $result = [];
+
+        foreach ($id as $elemId) {
+            $category = VehicleInfo::where('category', $elemId)->pluck('category');
+            if (in_array($category, $result)) {
+                array_push($result, $category);
+            }
+        }
+        return response()->json($result);
+    }
+    public function getFueltype(Request $request)
+    {
+        $model = $request->input('model');
+        $id = Vehicle::where('model', $model)->distinct()->pluck('id');
+        $result = [];
+        foreach ($id as $elemId) {
+            $fueltype = VehicleInfo::where('vehicle_id', $elemId)->pluck('fuel');
+            if (in_array($fueltype, $result) == null) {
+                array_push($result, $fueltype);
+            }
+        }
+        return response()->json($result);
     }
 }

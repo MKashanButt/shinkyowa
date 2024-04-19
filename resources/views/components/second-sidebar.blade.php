@@ -42,6 +42,8 @@
                 a
                 vehicle from Car Junction....</p>
         </div>
-        <button>View All</button>
+        <div class="btn">
+            <button>View All</button>
+        </div>
     </div>
 </aside>

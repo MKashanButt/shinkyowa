@@ -93,7 +93,7 @@
 }
 
 .second-sidebar .testimonials {
-    display: grid;
+    height: 100%;
 }
 
 .second-sidebar .testimonials .item {
@@ -145,6 +145,10 @@
 
 .second-sidebar .testimonials {
     width: 100%;
+}
+
+.second-sidebar .testimonials .btn {
+    display: grid;
 }
 
 .second-sidebar .testimonials img {

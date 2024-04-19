@@ -1,6 +1,6 @@
 <a href="/vehicle-info/{{ $id }}">
     <div class="item flex">
-        <img src="{{ asset('storage/' . $img) }}" alt="">
+        <img src="{{ asset('storage/images/' . $img) }}" alt="">
         <div class="content">
             <h3>{{ $year }} {{ $make }} {{ $model }}</h3>
             <div class="text">
