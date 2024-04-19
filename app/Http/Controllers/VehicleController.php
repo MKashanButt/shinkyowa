@@ -121,7 +121,7 @@ class VehicleController extends Controller
         if ($stock) {
             $query->where('id', $stock);
         }
-        $vehicles = $query->get();
+        $vehicles = $query->paginate(5);
         $totalcount = $query->count();
 
         $filterOptions = [
@@ -282,20 +282,6 @@ class VehicleController extends Controller
         $models = Vehicle::where('make', $make)->distinct()->pluck('model');
         return response()->json($models);
     }
-    public function getCategory(Request $request)
-    {
-        $model = $request->input('model');
-        $id = Vehicle::where('model', $model)->distinct()->pluck('id');
-        $result = [];
-
-        foreach ($id as $elemId) {
-            $category = VehicleInfo::where('category', $elemId)->pluck('category');
-            if (in_array($category, $result)) {
-                array_push($result, $category);
-            }
-        }
-        return response()->json($result);
-    }
     public function getFueltype(Request $request)
     {
         $model = $request->input('model');
@@ -307,6 +293,21 @@ class VehicleController extends Controller
                 array_push($result, $fueltype);
             }
         }
+        return response()->json($result);
+    }
+    public function getColor(Request $request)
+    {
+        $model = $request->input('color');
+        $id = Vehicle::where('model', $model)->pluck('id');
+        $result = [];
+
+        foreach ($id as $elemId) {
+            $color = VehicleInfo::where('vehicle_id', $elemId)->pluck('color');
+            if (in_array($color, $result)) {
+                array_push($result, $color);
+            }
+        }
+
         return response()->json($result);
     }
 }

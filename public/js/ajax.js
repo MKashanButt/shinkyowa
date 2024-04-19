@@ -21,26 +21,6 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('filtermodel').addEventListener('change', function () {
         let model = this.value;
         let xhr = new XMLHttpRequest();
-        xhr.open('GET', '/get-category?model=' + model, true);
-        xhr.onload = function () {
-            if (xhr.status === 200) {
-                let category = JSON.parse(xhr.responseText);
-                let categoryDropdown = document.getElementById('filtercategory');
-                categoryDropdown.innerHTML =
-                    '<option disabled selected>Select Category</option>';
-                category.forEach(function (category) {
-                    let option = document.createElement('option');
-                    option.value = category;
-                    option.text = category;
-                    categoryDropdown.appendChild(option);
-                });
-            }
-        };
-        xhr.send();
-    });
-    document.getElementById('filtermodel').addEventListener('change', function () {
-        let model = this.value;
-        let xhr = new XMLHttpRequest();
         xhr.open('GET', '/get-fueltype?model=' + model, true);
         xhr.onload = function () {
             if (xhr.status === 200) {

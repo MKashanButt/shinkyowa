@@ -22,12 +22,11 @@
                     <option value="" disabled selected>Select Fuel Type</option>
                 </select>
                 <select name="transmission" id="transmission">
-                    <option value="" disabled selected>Transmission</option>
-                    <option value="Toyota">Toyota</option>
-                    <option value="Honda">Honda</option>
-                    <option value="Mitsubishi">Mitsubishi</option>
+                    <option value="" disabled selected>Select Transmission</option>
+                    <option value="manual">Manual</option>
+                    <option value="automatic">Automatic</option>
                 </select>
-                <select name="color" id="color">
+                <select name="filtercolor" id="filtercolor">
                     <option value="" disabled selected>Color</option>
                     <option value="Toyota">Toyota</option>
                     <option value="Honda">Honda</option>
@@ -75,9 +74,7 @@
     </div>
     <div class="pagination">
         @if (!$msg)
-            <div class="btn">
-                {{ $vehicles->links('vendor.pagination.custom') }}
-            </div>
+            {{ $vehicles->links('vendor.pagination.custom') }}
         @endif
     </div>
 @endsection
