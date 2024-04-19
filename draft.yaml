@@ -1,33 +1,32 @@
 models:
   Vehicle:
-    id: integer:100 primary
-    model: string:100 
+    id: integer primary
+    stock_id: string:50
+    model: string:100
     year: integer:4
     fob: integer:10
-    relationships:
-      hasOne: VehicleInfo
-      hasMany: VehicleImage
-      belongsTo: make
-
-  VehicleInfo:
+    currency: string:1
     mileage: integer:7
     engine: string:20
     doors: int:1
     transmission: string:10
     type: string:10
     fuel: string:10
+    category: string:10
     extras: text
     buy_link: string:200
-    relationships:
-      belongsTo: Vehicle
 
   VehicleImage:
-    url: string
-    relationships:
-      belongsTo: Vehicle
+    id: integer primary
+    vehicle_id: string:50
+    thumbnail: string:50
+    image: string:100
 
   Make:
+    id: integer primary
     make: string:20
-    relationships:
-      hasMany: Vechicle
+
+  Model:
+    id: integer primary
+    model: string:20
   

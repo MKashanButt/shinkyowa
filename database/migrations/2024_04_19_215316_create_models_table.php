@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('makes', function (Blueprint $table) {
-            $table->id();
-            $table->string('make', 20);
+        Schema::create('models', function (Blueprint $table) {
+            $table->integer('id')->primary();
+            $table->string('model', 20);
             $table->timestamps();
         });
     }
@@ -23,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('makes');
+        Schema::dropIfExists('models');
     }
 };

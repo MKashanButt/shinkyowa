@@ -11,12 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('vehicles', function (Blueprint $table) {
+        Schema::create('vehicle_images', function (Blueprint $table) {
             $table->integer('id')->primary();
-            $table->foreignId('make_id');
-            $table->string('model', 100);
-            $table->integer('year');
-            $table->integer('fob');
+            $table->string('vehicle_id', 50);
+            $table->string('thumbnail', 50);
+            $table->string('image', 100);
             $table->timestamps();
         });
     }
@@ -26,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('vehicles');
+        Schema::dropIfExists('vehicle_images');
     }
 };

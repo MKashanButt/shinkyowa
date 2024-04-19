@@ -11,15 +11,20 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('vehicle_infos', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('vehicle_id');
+        Schema::create('vehicles', function (Blueprint $table) {
+            $table->integer('id')->primary();
+            $table->string('stock_id', 50);
+            $table->string('model', 100);
+            $table->integer('year');
+            $table->integer('fob');
+            $table->string('currency', 1);
             $table->integer('mileage');
             $table->string('engine', 20);
             $table->string('doors');
             $table->string('transmission', 10);
             $table->string('type', 10);
             $table->string('fuel', 10);
+            $table->string('category', 10);
             $table->text('extras');
             $table->string('buy_link', 200);
             $table->timestamps();
@@ -31,6 +36,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('vehicle_infos');
+        Schema::dropIfExists('vehicles');
     }
 };
