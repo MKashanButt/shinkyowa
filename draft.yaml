@@ -2,6 +2,7 @@ models:
   Vehicle:
     id: integer primary
     stock_id: string:50
+    make: string:40
     model: string:100
     year: integer:4
     fob: integer:10
