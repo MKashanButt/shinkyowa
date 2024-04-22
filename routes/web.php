@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\VehicleController;
 
@@ -25,3 +26,11 @@ Route::get('/services/shipping', [VehicleController::class, 'shipping'])->name('
 Route::get('/about-us/company-profile', [VehicleController::class, 'company_profile'])->name('about-us.company-profile');
 Route::get('/about-us/why-choose-us', [VehicleController::class, 'why_choose_us'])->name('about-us.why-choose-us');
 Route::get('/sales-and-bank-details', [VehicleController::class, 'sales_and_bank_details'])->name('sales-and-bank-details');
+
+
+//Admin
+Route::get('/admin', function () {
+    return view('admin.index', ['title' => 'Login', 'stylesheet' => '/login.css']);
+})->name('admin.index');
+Route::post('/admin/login/', [AdminController::class, 'login'])->name('admin.login');
+Route::get('/admin/dashboard/', [AdminController::class, 'index'])->name('admin.dashboard');

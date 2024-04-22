@@ -1,0 +1,18 @@
+.admin-sidebar {
+    padding: 1rem;
+}
+
+.admin-sidebar h1 {
+    margin-bottom: 1rem;
+}
+
+.admin-sidebar ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.admin-sidebar ul li {
+    display: flex;
+    align-items: center;
+}
