@@ -12,6 +12,13 @@
 <body>
     <section class="bg">
         <div class="login">
+            @if ($errors->any())
+                <div class="alert">
+                    @foreach ($errors->all() as $error)
+                        <p>{{ $error }}</p>
+                    @endforeach
+                </div>
+            @endif
             <h1>Login</h1>
             <form action="/admin/login" method="POST">
                 @csrf

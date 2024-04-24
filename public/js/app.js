@@ -15,3 +15,15 @@ function toggleDisplay() {
         dialog.style.display = "none"
     }
 }
+function toggleTab() {
+    let icon = document.getElementById('tab-icon')
+    let tab = document.getElementById('sub-menu')
+
+    if (icon.style.rotate == '180deg') {
+        icon.style.rotate = '0deg'
+    } else {
+        icon.style.rotate = '180deg'
+    }
+
+    tab.classList.toggle('d-none');
+}

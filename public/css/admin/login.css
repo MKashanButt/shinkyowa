@@ -49,3 +49,11 @@
     border-radius: 0;
     padding: 10px 0;
 }
+
+.alert {
+    width: 100%;
+    text-align: left;
+    background-color: rgb(187, 33, 36);
+    padding: 1rem;
+    color: white;
+}

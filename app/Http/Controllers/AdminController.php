@@ -5,18 +5,31 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
-    public function login(Request $request)
+    public function loginform()
     {
-        $email = $request->input('email');
-        $password = md5($request->input('password'));
-
-        $user = User::where('email', $email)->where('password', $password);
-        if ($user) {
-            return redirect('admin/dashboard');
+        if (Auth::user()) {
         }
+    }
+    public function validatelogin(Request $request)
+    {
+        $credentials = $request->validate([
+            'email' => ['required', 'email'],
+            'password' => ['required'],
+        ]);
+
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
+
+            return redirect()->intended('admin/dashboard');
+        }
+
+        return back()->withErrors([
+            'email' => 'The provided credentials do not match our records.',
+        ])->onlyInput('email');
     }
 
     public function index()

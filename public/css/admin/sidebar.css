@@ -1,9 +1,15 @@
 .admin-sidebar {
+    height: 100vh;
+    background-color: var(--primary-color);
     padding: 1rem;
+    color: white;
 }
 
 .admin-sidebar h1 {
+    font-size: 18px;
+    text-transform: uppercase;
     margin-bottom: 1rem;
+    letter-spacing: 1px;
 }
 
 .admin-sidebar ul {
@@ -12,7 +18,59 @@
     gap: 10px;
 }
 
-.admin-sidebar ul li {
+.admin-sidebar ul>a>li,
+.admin-sidebar ul>li {
     display: flex;
     align-items: center;
+    padding: 0.5rem;
+    gap: 8px;
+    transition: 0.2s ease all;
+    position: relative;
+}
+
+.admin-sidebar ul>a>li:hover,
+.admin-sidebar ul>li:hover {
+    background-color: white;
+    color: black;
+}
+
+.admin-sidebar ul a:active {
+    background-color: white;
+    color: black;
+}
+
+.admin-sidebar ul li:hover .tab-icon {
+    color: black;
+}
+
+.tab-icon {
+    width: 20px;
+    position: absolute;
+    right: 5px;
+    color: white;
+}
+
+.sub-menu {
+    width: 100%;
+    padding: 0.5rem;
+    background-color: white;
+    color: black;
+}
+
+.sub-menu ul li {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    gap: 8px;
+    transition: 0.2s ease all;
+}
+
+.sub-menu ul li:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.d-none {
+    display: none;
 }
