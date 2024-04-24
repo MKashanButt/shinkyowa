@@ -14,6 +14,7 @@
     <div class="content">
         <x-admin-sidebar />
         <div class="sub-content">
+            <x-admin-topbar />
             @yield('content')
         </div>
     </div>
