@@ -1,8 +1,8 @@
 @extends('template')
 @section('content')
-    <h2>{{ $vehicle->make }} {{ $vehicle->model }} {{ $vehicle_info->transmission }} {{ $vehicle_info->year }}
-        {{ $vehicle_info->engine }}
-        {{ $vehicle_info->fuel }} for Sale</h2>
+    <h2>{{ $vehicle->make }} {{ $vehicle->model }} {{ $vehicle->transmission }} {{ $vehicle->year }}
+        {{ $vehicle->engine }}
+        {{ $vehicle->fuel }} for Sale</h2>
     <div class="stage flex">
         <div class="item">
             {{-- @foreach ($vehicle_image as $image) --}}
@@ -22,7 +22,7 @@
                                 <p>S.No</p>
                             </div>
                             <div class="row">
-                                <p>{{ $vehicle->id }}</p>
+                                <p>{{ $vehicle->stock_id }}</p>
                             </div>
                         </div>
                         <div class="col flex">
@@ -46,7 +46,7 @@
                                 <p>Driving Type</p>
                             </div>
                             <div class="row">
-                                <p>{{ $vehicle_info->type }}</p>
+                                <p>{{ $vehicle->type }}</p>
                             </div>
                         </div>
                         <div class="col flex">
@@ -54,7 +54,7 @@
                                 <p>Engine</p>
                             </div>
                             <div class="row">
-                                <p>{{ $vehicle_info->engine }}</p>
+                                <p>{{ $vehicle->engine }}</p>
                             </div>
                         </div>
                         <div class="col flex">
@@ -62,7 +62,7 @@
                                 <p>Fuel</p>
                             </div>
                             <div class="row">
-                                <p>{{ $vehicle_info->fuel }}</p>
+                                <p>{{ $vehicle->fuel }}</p>
                             </div>
                         </div>
                         <div class="col flex">
@@ -70,7 +70,7 @@
                                 <p>Mileage</p>
                             </div>
                             <div class="row">
-                                <p>{{ $vehicle_info->mileage }}</p>
+                                <p>{{ $vehicle->mileage }}</p>
                             </div>
                         </div>
                         <div class="col flex">
@@ -78,7 +78,7 @@
                                 <p>Transmission</p>
                             </div>
                             <div class="row">
-                                <p>{{ $vehicle_info->transmission }}</p>
+                                <p>{{ $vehicle->transmission }}</p>
                             </div>
                         </div>
                         <div class="col flex">
@@ -86,13 +86,13 @@
                                 <p>Doors</p>
                             </div>
                             <div class="row">
-                                <p>{{ $vehicle_info->doors }}</p>
+                                <p>{{ $vehicle->doors }}</p>
                             </div>
                         </div>
                     </div>
                     <div class="extras">
                         <h4>Extras</h4>
-                        <p>{{ $vehicle_info->extras }}</p>
+                        <p>{{ $vehicle->extras }}</p>
                     </div>
                 </div>
                 <div class="action">

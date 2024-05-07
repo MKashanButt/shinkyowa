@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Vehicle extends Model
 {
+    protected $table = 'stocks';
     use HasFactory;
 
     protected $fillable = [

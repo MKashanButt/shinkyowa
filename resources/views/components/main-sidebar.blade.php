@@ -69,24 +69,24 @@
     <div class="type">
         <h2 class="heading">Search By Type</h2>
         <ul>
-            <li><a href="/type/"><img src="https://www.carjunction.com/category_image/6/Hatchback-Icn-Blue.png"
-                        alt=""> <span>Hatchback(15)</span></a></li>
-            <li><a href="/type/coupe"><img src="https://www.carjunction.com/category_image/2/Sedan-Icn-Blue.png"
-                        alt=""> <span>Sedan(12)</span></a></li>
-            <li><a href="/"><img src="https://www.carjunction.com/category_image/7/Trucks-Icn-Blue.png"
-                        alt=""> <span>Truck(5)</span></a></li>
-            <li><a href="/"><img src="https://www.carjunction.com/category_image/8/Vans-Icn-Blue.png"
-                        alt=""> <span>Van(78)</span></a></li>
-            <li><a href="/"><img src="https://www.carjunction.com/category_image/1/Suv-Icn-Blue.png"
-                        alt=""> <span>Suv(46)</span></a></li>
-            <li><a href="/"><img src="https://www.carjunction.com/category_image/52/Pickups-Icn-Blue.png"
-                        alt=""> <span>Pickup(89)</span></a></li>
-            <li><a href="/"><img src="https://www.carjunction.com/category_image/3/Wagons-Icn-Blue.png"
-                        alt=""> <span>Wagon(4)</span></a></li>
-            <li><a href="/"><img src="https://www.carjunction.com/category_image/4/Bus-Icn-Blue.png"
-                        alt=""> <span>Buses(40)</span></a></li>
-            <li><a href="/"><img src="https://www.carjunction.com/category_image/4/Bus-Icn-Blue.png"
-                        alt=""> <span>Mini Buses(10)</span></a></li>
+            <li><a href="/type/hatchback"><img src="https://www.carjunction.com/category_image/6/Hatchback-Icn-Blue.png"
+                        alt=""> <span>Hatchback({{ $count['hatchback'] }})</span></a></li>
+            <li><a href="/type/sedan"><img src="https://www.carjunction.com/category_image/2/Sedan-Icn-Blue.png"
+                        alt=""> <span>Sedan({{ $count['sedan'] }})</span></a></li>
+            <li><a href="/type/truck"><img src="https://www.carjunction.com/category_image/7/Trucks-Icn-Blue.png"
+                        alt=""> <span>Truck({{ $count['truck'] }})</span></a></li>
+            <li><a href="/type/van"><img src="https://www.carjunction.com/category_image/8/Vans-Icn-Blue.png"
+                        alt=""> <span>Van({{ $count['van'] }})</span></a></li>
+            <li><a href="/type/suv"><img src="https://www.carjunction.com/category_image/1/Suv-Icn-Blue.png"
+                        alt=""> <span>Suv({{ $count['suv'] }})</span></a></li>
+            <li><a href="/type/pickup"><img src="https://www.carjunction.com/category_image/52/Pickups-Icn-Blue.png"
+                        alt=""> <span>Pickup({{ $count['pickup'] }})</span></a></li>
+            <li><a href="/type/wagon"><img src="https://www.carjunction.com/category_image/3/Wagons-Icn-Blue.png"
+                        alt=""> <span>Wagon({{ $count['wagon'] }})</span></a></li>
+            <li><a href="/type/busses"><img src="https://www.carjunction.com/category_image/4/Bus-Icn-Blue.png"
+                        alt=""> <span>Buses({{ $count['buses'] }})</span></a></li>
+            <li><a href="/type/mini busses"><img src="https://www.carjunction.com/category_image/4/Bus-Icn-Blue.png"
+                        alt=""> <span>Mini Buses({{ $count['mini buses'] }})</span></a></li>
         </ul>
     </div>
     <div class="region">

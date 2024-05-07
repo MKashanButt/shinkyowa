@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Vehicle;
-use App\Models\VehicleInfo;
-use App\Models\VehicleImage;
 use Illuminate\Support\Facades\DB;
 use LDAP\Result;
 
@@ -17,26 +15,39 @@ class VehicleController extends Controller
 
         $total = Vehicle::count();
 
-        $count = [
-            'toyota' => Vehicle::where('make', 'toyota')->count(),
-            'nissan' => Vehicle::where('make', 'nissan')->count(),
-            'honda' => Vehicle::where('make', 'honda')->count(),
-            'mazda' => Vehicle::where('make', 'mazda')->count(),
-            'suzuki' => Vehicle::where('make', 'suzuki')->count(),
-            'BMW' => Vehicle::where('make', 'BMW')->count(),
-            'isuzu' => Vehicle::where('make', 'isuzu')->count(),
-            'hino' => Vehicle::where('make', 'hino')->count(),
-            'mitsubishi' => Vehicle::where('make', 'mitsubishi')->count(),
-            'volkswagen' => Vehicle::where('make', 'volkswagen')->count(),
-            'daihatsu' => Vehicle::where('make', 'daihatsu')->count(),
-            'mitsuoka' => Vehicle::where('make', 'mitsuoka')->count(),
-            'lexus' => Vehicle::where('make', 'lexus')->count(),
-            'subaru' => Vehicle::where('make', 'subaru')->count()
-        ];
         return [
             'allmake' => $allmake,
             'total' => $total,
-            'count' => $count,
+            'count' => [
+                'toyota' => Vehicle::where('make', 'toyota')->count(),
+                'nissan' => Vehicle::where('make', 'nissan')->count(),
+                'honda' => Vehicle::where('make', 'honda')->count(),
+                'mazda' => Vehicle::where('make', 'mazda')->count(),
+                'suzuki' => Vehicle::where('make', 'suzuki')->count(),
+                'BMW' => Vehicle::where('make', 'BMW')->count(),
+                'isuzu' => Vehicle::where('make', 'isuzu')->count(),
+                'hino' => Vehicle::where('make', 'hino')->count(),
+                'mitsubishi' => Vehicle::where('make', 'mitsubishi')->count(),
+                'volkswagen' => Vehicle::where('make', 'volkswagen')->count(),
+                'daihatsu' => Vehicle::where('make', 'daihatsu')->count(),
+                'mitsuoka' => Vehicle::where('make', 'mitsuoka')->count(),
+                'lexus' => Vehicle::where('make', 'lexus')->count(),
+                'subaru' => Vehicle::where('make', 'subaru')->count(),
+
+                'hatchback' => Vehicle::where('body_type', 'hatchback')->count(),
+                'sedan' => Vehicle::where('body_type', 'sedan')->count(),
+                'truck' => Vehicle::where('body_type', 'truck')->count(),
+                'van' => Vehicle::where('body_type', 'van')->count(),
+                'suv' => Vehicle::where('body_type', 'suv')->count(),
+                'pickup' => Vehicle::where('body_type', 'pickup')->count(),
+                'wagon' => Vehicle::where('body_type', 'wagon')->count(),
+                'buses' => Vehicle::where('body_type', 'buses')->count(),
+                'mini buses' => Vehicle::where('body_type', 'mini buses')->count(),
+            ],
+            "filteroptions" => [
+                "make" => Vehicle::select('make')->distinct()->get(),
+            ],
+            "total" => Vehicle::select('vehicles')->count(),
         ];
     }
 
@@ -48,20 +59,12 @@ class VehicleController extends Controller
 
     public function index()
     {
-        $vehicles = Vehicle::join('vehicle_infos', 'vehicles.id', '=', 'vehicle_infos.vehicle_id')
-            ->join('vehicle_images', 'vehicles.id', '=', 'vehicle_images.vehicle_id')
-            ->orderByDesc('vehicles.id')
-            ->paginate(6, ['vehicles.*', 'vehicle_infos.*', 'vehicle_images.*']);
 
-        $filterOptions = [
-            "make" => Vehicle::select('make')->distinct()->get(),
-        ];
         return $this->load_view('stock', [
-            'vehicles' => $vehicles,
+            'vehicles' => DB::table('stocks')->paginate(6),
             'stylesheet' => 'stock.css',
             'totalvehicles' => Vehicle::count(),
             'msg' => Vehicle::count() == 0 && 'No Vehicles Found',
-            'filteroptions' => $filterOptions,
             'sidebar' => true,
             'title' => 'Japanese Used Car Exporter'
         ]);
@@ -70,9 +73,8 @@ class VehicleController extends Controller
     public function limited()
     {
         $vehicle = Vehicle::take(12)
-            ->join('vehicle_images', 'vehicles.id', '=', 'vehicle_images.vehicle_id')
-            ->orderByDesc('vehicles.id')
-            ->get(['vehicles.*', 'vehicle_images.thumbnail']);
+            ->orderBy('id', 'desc')
+            ->get();
 
         return $this->load_view('index', [
             'vehicle' => $vehicle,
@@ -85,13 +87,9 @@ class VehicleController extends Controller
     public function show(int $id)
     {
         $vehicle = Vehicle::findOrFail($id);
-        $vehicle_info = VehicleInfo::where("vehicle_id", $id)->firstOrFail();
-        $vehicle_images = VehicleImage::where("vehicle_id", $id)->get('url');
 
         return $this->load_view('vehicle-info', [
             'vehicle' => $vehicle,
-            'vehicle_info' => $vehicle_info,
-            'vehicle_image' => $vehicle_images,
             'stylesheet' => 'vehicle-info.css',
             'sidebar' => false,
             'title' => 'Vehicle Info'
@@ -155,102 +153,65 @@ class VehicleController extends Controller
     }
     public function filterMake(string $make)
     {
-        $vehicles = Vehicle::join('vehicle_infos', 'vehicles.id', '=', 'vehicle_infos.vehicle_id')
-            ->join('vehicle_images', 'vehicles.id', '=', 'vehicle_images.vehicle_id')
-            ->where('vehicles.make', $make)
-            ->paginate(5, ['vehicles.*', 'vehicle_infos.*', 'vehicle_images.thumbnail']);
+        $vehicles = Vehicle::where('make', $make)
+            ->paginate(5);
 
-        $allMake = Vehicle::select('make')->distinct()->get();
-        $toyota = Vehicle::where('make', 'toyota')->count();
-        $nissan = Vehicle::where('make', 'nissan')->count();
-        $mazda = Vehicle::where('make', 'mazda')->count();
-        $mitsubishi = Vehicle::where('make', 'mitsubishi')->count();
-        $honda = Vehicle::where('make', 'honda')->count();
-        $suzuki = Vehicle::where('make', 'suzuki')->count();
-        $subaru = Vehicle::where('make', 'subaru')->count();
-        $isuzu = Vehicle::where('make', 'isuzu')->count();
-        $daihatsu = Vehicle::where('make', 'daihatsu')->count();
-        $mitsuoka = Vehicle::where('make', 'mitsuoka')->count();
-        $lexus = Vehicle::where('make', 'lexus')->count();
-        $BMW = Vehicle::where('make', 'BMW')->count();
-        $hino = Vehicle::where('make', 'hino')->count();
-        $volkswagen = Vehicle::where('make', 'volkswagen')->count();
-
-        $total = Vehicle::select('vehicles')->count();
         $totalVehicles = Vehicle::where('make', $make)->count();
         $msg = null;
 
         if ($totalVehicles == 0) {
             $msg = "No Vehicles Present";
         }
-
-        $count = [
-            'toyota' => $toyota,
-            'nissan' => $nissan,
-            'honda' => $honda,
-            'mazda' => $mazda,
-            'suzuki' => $suzuki,
-            'BMW' => $BMW,
-            'isuzu' => $isuzu,
-            'hino' => $hino,
-            'mitsubishi' => $mitsubishi,
-            'volkswagen' => $volkswagen,
-            'daihatsu' => $daihatsu,
-            'mitsuoka' => $mitsuoka,
-            'lexus' => $lexus,
-            'subaru' => $subaru
-        ];
-        return view('stock.index', [
+        return $this->load_view('stock', [
             'vehicles' => $vehicles,
-            'allmake' => $allMake,
-            'count' => $count,
-            'total' => $total,
             'msg' => $msg,
             'totalvehicles' => $totalVehicles,
-            'title' => 'Car Stock'
+            'stylesheet' => 'stock.css',
+            'title' => 'Car Stock',
+            'sidebar' => true
         ]);
     }
     public function filterType(string $type)
     {
-        $vehicles = Vehicle::join('vehicle_infos', 'vehicles.id', '=', 'vehicle_infos.vehicle_id')
-            ->join('vehicle_images', 'vehicles.id', '=', 'vehicle_images.vehicle_id')
-            ->where('vehicle_infos.type', $type)
-            ->paginate(5, ['vehicles.*', 'vehicle_infos.*', 'vehicle_images.thumbnail']);
+        $vehicles = Vehicle::where('body_type', $type)
+            ->paginate(5);
 
-        $allMake = Vehicle::select('make')->distinct()->get();
-        $toyota = Vehicle::where('make', 'toyota')->count();
-        $nissan = Vehicle::where('make', 'nissan')->count();
-        $honda = Vehicle::where('make', 'honda')->count();
-        $mazda = Vehicle::where('make', 'mazda')->count();
-        $suzuki = Vehicle::where('make', 'suzuki')->count();
-        $BMW = Vehicle::where('make', 'BMW')->count();
-        $isuzu = Vehicle::where('make', 'isuzu')->count();
-        $hino = Vehicle::where('make', 'hino')->count();
-        $mitsubishi = Vehicle::where('make', 'mitsubishi')->count();
-        $volkswagen = Vehicle::where('make', 'volkswagen')->count();
+        $totalVehicles = Vehicle::where('body_type', $type)->count();
+        $msg = null;
 
-        $total = Vehicle::select('vehicles')->count();
-
-        $totalVehicles = Vehicle::where('type', $type);
-
-        $count = [
-            'toyota' => $toyota,
-            'nissan' => $nissan,
-            'honda' => $honda,
-            'mazda' => $mazda,
-            'suzuki' => $suzuki,
-            'BMW' => $BMW,
-            'isuzu' => $isuzu,
-            'hino' => $hino,
-            'mitsubishi' => $mitsubishi,
-            'volkswagen' => $volkswagen,
-        ];
-        return view('stock.index', [
+        if ($totalVehicles == 0) {
+            $msg = "No Vehicles Present";
+        }
+        return $this->load_view('stock', [
             'vehicles' => $vehicles,
-            'title' => 'Car Stock'
+            'title' => 'Car Stock',
+            'stylesheet' => 'stock.css',
+            'sidebar' => true,
+            'msg' => $msg,
+            'totalvehicles' => $totalVehicles,
         ]);
     }
+    public function filterRegion(string $type)
+    {
+        $vehicles = Vehicle::where('region', $type)
+            ->paginate(5);
 
+        $totalVehicles = Vehicle::where('region', $type)->count();
+        $msg = null;
+
+        if ($totalVehicles == 0) {
+            $msg = "No Vehicles Present";
+        }
+
+        return $this->load_view('stock', [
+            'vehicles' => $vehicles,
+            'title' => 'Car Stock',
+            'stylesheet' => 'stock.css',
+            'sidebar' => true,
+            'msg' => $msg,
+            'totalvehicles' => $totalVehicles,
+        ]);
+    }
     public function sidebar_options()
     {
         $allMake = Vehicle::select('make')->distinct()->get();
@@ -300,11 +261,10 @@ class VehicleController extends Controller
     public function getFueltype(Request $request)
     {
         $model = $request->input('model');
-        $id = Vehicle::where('model', $model)->distinct()->pluck('id');
         $result = [];
-        foreach ($id as $elemId) {
-            $fueltype = VehicleInfo::where('vehicle_id', $elemId)->pluck('fuel');
-            if (in_array($fueltype, $result) == null) {
+        $fueltype = Vehicle::where('model', $model)->pluck('fuel');
+        foreach ($fueltype as $fuel) {
+            if (in_array($fueltype, $fuel) == null) {
                 array_push($result, $fueltype);
             }
         }

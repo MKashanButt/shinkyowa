@@ -6,7 +6,7 @@
                     <p>Email : <span>info@shinkyowa.com</span></p>
                 </div>
                 <div class="item">
-                    <p>Phone : <span>+8127 212 9973, +8127 212 9986</span></p>
+                    <p>Phone : <span>+81 70-1524-1308, +81 90-3049-1308</span></p>
                 </div>
                 <div class="item">
                     <p>Total Stock : <span>{{ $total }}</span></p>
@@ -16,9 +16,12 @@
                 <p>Japan Time : <span id="current-time"></span></p>
             </div>
             <div class="socials">
-                <i class='bx bxl-facebook'></i>
-                <i class='bx bxl-linkedin'></i>
-                <i class='bx bxl-instagram'></i>
+                <a href="https://www.facebook.com/shinkyowaint" target="__blank">
+                    <i class='bx bxl-facebook'></i>
+                </a>
+                <a href="https://www.linkedin.com/company/shin-kyowa-international/?viewAsMember=true" target="__blank">
+                    <i class='bx bxl-linkedin'></i>
+                </a>
             </div>
         </div>
     </div>

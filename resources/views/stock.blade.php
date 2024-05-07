@@ -53,7 +53,7 @@
     </div>
     <div class="listing">
         @if ($msg)
-            <p>{{ $msg }}</p>
+            <p class="msg">{{ $msg }}</p>
         @endif
         @foreach ($vehicles as $item)
             <x-vehicle-listing-card :img="$item->thumbnail" :id="$item->id" :make="$item->make" :model="$item->model"

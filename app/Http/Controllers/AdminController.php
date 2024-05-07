@@ -36,7 +36,7 @@ class AdminController extends Controller
     {
         return view('admin.dashboard', [
             'title' => 'Dashboard',
-            'stylesheet' => 'dashboard.css'
+            'stylesheet' => '/dashboard.css'
         ]);
     }
 

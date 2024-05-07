@@ -1,3 +1,11 @@
+.msg {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 0;
+}
+
 .pageContent .sub-content .filter {
     display: flex;
     flex-direction: column;

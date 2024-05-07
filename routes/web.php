@@ -28,11 +28,3 @@ Route::controller(VehicleController::class)->group(function () {
     Route::get('/about-us/why-choose-us', 'why_choose_us')->name('about-us.why-choose-us');
     Route::get('/sales-and-bank-details', 'sales_and_bank_details')->name('sales-and-bank-details');
 });
-//Admin
-Route::prefix('admin')->controller(AdminController::class)->group(function () {
-    Route::get('/', function () {
-        return view('admin.index', ['title' => 'Login', 'stylesheet' => '/login.css']);
-    })->name('admin.index');
-    Route::post('login/', 'validatelogin')->name('admin.validatelogin');
-    Route::get('dashboard/', 'index')->name('admin.dashboard');
-});
