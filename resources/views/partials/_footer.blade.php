@@ -58,64 +58,65 @@
             <ul>
                 <li>Toyota</li>
                 <li>Nissan</li>
-                <li>Honda</li>
-                <li>Mitsubishi</li>
                 <li>Mazda</li>
+                <li>Mitsubishi</li>
+                <li>Honda</li>
                 <li>Suzuki</li>
-                <li>BMW</li>
-                <li>Mercedes Benz</li>
-                <li>Iveco</li>
-                <li>Lexus</li>
-                <li>Daihatsu</li>
                 <li>Subaru</li>
-                <li>Land Rover</li>
+                <li>Isuzu</li>
+                <li>Daihatsu</li>
+                <li>Mitsuoka</li>
+                <li>Lexus</li>
+                <li>BMW</li>
                 <li>Hino</li>
-                <li>Land Cruiser SUVs</li>
+                <li>Volkswagen</li>
             </ul>
         </div>
         <div class="item">
             <h3></h3>
             <ul>
-                <li>Sedans</li>
-                <li>Hatchbacks</li>
+                <li>Hatchback</li>
+                <li>Sedan</li>
                 <li>Sports</li>
-                <li>SUV/4WD</li>
-                <li>Wagons</li>
-                <li>Vans</li>
-                <li>Buses</li>
-                <li>Trucks</li>
-                <li>Pickup Trucks</li>
-                <li>Trailer Trucks</li>
-                <li>Wing Body Trucks</li>
-                <li>Trailer Trucks</li>
-                <li>Chassis Trucks</li>
-                <li>Car Carrier Trucks</li>
-                <li>Freezer Trucks</li>
-                <li>Garbage Trucks</li>
-                <li>Flatbed Trucks</li>
-                <li>Box Trucks</li>
-                <li>Dump Trucks</li>
+                <li>Truck</li>
+                <li>Van</li>
+                <li>SUV</li>
+                <li>Pickup</li>
+                <li>Wagon</li>
+                <li>Busses</li>
+                <li>Mini Busses</li>
             </ul>
         </div>
         <div class="item">
             <h3>Other Links</h3>
             <ul>
-                <li>Newly Arrived Vehicles</li>
-                <li>Diplomats Offers</li>
-                <li>Clearance Sale</li>
-                <li>Low Mileage Vehicles</li>
-                <li>Manual Tansmission</li>
-                <li>Dealer Enquiry</li>
-                <li>Video Testimonials</li>
-                <li>Privacy Policy</li>
-                <li>Tractor Implements</li>
-                <li>Tractors for Sale</li>
-                <li>Left Hand Vehicles</li>
-                <li>Used Auto Parts</li>
-                <li>Heavy Machinery</li>
-                <li>Vehicles for Africa</li>
-                <li>Left Hand Pickup Trucks</li>
-                <li>Subscribe Newsletter</li>
+                <a href="/category/new arrival">
+                    <li>Newly Arrived Vehicles</li>
+                </a>
+                <a href="/category/discounted">
+                    <li>Discounted Vehicles</li>
+                </a>
+                <a href="/category/commercial">
+                    <li>Commercial Vehicles</li>
+                </a>
+                <a href="/testimonials">
+                    <li>Testimonials</li>
+                </a>
+                <a href="/sales-and-bank-details">
+                    <li>Privacy Policy</li>
+                </a>
+                <a href="/stock">
+                    <li>Vehicles</li>
+                </a>
+                <a href="/region/japan">
+                    <li>Vehicles for Japan</li>
+                </a>
+                <a href="/type/pikup">
+                    <li>Pickup Trucks</li>
+                </a>
+                <a href="/newsletter">
+                    <li>Subscribe Newsletter</li>
+                </a>
             </ul>
         </div>
     </div>

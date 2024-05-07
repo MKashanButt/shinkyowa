@@ -92,12 +92,13 @@
     <div class="region">
         <h2 class="heading">Search By Region</h2>
         <ul>
-            <li><a href="/region/"><img src="https://www.carjunction.com/images/japan.png" alt="region">Japan</a></li>
-            <li><a href="/region/"><img src="https://www.carjunction.com/images/thailand.png"
+            <li><a href="/region/"><img src="{{ asset('https://www.carjunction.com/images/japan.png') }}"
+                        alt="region">Japan</a></li>
+            <li><a href="/region/"><img src="{{ asset('https://www.carjunction.com/images/thailand.png') }}"
                         alt="region">Thailand</a>
             </li>
-            <li><a href="/region/"><img src="images/uk-flag.png" alt="region">UK</a></li>
-            <li><a href="/region/"><img src="https://www.carjunction.com/images/pakistan.png"
+            <li><a href="/region/"><img src="{{ asset('images/uk-flag.png') }}" alt="region">UK</a></li>
+            <li><a href="/region/"><img src="{{ asset('https://www.carjunction.com/images/pakistan.png') }}"
                         alt="region">Pakistan</a>
             </li>
         </ul>
