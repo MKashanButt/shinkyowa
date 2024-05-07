@@ -9,7 +9,12 @@
                 Post Code: 939-0301<br>
                 Tell & Fax: 0766 555 081<br>
                 Mon - Fri : 09am to 06pm</p>
-            <p>Follow us: <i class='bx bxl-facebook'></i><i class='bx bxl-twitter'></i><i class='bx bxl-linkedin'></i></p>
+            <p>Follow us: <a href="https://www.facebook.com/shinkyowaint" target="__blank"><i
+                        class='bx bxl-facebook'></i></a>
+                <a href="https://www.linkedin.com/company/shin-kyowa-international/" target="__blank">
+                    <i class='bx bxl-linkedin'></i>
+                </a>
+            </p>
         </div>
         <div class="item">
             <h3>Regional Stock</h3>

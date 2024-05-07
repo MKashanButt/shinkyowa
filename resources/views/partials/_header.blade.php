@@ -19,7 +19,7 @@
                 <a href="https://www.facebook.com/shinkyowaint" target="__blank">
                     <i class='bx bxl-facebook'></i>
                 </a>
-                <a href="https://www.linkedin.com/company/shin-kyowa-international/?viewAsMember=true" target="__blank">
+                <a href="https://www.linkedin.com/company/shin-kyowa-international" target="__blank">
                     <i class='bx bxl-linkedin'></i>
                 </a>
             </div>
