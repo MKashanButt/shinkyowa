@@ -137,20 +137,32 @@ class VehicleController extends Controller
         $vehicles = $query->paginate(5);
         $totalcount = $query->count();
 
-        $filterOptions = [
-            "make" => Vehicle::select('make')->distinct()->get(),
-        ];
+        return $this->load_view('stock', [
+            'title' => 'Filter Results',
+            'totalvehicles' => $totalcount,
+            'msg' => $totalcount == 0 ?? 'No Vehicles Found',
+            'stylesheet' => 'stock.css',
+            'sidebar' => true,
+            'vehicles' => $vehicles
+        ]);
+    }
+
+    public function search(Request $request)
+    {
+        $vehicles = '';
+
+        $totalcount = $request->count();
 
         return $this->load_view('stock', [
             'title' => 'Filter Results',
             'totalvehicles' => $totalcount,
             'msg' => $totalcount == 0 ?? 'No Vehicles Found',
             'stylesheet' => 'stock.css',
-            'filteroptions' => $filterOptions,
             'sidebar' => true,
             'vehicles' => $vehicles
         ]);
     }
+
     public function filterMake(string $make)
     {
         $vehicles = Vehicle::where('make', $make)

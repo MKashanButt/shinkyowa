@@ -20,7 +20,7 @@
     @include('partials._header')
     @if (Request::path() == '/')
         <div id="slider">
-            <img src="https://www.carjunction.com/logo_images/383/lexus_lx_600_main.gif" alt="slider-image">
+            <img src="{{ asset('images/banner.png') }}" alt="slider-image">
         </div>
     @endif
     <div class="content">
