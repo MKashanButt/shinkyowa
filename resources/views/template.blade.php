@@ -7,6 +7,7 @@
     <title>Shinkyowa International | {{ $title }} </title>
     <link rel="stylesheet" href="{{ asset('css/root.css') }}">
     <link rel="stylesheet" href="{{ asset('css/' . $stylesheet) }}">
+    <link rel="icon" href="">
 
     {{-- Box Icons --}}
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
