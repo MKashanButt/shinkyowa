@@ -191,12 +191,12 @@ class VehicleController extends Controller
             'totalvehicles' => $totalVehicles,
         ]);
     }
-    public function filterRegion(string $type)
+    public function filterRegion(string $region)
     {
-        $vehicles = Vehicle::where('region', $type)
+        $vehicles = Vehicle::where('region', $region)
             ->paginate(5);
 
-        $totalVehicles = Vehicle::where('region', $type)->count();
+        $totalVehicles = Vehicle::where('region', $region)->count();
         $msg = null;
 
         if ($totalVehicles == 0) {
@@ -212,12 +212,26 @@ class VehicleController extends Controller
             'totalvehicles' => $totalVehicles,
         ]);
     }
-    public function sidebar_options()
+    public function filterCategory(string $category)
     {
-        $allMake = Vehicle::select('make')->distinct()->get();
-        return [
-            'allmake' => $allMake
-        ];
+        $vehicles = Vehicle::where('category', $category)
+            ->paginate(5);
+
+        $totalVehicles = Vehicle::where('category', $category)->count();
+        $msg = null;
+
+        if ($totalVehicles == 0) {
+            $msg = "No Vehicles Present";
+        }
+
+        return $this->load_view('stock', [
+            'vehicles' => $vehicles,
+            'title' => 'Car Stock',
+            'stylesheet' => 'stock.css',
+            'sidebar' => true,
+            'msg' => $msg,
+            'totalvehicles' => $totalVehicles,
+        ]);
     }
 
     public function sales_and_bank_details()

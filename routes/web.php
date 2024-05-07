@@ -21,6 +21,8 @@ Route::controller(VehicleController::class)->group(function () {
     Route::get('/filter', 'filter');
     Route::get('/make/{make}', 'filterMake');
     Route::get('/type/{type}', 'filterType');
+    Route::get('/region/{region}', 'filterRegion');
+    Route::get('/category/{category}', 'filterCategory');
 
     // Static Pages
     Route::get('/services/shipping', 'shipping')->name('services.company-profile');
