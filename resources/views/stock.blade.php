@@ -2,7 +2,7 @@
 @section('content')
     <div class="filter">
         <h2>Filter Results</h2>
-        <form action="" method="get">
+        <form action="filter" method="get">
             <div class="row">
                 <select name="make" id="filtermake">
                     <option value="" disabled selected>Select Make</option>
@@ -15,8 +15,9 @@
                 </select>
                 <select name="category" id="filtercategory">
                     <option value="" disabled selected>Select Category</option>
-                    <option value="commercial">New Arrival</option>
-                    <option value="commercial">Discounted</option>
+                    <option value="new arrival">New Arrival</option>
+                    <option value="discounted">Discounted</option>
+                    <option value="commercial">Commercial</option>
                 </select>
                 <select name="fueltype" id="filterfueltype">
                     <option value="" disabled selected>Select Fuel Type</option>
@@ -53,7 +54,7 @@
     </div>
     <div class="listing">
         @if ($msg)
-            <p class="msg">{{ $msg }}</p>
+            <p class="msg">No Vehicle Present</p>
         @endif
         @foreach ($vehicles as $item)
             <x-vehicle-listing-card :img="$item->thumbnail" :id="$item->id" :make="$item->make" :model="$item->model"

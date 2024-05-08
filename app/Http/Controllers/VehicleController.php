@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\InquiryForm;
 use Illuminate\Http\Request;
 use App\Models\Vehicle;
 use Illuminate\Support\Facades\DB;
 use LDAP\Result;
+use Illuminate\Support\Facades\Mail;
 
 class VehicleController extends Controller
 {
@@ -183,6 +185,7 @@ class VehicleController extends Controller
             'sidebar' => true
         ]);
     }
+
     public function filterType(string $type)
     {
         $vehicles = Vehicle::where('body_type', $type)
@@ -203,6 +206,7 @@ class VehicleController extends Controller
             'totalvehicles' => $totalVehicles,
         ]);
     }
+
     public function filterRegion(string $region)
     {
         $vehicles = Vehicle::where('region', $region)
@@ -224,6 +228,7 @@ class VehicleController extends Controller
             'totalvehicles' => $totalVehicles,
         ]);
     }
+
     public function filterCategory(string $category)
     {
         $vehicles = Vehicle::where('category', $category)
@@ -254,6 +259,7 @@ class VehicleController extends Controller
             'sidebar' => false
         ]);
     }
+
     public function shipping()
     {
         return $this->load_view('shipping', [
@@ -262,6 +268,7 @@ class VehicleController extends Controller
             'stylesheet' => 'shipping.css'
         ]);
     }
+
     public function company_profile()
     {
         return $this->load_view('company-profile', [
@@ -270,6 +277,7 @@ class VehicleController extends Controller
             'stylesheet' => 'company-profile.css'
         ]);
     }
+
     public function why_choose_us()
     {
         return $this->load_view('why-choose-us', [
@@ -278,12 +286,14 @@ class VehicleController extends Controller
             'stylesheet' => 'why-choose-us.css'
         ]);
     }
+
     public function getModels(Request $request)
     {
         $make = $request->input('make');
         $models = Vehicle::where('make', $make)->distinct()->pluck('model');
         return response()->json($models);
     }
+
     public function getFueltype(Request $request)
     {
         $model = $request->input('model');
@@ -296,10 +306,23 @@ class VehicleController extends Controller
         }
         return response()->json($result);
     }
+
     public function getYears(Request $request)
     {
         $model = $request->input('model');
         $result = Vehicle::where('model', $model)->orderBy('year', 'ASC')->distinct()->pluck('year');
         return response()->json($result);
+    }
+
+    public function sendMail(Request $request)
+    {
+        $data = [
+            'name' => $request->input('name'),
+            'email' => $request->input('email'),
+            'phone' => $request->input('phone'),
+            'coment' => $request->input('coment'),
+        ];
+
+        Mail::to($request->input('email'))->send(new InquiryForm($data));
     }
 }

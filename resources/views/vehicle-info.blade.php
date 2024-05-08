@@ -111,10 +111,9 @@
                         <div class="destination">
                             <h3>Step 2: Vehicle Enquiry Form</h3>
                             <p>Enter your details below to send your enquiry for this vehicle</p>
-                            <input type="text" name="fullName" id="fullName" placeholder="Full Name" required>
-                            <input type="email" name="emailAddress" id="emailAddress" placeholder="Email Address"
-                                required>
-                            <input type="number" name="phoneNo" id="phoneNo" placeholder="Phone No">
+                            <input type="text" name="name" id="name" placeholder="Full Name" required>
+                            <input type="email" name="email" id="email" placeholder="Email Address" required>
+                            <input type="number" name="phone" id="phone" placeholder="Phone No">
                             <select name="destination" id="destination" required>
                                 <option value="" disabled selected>Select Country</option>
                                 <option value="New Zealand">New Zealand</option>
