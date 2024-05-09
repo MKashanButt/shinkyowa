@@ -385,6 +385,18 @@
         max-width: 250px;
     }
 
+    footer .container .item:nth-of-type(1) {
+        max-width: 37%;
+    }
+
+    footer p {
+        text-wrap: wrap !important;
+    }
+
+    footer .container {
+        gap: 20px !important;
+    }
+
     .whatsapp {
         font-size: 20px !important;
         padding: 0px !important;
