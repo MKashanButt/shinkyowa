@@ -16,7 +16,7 @@
     </div>
     <hr>
     <div class="offers">
-        <img src="https://www.carjunction.com/logo_images/192/Hilux-Revo-Small-Banner-For-.gif" alt="">
+        <img src="{{ asset('images/offer-one.gif') }}" alt="">
         <img src="https://www.carjunction.com/logo_images/202/2022-Brand-Ne-Vehicle-Small-Banner%20(1).gif"
             alt="">
         <img src="https://www.carjunction.com/logo_images/277/Isuzu-D-Max.gif" alt="">
