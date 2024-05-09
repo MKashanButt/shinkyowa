@@ -280,10 +280,8 @@
     }
 
     header nav ul {
-        display: flex;
         flex-direction: column;
         gap: 0 !important;
-        /* display: none !important; */
     }
 
     .main-sidebar .make li img {
@@ -353,6 +351,7 @@
     }
 
     footer .container:nth-of-type(2) {
+        display: flex;
         flex-direction: column !important;
     }
 

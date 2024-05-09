@@ -32,3 +32,11 @@ function toggleMenu() {
     let menu = document.getElementById("menu");
     menu.style.display = (menu.style.display === "none") ? "block" : "none";
 }
+
+function responsiveMenu() {
+    let menu = document.getElementById("menu");
+
+}
+if (window.innerWidth < 1007) {
+    document.getElementById("menu").style.display = "none";
+}
