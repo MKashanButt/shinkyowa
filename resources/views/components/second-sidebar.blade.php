@@ -24,23 +24,28 @@
     <hr>
     <div class="testimonials">
         <h2>Testimonials</h2>
-        <div class="item">
-            <img src="https://www.carjunction.com/testi_images/558/Image%2001.png" alt="">
-            <p>Thank you very much I received my vehicle with good condition of everything. I am very happy to purchase
-                a
-                vehicle from Car Junction....</p>
-        </div>
-        <div class="item">
-            <img src="https://www.carjunction.com/testi_images/558/Image%2001.png" alt="">
-            <p>Thank you very much I received my vehicle with good condition of everything. I am very happy to purchase
-                a
-                vehicle from Car Junction....</p>
-        </div>
-        <div class="item">
-            <img src="https://www.carjunction.com/testi_images/558/Image%2001.png" alt="">
-            <p>Thank you very much I received my vehicle with good condition of everything. I am very happy to purchase
-                a
-                vehicle from Car Junction....</p>
+        <div class="stage">
+            <div class="item">
+                <img src="https://www.carjunction.com/testi_images/558/Image%2001.png" alt="">
+                <p>Thank you very much I received my vehicle with good condition of everything. I am very happy to
+                    purchase
+                    a
+                    vehicle from Car Junction....</p>
+            </div>
+            <div class="item">
+                <img src="https://www.carjunction.com/testi_images/558/Image%2001.png" alt="">
+                <p>Thank you very much I received my vehicle with good condition of everything. I am very happy to
+                    purchase
+                    a
+                    vehicle from Car Junction....</p>
+            </div>
+            <div class="item">
+                <img src="https://www.carjunction.com/testi_images/558/Image%2001.png" alt="">
+                <p>Thank you very much I received my vehicle with good condition of everything. I am very happy to
+                    purchase
+                    a
+                    vehicle from Car Junction....</p>
+            </div>
         </div>
         <div class="btn">
             <button>View All</button>

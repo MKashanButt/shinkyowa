@@ -45,7 +45,14 @@
     </div>
     <nav>
         <div class="container">
-            <ul>
+            <button class="hamburger" onclick="toggleMenu()">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="icon">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+            </button>
+            <ul id="menu">
                 <li><a href="/">Home</a></li>
                 <li><a href="/stock">Browse Stock</a></li>
                 <li>Services
