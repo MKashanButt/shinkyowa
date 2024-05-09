@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{{ asset('css/root.css') }}">
     <link rel="stylesheet" href="{{ asset('css/' . $stylesheet) }}">
     <link rel="icon" href="">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     {{-- Box Icons --}}
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -19,8 +20,19 @@
 <body>
     @include('partials._header')
     @if (Request::path() == '/')
-        <div id="slider">
-            <img src="{{ asset('images/banner.png') }}" alt="slider-image">
+        <div class="swiper mySwiper" id="slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="{{ asset('images/banner-one.gif') }}" alt="slider-image">
+                </div>
+                <div class="swiper-slide">
+                    <img src="{{ asset('images/banner-two.gif') }}" alt="slider-image">
+                </div>
+                <div class="swiper-slide">
+                    <img src="{{ asset('images/banner-three.png') }}" alt="slider-image">
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
         </div>
     @endif
     <div class="content">
@@ -58,6 +70,19 @@
         </div>
     </dialog>
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            autoplay: {
+                delay: 2000,
+                disableOnInteraction: false,
+            },
+        });
+    </script>
 </body>
 
 </html>
