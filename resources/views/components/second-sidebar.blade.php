@@ -26,7 +26,7 @@
         <h2>Testimonials</h2>
         <div class="stage">
             <div class="item">
-                <img src="https://www.carjunction.com/testi_images/558/Image%2001.png" alt="">
+                <video src="{{ asset('images/reviews/Mr. Fabian Downer.mp4') }}" controls></video>
                 <p>Thank you very much I received my vehicle with good condition of everything. I am very happy to
                     purchase
                     a
@@ -46,9 +46,6 @@
                     a
                     vehicle from Car Junction....</p>
             </div>
-        </div>
-        <div class="btn">
-            <button>View All</button>
         </div>
     </div>
 </aside>

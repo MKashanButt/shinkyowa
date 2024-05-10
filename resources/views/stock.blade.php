@@ -5,33 +5,64 @@
         <form action="filter" method="get">
             <div class="row">
                 <select name="make" id="filtermake">
-                    <option value="" disabled selected>Select Make</option>
+                    @if (Request::get('make'))
+                        <option disabled selected>{{ Request::get('make') }}</option>
+                    @else
+                        <option disabled selected>Select Make</option>
+                    @endif
                     @foreach ($filteroptions['make'] as $item)
                         <option value="{{ $item->make }}">{{ $item->make }}</option>
                     @endforeach
                 </select>
                 <select name="model" id="filtermodel">
-                    <option value="" disabled selected>Select Model</option>
+                    @if (Request::get('model'))
+                        <option disabled selected>{{ Request::get('model') }}</option>
+                    @else
+                        <option disabled selected>Select Model</option>
+                    @endif
                 </select>
                 <select name="category" id="filtercategory">
-                    <option value="" disabled selected>Select Category</option>
-                    <option value="new arrival">New Arrival</option>
-                    <option value="discounted">Discounted</option>
-                    <option value="commercial">Commercial</option>
+                    @if (Request::get('category'))
+                        <option disabled selected>{{ Request::get('category') }}</option>
+                    @else
+                        <option value="" disabled selected>Select Category</option>
+                        <option value="new arrival">New Arrival</option>
+                        <option value="discounted">Discounted</option>
+                        <option value="commercial">Commercial</option>
+                    @endif
                 </select>
                 <select name="fueltype" id="filterfueltype">
-                    <option value="" disabled selected>Select Fuel Type</option>
+                    @if (Request::get('category'))
+                        <option disabled selected>{{ Request::get('fueltype') }}</option>
+                    @else
+                        <option value="" disabled selected>Select Fuel Type</option>
+                        <option value="petrol">Petrol</option>
+                        <option value="gasoline">Gasoline</option>
+                        <option value="diesel">Diesel</option>
+                    @endif
                 </select>
                 <select name="transmission" id="transmission">
-                    <option value="" disabled selected>Select Transmission</option>
-                    <option value="manual">Manual</option>
-                    <option value="automatic">Automatic</option>
+                    @if (Request::get('transmission'))
+                        <option disabled selected>{{ Request::get('transmission') }}</option>
+                    @else
+                        <option value="" disabled selected>Select Transmission</option>
+                        <option value="manual">Manual</option>
+                        <option value="automatic">Automatic</option>
+                    @endif
                 </select>
                 <select name="yearfrom" id="yearfrom">
-                    <option value="" disabled selected>Year From</option>
+                    @if (Request::get('yearfrom'))
+                        <option disabled selected>{{ Request::get('yearfrom') }}</option>
+                    @else
+                        <option value="" disabled selected>Year From</option>
+                    @endif
                 </select>
                 <select name="yearto" id="yearto">
-                    <option value="" disabled selected>Year To</option>
+                    @if (Request::get('yearto'))
+                        <option disabled selected>{{ Request::get('yearto') }}</option>
+                    @else
+                        <option value="" disabled selected>Year To</option>
+                    @endif
                 </select>
             </div>
             <button type="submit">Filter</button>

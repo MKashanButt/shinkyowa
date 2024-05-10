@@ -90,15 +90,30 @@
         </ul>
     </div>
     <div class="region">
-        <h2 class="heading">Search By Region</h2>
+        <h2 class="heading">Search By Country</h2>
         <ul>
-            <li><a href="/region/japan"><img src="{{ asset('https://www.carjunction.com/images/japan.png') }}"
-                        alt="region">Japan</a></li>
-            <li><a href="/region/thailand"><img src="{{ asset('https://www.carjunction.com/images/thailand.png') }}"
-                        alt="region">Thailand</a>
+            <li><a href="/country/jamaica"><img src="{{ asset('https://www.carjunction.com/images/japan.png') }}"
+                        alt="region">Jamaica</a></li>
+            <li><a href="/country/Bahamas"><img src="{{ asset('https://www.carjunction.com/images/thailand.png') }}"
+                        alt="region">Bahamas</a>
             </li>
-            <li><a href="/region/uk"><img src="{{ asset('images/uk-flag.png') }}" alt="region">UK</a></li>
-            <li><a href="/region/pakistan"><img src="{{ asset('https://www.carjunction.com/images/pakistan.png') }}"
+            <li><a href="/country/guyana"><img src="{{ asset('https://www.carjunction.com/images/thailand.png') }}"
+                        alt="region">Guyana</a>
+            </li>
+            <li><a href="/country/barbados"><img src="{{ asset('https://www.carjunction.com/images/thailand.png') }}"
+                        alt="region">Barbados</a>
+            </li>
+            <li><a href="/country/kenya"><img src="{{ asset('https://www.carjunction.com/images/thailand.png') }}"
+                        alt="region">Kenya</a>
+            </li>
+            <li><a href="/country/tanzania"><img src="{{ asset('https://www.carjunction.com/images/thailand.png') }}"
+                        alt="region">Tanzania</a>
+            </li>
+            <li><a href="/country/ireland"><img src="{{ asset('https://www.carjunction.com/images/thailand.png') }}"
+                        alt="region">Ireland</a>
+            </li>
+            <li><a href="/country/uk"><img src="{{ asset('images/uk-flag.png') }}" alt="region">UK</a></li>
+            <li><a href="/country/pakistan"><img src="{{ asset('https://www.carjunction.com/images/pakistan.png') }}"
                         alt="region">Pakistan</a>
             </li>
         </ul>

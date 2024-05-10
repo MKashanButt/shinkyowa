@@ -23,13 +23,19 @@
         <div class="swiper mySwiper" id="slider">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                    <img src="{{ asset('images/banner-one.gif') }}" alt="slider-image">
+                    <a href="/stock">
+                        <img src="{{ asset('images/banner-one.gif') }}" alt="slider-image">
+                    </a>
                 </div>
                 <div class="swiper-slide">
-                    <img src="{{ asset('images/banner-two.gif') }}" alt="slider-image">
+                    <a href="/filter?make=toyota&model=voxy">
+                        <img src="{{ asset('images/banner-two.gif') }}" alt="slider-image">
+                    </a>
                 </div>
                 <div class="swiper-slide">
-                    <img src="{{ asset('images/banner-three.png') }}" alt="slider-image">
+                    <a href="/filter?make=honda&model=crv">
+                        <img src="{{ asset('images/banner-three.png') }}" alt="slider-image">
+                    </a>
                 </div>
             </div>
             <div class="swiper-pagination"></div>

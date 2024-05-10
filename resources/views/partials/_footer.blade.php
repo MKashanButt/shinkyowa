@@ -20,71 +20,124 @@
             <h3>Regional Stock</h3>
             <h4>African Continent</h4>
             <ul>
-                <li>Africa</li>
-                <li>Zimbabwe</li>
-                <li>Tanzania</li>
-                <li>Kenya</li>
-                <li>Mozambique</li>
-                <li>Mauritius</li>
+                <a href="/country/kenya">
+                    <li>Kenya</li>
+                </a>
+                <a href="/country/tanzania">
+                    <li>Tanzania</li>
+                </a>
             </ul>
             <h4>Caribbean</h4>
             <ul>
-                <li>Jamaica</li>
-                <li>Barbados</li>
-                <li>Bermuda</li>
-                <li>Antigua</li>
-                <li>Bahamas</li>
-                <li>Guyana</li>
-                <li>Grenada</li>
-                <li>St. Lucia</li>
-                <li>St. Vincent</li>
-                <li>Dominica</li>
-                <li>Cayman Islands</li>
-                <li>Trinidad Tobago</li>
+                <a href="/country/jamaica">
+                    <li>Jamaica</li>
+                </a>
+                <a href="/country/bahamas">
+                    <li>Bahamas</li>
+                </a>
+                <a href="/country/guyana">
+                    <li>Guyana</li>
+                </a>
+                <a href="/country/barbados">
+                    <li>Barbados</li>
+                </a>
             </ul>
-            <h4>Oceania</h4>
+            <h4>Europe</h4>
             <ul>
-                <li>Australia</li>
-                <li>New Zealand</li>
+                <a href="/country/UK">
+                    <li>UK</li>
+                </a>
+                <a href="/country/ireland">
+                    <li>Ireland</li>
+                </a>
             </ul>
             <h4>Asia</h4>
             <ul>
-                <li>Thailand</li>
-                <li>Indonesia</li>
+                <a href="/country/pakistan">
+                    <li>Pakistan</li>
+                </a>
             </ul>
         </div>
         <div class="item">
             <h3>Used Vehicles</h3>
             <ul>
-                <li>Toyota</li>
-                <li>Nissan</li>
-                <li>Mazda</li>
-                <li>Mitsubishi</li>
-                <li>Honda</li>
-                <li>Suzuki</li>
-                <li>Subaru</li>
-                <li>Isuzu</li>
-                <li>Daihatsu</li>
-                <li>Mitsuoka</li>
-                <li>Lexus</li>
-                <li>BMW</li>
-                <li>Hino</li>
-                <li>Volkswagen</li>
+                <a href="/make/toyota">
+                    <li>Toyota</li>
+                </a>
+                <a href="/make/nissan">
+                    <li>Nissan</li>
+                </a>
+                <a href="/make/mazda">
+                    <li>Mazda</li>
+                </a>
+                <a href="/make/mitsubishi">
+                    <li>Mitsubishi</li>
+                </a>
+                <a href="/make/honda">
+                    <li>Honda</li>
+                </a>
+                <a href="/make/suzuki">
+                    <li>Suzuki</li>
+                </a>
+                <a href="/make/subaru">
+                    <li>Subaru</li>
+                </a>
+                <a href="/make/isuzu">
+                    <li>Isuzu</li>
+                </a>
+                <a href="/make/daihatsu">
+                    <li>Daihatsu</li>
+                </a>
+                <a href="/make/mitsuoka">
+                    <li>Mitsuoka</li>
+                </a>
+                <a href="/make/lexus">
+                    <li>Lexus</li>
+                </a>
+                <a href="/make/BMW">
+                    <li>BMW</li>
+                </a>
+                <a href="/make/hino">
+                    <li>Hino</li>
+                </a>
+                <a href="/make/volkswagen">
+                    <li>Volkswagen</li>
+                </a>
             </ul>
         </div>
         <div class="item">
             <h3></h3>
             <ul>
-                <li>Hatchback</li>
-                <li>Sedan</li>
-                <li>Sports</li>
-                <li>Truck</li>
-                <li>Van</li>
-                <li>SUV</li>
-                <li>Pickup</li>
-                <li>Wagon</li>
-                <li>Busses</li>
-                <li>Mini Busses</li>
+                <a href="/type/hatchback">
+                    <li>Hatchback</li>
+                </a>
+                <a href="/type/sedan">
+                    <li>Sedan</li>
+                </a>
+                <a href="/type/sports">
+                    <li>Sports</li>
+                </a>
+                <a href="/type/truck">
+                    <li>Truck</li>
+                </a>
+                <a href="/type/van">
+                    <li>Van</li>
+                </a>
+                <a href="/type/SUV">
+                    <li>SUV</li>
+                </a>
+                <a href="/type/pickup">
+                    <li>Pickup</li>
+                </a>
+                <a href="/type/wagon">
+                    <li>Wagon</li>
+                </a>
+                <a href="/type/busses">
+                    <li>Busses</li>
+                </a>
+                <a href="/type/mini busses">
+                    <li>Mini Busses</li>
+                </a>
             </ul>
         </div>
         <div class="item">
