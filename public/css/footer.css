@@ -59,3 +59,24 @@ footer .container:nth-of-type(2) p:nth-of-type(2) {
     position: absolute;
     right: 0;
 }
+
+.newsletter {
+    background-color: white;
+    display: flex;
+    color: var(--black);
+}
+
+.newsletter input {
+    width: 80%;
+    border: none;
+    outline: none;
+    background-color: inherit;
+    padding-left: 5px;
+}
+
+.newsletter button {
+    all: unset;
+    width: 20%;
+    color: black;
+    background-color: rgba(0, 0, 0, 0.1);
+}

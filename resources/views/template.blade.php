@@ -50,7 +50,7 @@
                 @yield('content')
             </div>
             @if ($sidebar)
-                <x-second-sidebar />
+                <x-second-sidebar :vehicleOfDay="$vehicleOfDay" />
             @endif
         </div>
     </div>

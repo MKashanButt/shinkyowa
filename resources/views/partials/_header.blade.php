@@ -31,7 +31,7 @@
                 <a href="/"><img src="/logo.png" alt=""></a>
             </div>
             <div class="search">
-                <form action="/filter" method="get" class="flex">
+                <form action="/stock-search" method="get" class="flex">
                     <input type="search" name="search" id="search" placeholder="Search by Name....">
                     <button><i class='bx bx-search'></i></button>
                 </form>

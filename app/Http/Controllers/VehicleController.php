@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Mail\InquiryForm;
 use Illuminate\Http\Request;
 use App\Models\Vehicle;
+use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\DB;
 use LDAP\Result;
 use Illuminate\Support\Facades\Mail;
@@ -50,6 +51,7 @@ class VehicleController extends Controller
                 "make" => Vehicle::select('make')->distinct()->get(),
             ],
             "total" => Vehicle::select('vehicles')->count(),
+            "vehicleOfDay" => Vehicle::select('thumbnail', 'make', 'model', 'year', 'stock_id')->orderBy('id', 'desc')->limit(3)->get(),
         ];
     }
 
@@ -61,7 +63,6 @@ class VehicleController extends Controller
 
     public function index()
     {
-
         return $this->load_view('stock', [
             'vehicles' => DB::table('stocks')->paginate(6),
             'stylesheet' => 'stock.css',
@@ -197,6 +198,7 @@ class VehicleController extends Controller
         if ($totalVehicles == 0) {
             $msg = "No Vehicles Present";
         }
+
         return $this->load_view('stock', [
             'vehicles' => $vehicles,
             'title' => 'Car Stock',
@@ -207,12 +209,12 @@ class VehicleController extends Controller
         ]);
     }
 
-    public function filterRegion(string $region)
+    public function filterCountry(string $country)
     {
-        $vehicles = Vehicle::where('region', $region)
+        $vehicles = Vehicle::where('country', $country)
             ->paginate(5);
 
-        $totalVehicles = Vehicle::where('region', $region)->count();
+        $totalVehicles = Vehicle::where('country', $country)->count();
         $msg = null;
 
         if ($totalVehicles == 0) {
@@ -324,5 +326,18 @@ class VehicleController extends Controller
         ];
 
         Mail::to($request->input('email'))->send(new InquiryForm($data));
+    }
+
+    public function searchFilter(Request $request)
+    {
+        $search = $request->input('search');
+
+        return $this->load_view('stock', [
+            'vehicles' => Vehicle::search($search)->get(),
+            'stylesheet' => 'stock.css',
+            'msg' => Vehicle::count() == 0 && 'No Vehicles Found',
+            'sidebar' => true,
+            'title' => 'Japanese Used Car Exporter'
+        ]);
     }
 }
