@@ -7,7 +7,7 @@
                     <div class="swiper-wrapper">
                         @foreach ($vehicleOfDay as $item)
                             <div class="swiper-slide">
-                                {{-- <img src="{{ asset($item['thumbnail']) }}" alt="vehicle-of-the-day"> --}}
+                                <img src="{{ env('STOCK_IMG_LINK') . $item['thumbnail'] }}" alt="vehicle-of-the-day">
                                 <p>{{ $item['make'] . ' / ' . $item['model'] . ' ' . $item['year'] }}</p>
                                 <span>Stock No. {{ $item['stock_id'] }}</span>
                                 <button>Details</button>
