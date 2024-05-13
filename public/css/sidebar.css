@@ -111,7 +111,7 @@
 }
 
 .second-sidebar .vehicle-of-day .stage .item img {
-    width: 100%;
+    width: 80%;
 }
 
 .second-sidebar .vehicle-of-day .stage .item button,
@@ -170,4 +170,9 @@
 .second-sidebar .offers img {
     width: 100%;
     cursor: pointer;
+}
+
+#vehicleOfDay .swiper-slide {
+    display: flex;
+    flex-direction: column;
 }
