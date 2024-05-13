@@ -29,7 +29,7 @@
                 </div>
                 <div class="swiper-slide">
                     <a href="/filter?make=toyota&model=voxy">
-                        <img src="{{ asset('images/banner-two.gif') }}" alt="slider-image">
+                        <img src="{{ asset('images/banner-two.png') }}" alt="slider-image">
                     </a>
                 </div>
                 <div class="swiper-slide">
