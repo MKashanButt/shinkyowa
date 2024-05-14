@@ -6,11 +6,11 @@
         </div>
     </div>
     <div class="budget-vehicle">
-        @foreach ($vehicle as $item)
+        @foreach ($newarival as $item)
             <x-home-vehicle-card :img="$item->thumbnail" :id="$item->id" :make="$item->make" :model="$item->model" :fob="$item->fob"
                 :currency="$item->currency" />
         @endforeach
-        <a href="/stock"><button>View All</button></a>
+        <a href="/filter?category=new arrival"><button>View All</button></a>
     </div>
     <div class="tabs flex">
         <div class="option">
@@ -18,11 +18,11 @@
         </div>
     </div>
     <div class="budget-vehicle">
-        @foreach ($vehicle as $item)
+        @foreach ($discounted as $item)
             <x-home-vehicle-card :img="$item->thumbnail" :id="$item->id" :make="$item->make" :model="$item->model" :fob="$item->fob"
                 :currency="$item->currency" />
         @endforeach
-        <a href="/stock"><button>View All</button></a>
+        <a href="/filter?category=discounted"><button>View All</button></a>
     </div>
     <div class="tabs flex">
         <div class="option">
@@ -30,10 +30,10 @@
         </div>
     </div>
     <div class="budget-vehicle">
-        @foreach ($vehicle as $item)
+        @foreach ($commercial as $item)
             <x-home-vehicle-card :img="$item->thumbnail" :id="$item->id" :make="$item->make" :model="$item->model"
                 :fob="$item->fob" :currency="$item->currency" />
         @endforeach
-        <a href="/stock"><button>View All</button></a>
+        <a href="/filter?category=commercial"><button>View All</button></a>
     </div>
 @endsection

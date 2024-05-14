@@ -75,12 +75,23 @@ class VehicleController extends Controller
 
     public function limited()
     {
-        $vehicle = Vehicle::take(12)
+        $discounted = Vehicle::where('category', 'discounted')
+            ->take(12)
+            ->orderBy('id', 'desc')
+            ->get();
+        $newarival = Vehicle::where('category', 'new arrival')
+            ->take(12)
+            ->orderBy('id', 'desc')
+            ->get();
+        $commercial = Vehicle::where('category', 'commercial')
+            ->take(12)
             ->orderBy('id', 'desc')
             ->get();
 
         return $this->load_view('index', [
-            'vehicle' => $vehicle,
+            'discounted' => $discounted,
+            'newarival' => $newarival,
+            'commercial' => $commercial,
             'stylesheet' => 'home.css',
             'sidebar' => true,
             'title' => 'Japanese Used Car Exporter'
