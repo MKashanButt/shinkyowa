@@ -84,8 +84,15 @@
     height: 20px;
 }
 
-.second-sidebar .vehicle-of-day,
+.second-sidebar .vehicle-of-day {
+    height: 250px;
+    position: relative;
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
 .second-sidebar .testimonials {
+    height: 250px;
     position: relative;
     font-size: 12px;
     margin-bottom: 20px;
@@ -174,4 +181,9 @@
 #vehicleOfDay .swiper-slide {
     display: flex;
     flex-direction: column;
+    background: transparent;
+}
+
+#vehicleOfDay .swiper-slide img {
+    height: 50%;
 }

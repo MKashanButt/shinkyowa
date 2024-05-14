@@ -131,6 +131,7 @@ header nav ul li ul {
     background-color: white;
     margin-top: 10px;
     display: none;
+    z-index: 100;
 }
 
 header nav ul li:hover .submenu {

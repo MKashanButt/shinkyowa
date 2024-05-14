@@ -7,7 +7,9 @@
                     <div class="swiper-wrapper">
                         @foreach ($vehicleOfDay as $item)
                             <div class="swiper-slide">
-                                <img src="{{ env('STOCK_IMG_LINK') . $item['thumbnail'] }}" alt="vehicle-of-the-day">
+                                {{-- <img src="{{ env('STOCK_IMG_LINK') . $item['thumbnail'] }}" alt="vehicle-of-the-day"> --}}
+                                <img src="http://crm.squadinternational.net/storage/01HWE47H68J3TJ0266XJADRQN9.png"
+                                    alt="vehicle-of-the-day">
                                 <p>{{ $item['make'] . ' / ' . $item['model'] . ' ' . $item['year'] }}</p>
                                 <span>Stock No. {{ $item['stock_id'] }}</span>
                                 <button>Details</button>
@@ -17,11 +19,6 @@
                 </div>
             </div>
         </div>
-        {{-- <div class="action">
-            <button><i class='bx bx-chevron-left'></i></button>
-            <button><i class='bx bx-chevron-right'></i></button>
-        </div> --}}
-        <div class="swiper-pagination"></div>
     </div>
     <hr>
     <div class="offers">
