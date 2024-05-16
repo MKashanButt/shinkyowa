@@ -91,29 +91,28 @@
     <div class="region">
         <h2 class="heading">Search By Country</h2>
         <ul>
-            <li><a href="/country/jamaica"><img src="{{ asset('https://www.carjunction.com/images/japan.png') }}"
-                        alt="region">Jamaica</a></li>
-            <li><a href="/country/Bahamas"><img src="{{ asset('https://www.carjunction.com/images/thailand.png') }}"
-                        alt="region">Bahamas</a>
+            <li><a href="/country/jamaica"><img src="{{ asset('images/flags/jamaica.png') }}"
+                        alt="country">Jamaica</a></li>
+            <li><a href="/country/Bahamas"><img src="{{ asset('images/flags/bahamas.png') }}"
+                        alt="country">Bahamas</a>
             </li>
-            <li><a href="/country/guyana"><img src="{{ asset('https://www.carjunction.com/images/thailand.png') }}"
-                        alt="region">Guyana</a>
+            <li><a href="/country/guyana"><img src="{{ asset('images/flags/guyana.png') }}"
+                        alt="country">Guyana</a>
             </li>
-            <li><a href="/country/barbados"><img src="{{ asset('https://www.carjunction.com/images/thailand.png') }}"
-                        alt="region">Barbados</a>
+            <li><a href="/country/barbados"><img src="{{ asset('images/flags/barbados.png') }}"
+                        alt="country">Barbados</a>
             </li>
-            <li><a href="/country/kenya"><img src="{{ asset('https://www.carjunction.com/images/thailand.png') }}"
-                        alt="region">Kenya</a>
+            <li><a href="/country/kenya"><img src="{{ asset('images/flags/kenya.png') }}" alt="country">Kenya</a>
             </li>
-            <li><a href="/country/tanzania"><img src="{{ asset('https://www.carjunction.com/images/thailand.png') }}"
-                        alt="region">Tanzania</a>
+            <li><a href="/country/tanzania"><img src="{{ asset('images/flags/tanzania.png') }}"
+                        alt="country">Tanzania</a>
             </li>
-            <li><a href="/country/ireland"><img src="{{ asset('https://www.carjunction.com/images/thailand.png') }}"
-                        alt="region">Ireland</a>
+            <li><a href="/country/ireland"><img src="{{ asset('images/flags/ireland.png') }}"
+                        alt="country">Ireland</a>
             </li>
-            <li><a href="/country/uk"><img src="{{ asset('images/uk-flag.png') }}" alt="region">UK</a></li>
-            <li><a href="/country/pakistan"><img src="{{ asset('https://www.carjunction.com/images/pakistan.png') }}"
-                        alt="region">Pakistan</a>
+            <li><a href="/country/uk"><img src="{{ asset('images/flags/uk.png') }}" alt="country">UK</a></li>
+            <li><a href="/country/pakistan"><img src="{{ asset('images/flags/pakistan.png') }}"
+                        alt="country">Pakistan</a>
             </li>
         </ul>
     </div>
