@@ -35,34 +35,33 @@
     <div class="make">
         <h2 class="heading">Search By Make</h2>
         <ul>
-            <li><a href="/make/toyota"><img src="https://www.carjunction.com/make_image/34/Toyota.gif" alt="">
+            <li><a href="/make/toyota"><img src="{{ asset('images/makes/toyota.png') }}" alt="">
                     <span>Toyota({{ $count['toyota'] }})</span></a></li>
-            <li><a href="/make/nissan"><img src="https://www.carjunction.com/make_image/27/Nissan.gif" alt="">
+            <li><a href="/make/nissan"><img src="{{ asset('images/makes/nissan.png') }}" alt="">
                     <span>Nissan({{ $count['nissan'] }})</span></a></li>
-            <li><a href="/make/mazda"><img src="https://www.carjunction.com/make_image/22/Mazda.gif" alt="">
+            <li><a href="/make/mazda"><img src="{{ asset('images/makes/mazda.png') }}" alt="">
                     <span>Mazda({{ $count['mazda'] }})</span></a></li>
-            <li><a href="/make/mitsubishi"><img src="https://www.carjunction.com/make_image/26/Mitsubishi.gif"
-                        alt="">
+            <li><a href="/make/mitsubishi"><img src="{{ asset('images/makes/mitsubishi.png') }}" alt="">
                     <span>Mitsubishi({{ $count['mitsubishi'] }})</span></a></li>
-            <li><a href="/make/honda"><img src="https://www.carjunction.com/make_image/11/Honda.gif" alt="">
+            <li><a href="/make/honda"><img src="{{ asset('images/makes/honda.png') }}" alt="">
                     <span>Honda({{ $count['honda'] }})</span></a></li>
-            <li><a href="/make/suzuki"><img src="https://www.carjunction.com/make_image/47/Suzuki.gif" alt="">
+            <li><a href="/make/suzuki"><img src="{{ asset('images/makes/suzuki.png') }}" alt="">
                     <span>Suzuki({{ $count['suzuki'] }})</span></a></li>
-            <li><a href="/make/subaru"><img src="https://www.carjunction.com/make_image/47/Suzuki.gif" alt="">
+            <li><a href="/make/subaru"><img src="{{ asset('images/makes/subaru.png') }}" alt="">
                     <span>Subaru({{ $count['subaru'] }})</span></a></li>
-            <li><a href="/make/isuzu"><img src="https://www.carjunction.com/make_image/14/Isuzu.gif" alt="">
+            <li><a href="/make/isuzu"><img src="{{ asset('images/makes/isuzu.png') }}" alt="">
                     <span>Isuzu({{ $count['isuzu'] }})</span></a></li>
-            <li><a href="/make/daihatsu"><img src="https://www.carjunction.com/make_image/14/Isuzu.gif" alt="">
+            <li><a href="/make/daihatsu"><img src="{{ asset('images/makes/daihatsu.png') }}" alt="">
                     <span>Daihatsu({{ $count['daihatsu'] }})</span></a></li>
-            <li><a href="/make/mitsuoka"><img src="https://www.carjunction.com/make_image/14/Isuzu.gif" alt="">
+            <li><a href="/make/mitsuoka"><img src="{{ asset('images/makes/mitsuoka.png') }}" alt="">
                     <span>Mitsuoka({{ $count['mitsuoka'] }})</span></a></li>
-            <li><a href="/make/lexus"><img src="https://www.carjunction.com/make_image/14/Isuzu.gif" alt="">
+            <li><a href="/make/lexus"><img src="{{ asset('images/makes/lexus.png') }}" alt="">
                     <span>Lexus({{ $count['lexus'] }})</span></a></li>
-            <li><a href="/make/BMW"><img src="https://www.shinkyowa.com/images/brand12.png" alt="">
+            <li><a href="/make/BMW"><img src="{{ asset('images/makes/BMW.png') }}" alt="">
                     <span>BMW({{ $count['BMW'] }})</span></a></li>
-            <li><a href="/make/hino"><img src="https://www.carjunction.com/make_image/49/Hino.gif" alt="">
+            <li><a href="/make/hino"><img src="{{ asset('images/makes/hino.png') }}" alt="">
                     <span>Hino({{ $count['hino'] }})</span></a></li>
-            <li><a href="/make/volkswagen"><img src="https://www.shinkyowa.com/images/brand8.png" alt="">
+            <li><a href="/make/volkswagen"><img src="{{ asset('images/makes/volkswagon.png') }}" alt="">
                     <span>Volkswagen({{ $count['volkswagen'] }})</span></a></li>
         </ul>
     </div>
