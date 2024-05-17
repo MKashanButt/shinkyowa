@@ -68,24 +68,27 @@
     <div class="type">
         <h2 class="heading">Search By Type</h2>
         <ul>
-            <li><a href="/type/hatchback"><img src="https://www.carjunction.com/category_image/6/Hatchback-Icn-Blue.png"
-                        alt=""> <span>Hatchback({{ $count['hatchback'] }})</span></a></li>
-            <li><a href="/type/sedan"><img src="https://www.carjunction.com/category_image/2/Sedan-Icn-Blue.png"
-                        alt=""> <span>Sedan({{ $count['sedan'] }})</span></a></li>
-            <li><a href="/type/truck"><img src="https://www.carjunction.com/category_image/7/Trucks-Icn-Blue.png"
-                        alt=""> <span>Truck({{ $count['truck'] }})</span></a></li>
-            <li><a href="/type/van"><img src="https://www.carjunction.com/category_image/8/Vans-Icn-Blue.png"
-                        alt=""> <span>Van({{ $count['van'] }})</span></a></li>
-            <li><a href="/type/suv"><img src="https://www.carjunction.com/category_image/1/Suv-Icn-Blue.png"
-                        alt=""> <span>Suv({{ $count['suv'] }})</span></a></li>
-            <li><a href="/type/pickup"><img src="https://www.carjunction.com/category_image/52/Pickups-Icn-Blue.png"
-                        alt=""> <span>Pickup({{ $count['pickup'] }})</span></a></li>
-            <li><a href="/type/wagon"><img src="https://www.carjunction.com/category_image/3/Wagons-Icn-Blue.png"
-                        alt=""> <span>Wagon({{ $count['wagon'] }})</span></a></li>
-            <li><a href="/type/busses"><img src="https://www.carjunction.com/category_image/4/Bus-Icn-Blue.png"
-                        alt=""> <span>Buses({{ $count['buses'] }})</span></a></li>
-            <li><a href="/type/mini busses"><img src="https://www.carjunction.com/category_image/4/Bus-Icn-Blue.png"
-                        alt=""> <span>Mini Buses({{ $count['mini buses'] }})</span></a></li>
+            <li><a href="/type/hatchback"><img src="{{ asset('images/type/hatchback.png') }}" alt="">
+                    <span>Hatchback({{ $count['hatchback'] }})</span></a></li>
+            <li><a href="/type/sedan"><img src="{{ asset('images/type/sedan.png') }}" alt="">
+                    <span>Sedan({{ $count['sedan'] }})</span></a></li>
+            <li><a href="/type/truck"><img src="{{ asset('images/type/truck.png') }}" alt="">
+                    <span>Truck({{ $count['truck'] }})</span></a></li>
+            <li><a href="/type/suv"><img src="{{ asset('images/type/suv.png') }}" alt="">
+                    <span>SUV({{ $count['suv'] }})</span></a></li>
+            <li><a href="/type/van"><img src="{{ asset('images/type/van.png') }}" alt="">
+                    <span>Van({{ $count['van'] }})</span></a></li>
+            <li><a href="/type/suv"><img src="{{ asset('images/type/suv.png') }}" alt="">
+                    <span>Suv({{ $count['suv'] }})</span></a></li>
+            <li><a href="/type/pickup"><img src="{{ asset('images/type/pickup.png') }}" alt="">
+                    <span>Pickup({{ $count['pickup'] }})</span></a></li>
+            <li><a href="/type/wagon"><img src="{{ asset('images/type/wagon.png') }}" alt="">
+                    <span>Wagon({{ $count['wagon'] }})</span></a></li>
+            <li><a href="/type/buses"><img src="{{ asset('images/type/bus.png') }}" alt="">
+                    <span>Buses({{ $count['buses'] }})</span></a></li>
+            <li><a href="/type/mini buses"><img src="{{ asset('images/type/minibus.png') }}" alt="">
+                    <span>Mini
+                        Buses({{ $count['mini buses'] }})</span></a></li>
         </ul>
     </div>
     <div class="region">
