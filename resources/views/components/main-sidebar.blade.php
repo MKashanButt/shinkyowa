@@ -35,58 +35,66 @@
     <div class="make">
         <h2 class="heading">Search By Make</h2>
         <ul>
-            <li><a href="/make/toyota"><img src="{{ asset('images/makes/toyota.png') }}" alt="">
+            <li><a href="/make/toyota"><img src="{{ env('IMAGE_API_URL') . 'images/makes/toyota.png' }}" alt="">
                     <span>Toyota({{ $count['toyota'] }})</span></a></li>
-            <li><a href="/make/nissan"><img src="{{ asset('images/makes/nissan.png') }}" alt="">
+            <li><a href="/make/nissan"><img src="{{ env('IMAGE_API_URL') . 'images/makes/nissan.png' }}" alt="">
                     <span>Nissan({{ $count['nissan'] }})</span></a></li>
-            <li><a href="/make/mazda"><img src="{{ asset('images/makes/mazda.png') }}" alt="">
+            <li><a href="/make/mazda"><img src="{{ env('IMAGE_API_URL') . 'images/makes/mazda.png' }}" alt="">
                     <span>Mazda({{ $count['mazda'] }})</span></a></li>
-            <li><a href="/make/mitsubishi"><img src="{{ asset('images/makes/mitsubishi.png') }}" alt="">
+            <li><a href="/make/mitsubishi"><img src="{{ env('IMAGE_API_URL') . 'images/makes/mitsubishi.png' }}"
+                        alt="">
                     <span>Mitsubishi({{ $count['mitsubishi'] }})</span></a></li>
-            <li><a href="/make/honda"><img src="{{ asset('images/makes/honda.png') }}" alt="">
+            <li><a href="/make/honda"><img src="{{ env('IMAGE_API_URL') . 'images/makes/honda.png' }}" alt="">
                     <span>Honda({{ $count['honda'] }})</span></a></li>
-            <li><a href="/make/suzuki"><img src="{{ asset('images/makes/suzuki.png') }}" alt="">
+            <li><a href="/make/suzuki"><img src="{{ env('IMAGE_API_URL') . 'images/makes/suzuki.png' }}"
+                        alt="">
                     <span>Suzuki({{ $count['suzuki'] }})</span></a></li>
-            <li><a href="/make/subaru"><img src="{{ asset('images/makes/subaru.png') }}" alt="">
+            <li><a href="/make/subaru"><img src="{{ env('IMAGE_API_URL') . 'images/makes/subaru.png' }}"
+                        alt="">
                     <span>Subaru({{ $count['subaru'] }})</span></a></li>
-            <li><a href="/make/isuzu"><img src="{{ asset('images/makes/isuzu.png') }}" alt="">
+            <li><a href="/make/isuzu"><img src="{{ env('IMAGE_API_URL') . 'images/makes/isuzu.png' }}" alt="">
                     <span>Isuzu({{ $count['isuzu'] }})</span></a></li>
-            <li><a href="/make/daihatsu"><img src="{{ asset('images/makes/daihatsu.png') }}" alt="">
+            <li><a href="/make/daihatsu"><img src="{{ env('IMAGE_API_URL') . 'images/makes/daihatsu.png' }}"
+                        alt="">
                     <span>Daihatsu({{ $count['daihatsu'] }})</span></a></li>
-            <li><a href="/make/mitsuoka"><img src="{{ asset('images/makes/mitsuoka.png') }}" alt="">
+            <li><a href="/make/mitsuoka"><img src="{{ env('IMAGE_API_URL') . 'images/makes/mitsuoka.png' }}"
+                        alt="">
                     <span>Mitsuoka({{ $count['mitsuoka'] }})</span></a></li>
-            <li><a href="/make/lexus"><img src="{{ asset('images/makes/lexus.png') }}" alt="">
+            <li><a href="/make/lexus"><img src="{{ env('IMAGE_API_URL') . 'images/makes/lexus.png' }}" alt="">
                     <span>Lexus({{ $count['lexus'] }})</span></a></li>
-            <li><a href="/make/BMW"><img src="{{ asset('images/makes/BMW.png') }}" alt="">
+            <li><a href="/make/BMW"><img src="{{ env('IMAGE_API_URL') . 'images/makes/BMW.png' }}" alt="">
                     <span>BMW({{ $count['BMW'] }})</span></a></li>
-            <li><a href="/make/hino"><img src="{{ asset('images/makes/hino.png') }}" alt="">
+            <li><a href="/make/hino"><img src="{{ env('IMAGE_API_URL') . 'images/makes/hino.png' }}" alt="">
                     <span>Hino({{ $count['hino'] }})</span></a></li>
-            <li><a href="/make/volkswagen"><img src="{{ asset('images/makes/volkswagon.png') }}" alt="">
+            <li><a href="/make/volkswagen"><img src="{{ env('IMAGE_API_URL') . 'images/makes/volkswagon.png' }}"
+                        alt="">
                     <span>Volkswagen({{ $count['volkswagen'] }})</span></a></li>
         </ul>
     </div>
     <div class="type">
         <h2 class="heading">Search By Type</h2>
         <ul>
-            <li><a href="/type/hatchback"><img src="{{ asset('images/type/hatchback.png') }}" alt="">
+            <li><a href="/type/hatchback"><img src="{{ env('IMAGE_API_URL') . 'images/type/hatchback.png' }}"
+                        alt="">
                     <span>Hatchback({{ $count['hatchback'] }})</span></a></li>
-            <li><a href="/type/sedan"><img src="{{ asset('images/type/sedan.png') }}" alt="">
+            <li><a href="/type/sedan"><img src="{{ env('IMAGE_API_URL') . 'images/type/sedan.png' }}" alt="">
                     <span>Sedan({{ $count['sedan'] }})</span></a></li>
-            <li><a href="/type/truck"><img src="{{ asset('images/type/truck.png') }}" alt="">
+            <li><a href="/type/truck"><img src="{{ env('IMAGE_API_URL') . 'images/type/truck.png' }}" alt="">
                     <span>Truck({{ $count['truck'] }})</span></a></li>
-            <li><a href="/type/suv"><img src="{{ asset('images/type/suv.png') }}" alt="">
+            <li><a href="/type/suv"><img src="{{ env('IMAGE_API_URL') . 'images/type/suv.png' }}" alt="">
                     <span>SUV({{ $count['suv'] }})</span></a></li>
-            <li><a href="/type/van"><img src="{{ asset('images/type/van.png') }}" alt="">
+            <li><a href="/type/van"><img src="{{ env('IMAGE_API_URL') . 'images/type/van.png' }}" alt="">
                     <span>Van({{ $count['van'] }})</span></a></li>
-            <li><a href="/type/suv"><img src="{{ asset('images/type/suv.png') }}" alt="">
+            <li><a href="/type/suv"><img src="{{ env('IMAGE_API_URL') . 'images/type/suv.png' }}" alt="">
                     <span>Suv({{ $count['suv'] }})</span></a></li>
-            <li><a href="/type/pickup"><img src="{{ asset('images/type/pickup.png') }}" alt="">
+            <li><a href="/type/pickup"><img src="{{ env('IMAGE_API_URL') . 'images/type/pickup.png' }}" alt="">
                     <span>Pickup({{ $count['pickup'] }})</span></a></li>
-            <li><a href="/type/wagon"><img src="{{ asset('images/type/wagon.png') }}" alt="">
+            <li><a href="/type/wagon"><img src="{{ env('IMAGE_API_URL') . 'images/type/wagon.png' }}" alt="">
                     <span>Wagon({{ $count['wagon'] }})</span></a></li>
-            <li><a href="/type/buses"><img src="{{ asset('images/type/bus.png') }}" alt="">
+            <li><a href="/type/buses"><img src="{{ env('IMAGE_API_URL') . 'images/type/bus.png' }}" alt="">
                     <span>Buses({{ $count['buses'] }})</span></a></li>
-            <li><a href="/type/mini buses"><img src="{{ asset('images/type/minibus.png') }}" alt="">
+            <li><a href="/type/mini buses"><img src="{{ env('IMAGE_API_URL') . 'images/type/minibus.png' }}"
+                        alt="">
                     <span>Mini
                         Buses({{ $count['mini buses'] }})</span></a></li>
         </ul>
@@ -94,27 +102,29 @@
     <div class="region">
         <h2 class="heading">Search By Country</h2>
         <ul>
-            <li><a href="/country/jamaica"><img src="{{ asset('images/flags/jamaica.png') }}"
+            <li><a href="/country/jamaica"><img src="{{ env('IMAGE_API_URL') . 'images/flags/jamaica.png' }}"
                         alt="country">Jamaica</a></li>
-            <li><a href="/country/Bahamas"><img src="{{ asset('images/flags/bahamas.png') }}"
+            <li><a href="/country/Bahamas"><img src="{{ env('IMAGE_API_URL') . 'images/flags/bahamas.png' }}"
                         alt="country">Bahamas</a>
             </li>
-            <li><a href="/country/guyana"><img src="{{ asset('images/flags/guyana.png') }}"
+            <li><a href="/country/guyana"><img src="{{ env('IMAGE_API_URL') . 'images/flags/guyana.png' }}"
                         alt="country">Guyana</a>
             </li>
-            <li><a href="/country/barbados"><img src="{{ asset('images/flags/barbados.png') }}"
+            <li><a href="/country/barbados"><img src="{{ env('IMAGE_API_URL') . 'images/flags/barbados.png' }}"
                         alt="country">Barbados</a>
             </li>
-            <li><a href="/country/kenya"><img src="{{ asset('images/flags/kenya.png') }}" alt="country">Kenya</a>
+            <li><a href="/country/kenya"><img src="{{ env('IMAGE_API_URL') . 'images/flags/kenya.png' }}"
+                        alt="country">Kenya</a>
             </li>
-            <li><a href="/country/tanzania"><img src="{{ asset('images/flags/tanzania.png') }}"
+            <li><a href="/country/tanzania"><img src="{{ env('IMAGE_API_URL') . 'images/flags/tanzania.png' }}"
                         alt="country">Tanzania</a>
             </li>
-            <li><a href="/country/ireland"><img src="{{ asset('images/flags/ireland.png') }}"
+            <li><a href="/country/ireland"><img src="{{ env('IMAGE_API_URL') . 'images/flags/ireland.png' }}"
                         alt="country">Ireland</a>
             </li>
-            <li><a href="/country/uk"><img src="{{ asset('images/flags/uk.png') }}" alt="country">UK</a></li>
-            <li><a href="/country/pakistan"><img src="{{ asset('images/flags/pakistan.png') }}"
+            <li><a href="/country/uk"><img src="{{ env('IMAGE_API_URL') . 'images/flags/uk.png' }}"
+                        alt="country">UK</a></li>
+            <li><a href="/country/pakistan"><img src="{{ env('IMAGE_API_URL') . 'images/flags/pakistan.png' }}"
                         alt="country">Pakistan</a>
             </li>
         </ul>

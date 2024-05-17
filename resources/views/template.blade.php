@@ -24,17 +24,17 @@
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
                     <a href="/stock">
-                        <img src="{{ asset('images/banner-one.png') }}" alt="slider-image">
+                        <img src="{{ env('IMAGE_API_URL') . 'images/banner-one.png' }}" alt="slider-image">
                     </a>
                 </div>
                 <div class="swiper-slide">
                     <a href="/filter?make=toyota&model=hilux&year=2024">
-                        <img src="{{ asset('images/banner-two.png') }}" alt="slider-image">
+                        <img src="{{ env('IMAGE_API_URL') . 'images/banner-two.png' }}" alt="slider-image">
                     </a>
                 </div>
                 <div class="swiper-slide">
                     <a href="/filter?make=honda&model=crv">
-                        <img src="{{ asset('images/banner-three.png') }}" alt="slider-image">
+                        <img src="{{ env('IMAGE_API_URL') . 'images/banner-three.png' }}" alt="slider-image">
                     </a>
                 </div>
             </div>

@@ -20,9 +20,9 @@
     </div>
     <hr>
     <div class="offers">
-        <img src="{{ asset('images/offers/offer-one.gif') }}" alt="">
-        <img src="{{ asset('images/offers/offer-two.gif') }}" alt="">
-        <img src="{{ asset('images/offers/offer-three.gif') }}" alt="">
+        <img src="{{ env('IMAGE_API_URL') . 'images/offers/offer-one.gif' }}" alt="">
+        <img src="{{ env('IMAGE_API_URL') . 'images/offers/offer-two.gif' }}" alt="">
+        <img src="{{ env('IMAGE_API_URL') . 'images/offers/offer-three.gif' }}" alt="">
     </div>
     <hr>
     <div class="testimonials">
