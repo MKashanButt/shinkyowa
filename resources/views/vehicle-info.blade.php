@@ -71,7 +71,7 @@
                                 <p>Mileage</p>
                             </div>
                             <div class="row">
-                                <p>{{ number_format($vehicle->mileage) }}</p>
+                                <p>{{ number_format(intval($vehicle->mileage)) }}</p>
                             </div>
                         </div>
                         <div class="col flex">
