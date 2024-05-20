@@ -1,6 +1,7 @@
 @extends('template')
 @section('content')
-    <h2>{{ $vehicle->make }} {{ $vehicle->model }} {{ $vehicle->transmission }} {{ $vehicle->year }}
+    <h2>{{ strtoupper($vehicle->make) }} {{ strtoupper($vehicle->model) }} {{ strtoupper($vehicle->transmission) }}
+        {{ $vehicle->year }}
         {{ $vehicle->engine }}
         {{ $vehicle->fuel }} for Sale</h2>
     <div class="stage flex">
@@ -22,7 +23,7 @@
                                 <p>S.No</p>
                             </div>
                             <div class="row">
-                                <p>{{ $vehicle->stock_id }}</p>
+                                <p>{{ number_format($vehicle->stock_id) }}</p>
                             </div>
                         </div>
                         <div class="col flex">
@@ -30,7 +31,7 @@
                                 <p>Make / Model</p>
                             </div>
                             <div class="row">
-                                <p>{{ $vehicle->make }} / {{ $vehicle->model }}</p>
+                                <p>{{ strtoupper($vehicle->make) }} / {{ strtoupper($vehicle->model) }}</p>
                             </div>
                         </div>
                         <div class="col flex">
@@ -70,7 +71,7 @@
                                 <p>Mileage</p>
                             </div>
                             <div class="row">
-                                <p>{{ $vehicle->mileage }}</p>
+                                <p>{{ number_format($vehicle->mileage) }}</p>
                             </div>
                         </div>
                         <div class="col flex">
