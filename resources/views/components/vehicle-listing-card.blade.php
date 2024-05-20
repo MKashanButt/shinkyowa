@@ -5,7 +5,7 @@
             <h3>{{ strtoupper($year) }} {{ strtoupper($make) }} {{ strtoupper($model) }}</h3>
             <div class="text">
                 <p>Year: <span>{{ $year }}</span></p>
-                <p>Mileage: <span>{{ number_format($mileage) }}</span></p>
+                <p>Mileage: <span>{{ $mileage }}</span></p>
                 <p>Engine: <span>{{ $engine }}</span></p>
                 <p>Doors: <span>{{ $doors }}</span></p>
                 <p>Transmission: <span>{{ $transmission }}</span></p>
