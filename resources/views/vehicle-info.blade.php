@@ -64,7 +64,7 @@
                                 <p>Body Type</p>
                             </div>
                             <div class="row">
-                                <p>{{ $vehicle->body_type }}</p>
+                                <p>{{ strtoupper($vehicle->body_type) }}</p>
                             </div>
                         </div>
                         <div class="col flex">
