@@ -6,48 +6,48 @@
             <div class="row">
                 <select name="make" id="filtermake">
                     @if (Request::get('make'))
-                        <option disabled selected>{{ Request::get('make') }}</option>
+                        <option disabled selected>{{ strtoupper(Request::get('make')) }}</option>
                     @else
                         <option disabled selected>Select Make</option>
                     @endif
                     @foreach ($filteroptions['make'] as $item)
-                        <option value="{{ $item->make }}">{{ $item->make }}</option>
+                        <option value="{{ $item->make }}">{{ strtoupper($item->make) }}</option>
                     @endforeach
                 </select>
                 <select name="model" id="filtermodel">
                     @if (Request::get('model'))
-                        <option disabled selected>{{ Request::get('model') }}</option>
+                        <option disabled selected>{{ strtoupper(Request::get('model')) }}</option>
                     @else
                         <option disabled selected>Select Model</option>
                     @endif
                 </select>
                 <select name="category" id="filtercategory">
                     @if (Request::get('category'))
-                        <option disabled selected>{{ Request::get('category') }}</option>
+                        <option disabled selected>{{ strtoupper(Request::get('category')) }}</option>
                     @else
                         <option value="" disabled selected>Select Category</option>
-                        <option value="new arrival">New Arrival</option>
-                        <option value="discounted">Discounted</option>
-                        <option value="commercial">Commercial</option>
+                        <option value="new arrival">NEW ARRIVAL</option>
+                        <option value="discounted">DISCOUNTED</option>
+                        <option value="commercial">COMMERCIAL</option>
                     @endif
                 </select>
                 <select name="fueltype" id="filterfueltype">
                     @if (Request::get('category'))
-                        <option disabled selected>{{ Request::get('fueltype') }}</option>
+                        <option disabled selected>{{ strtoupper(Request::get('fueltype')) }}</option>
                     @else
                         <option value="" disabled selected>Select Fuel Type</option>
-                        <option value="petrol">Petrol</option>
-                        <option value="gasoline">Gasoline</option>
-                        <option value="diesel">Diesel</option>
+                        <option value="petrol">PETROL</option>
+                        <option value="gasoline">GASOLINE</option>
+                        <option value="diesel">DIESEL</option>
                     @endif
                 </select>
                 <select name="transmission" id="transmission">
                     @if (Request::get('transmission'))
-                        <option disabled selected>{{ Request::get('transmission') }}</option>
+                        <option disabled selected>{{ strtoupper(Request::get('transmission')) }}</option>
                     @else
                         <option value="" disabled selected>Select Transmission</option>
-                        <option value="manual">Manual</option>
-                        <option value="automatic">Automatic</option>
+                        <option value="manual">MANUAL</option>
+                        <option value="automatic">AUTOMATIC</option>
                     @endif
                 </select>
                 <select name="yearfrom" id="yearfrom">

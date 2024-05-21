@@ -6,12 +6,12 @@
                 <label for="make">Make:</label>
                 <select name="make" id="make">
                     @if (Request::get('make'))
-                        <option disabled selected>{{ Request::get('make') }}</option>
+                        <option disabled selected>{{ strtoupper(Request::get('make')) }}</option>
                     @else
                         <option disabled selected>Select Make</option>
                     @endif
                     @foreach ($make as $item)
-                        <option value="{{ $item->make }}">{{ $item->make }}</option>
+                        <option value="{{ $item->make }}">{{ strtoupper($item->make) }}</option>
                     @endforeach
                 </select>
             </div>
@@ -19,7 +19,7 @@
                 <label for="model">Model:</label>
                 <select name="model" id="model">
                     @if (Request::get('model'))
-                        <option disabled selected>{{ Request::get('model') }}</option>
+                        <option disabled selected>{{ strtoupper(Request::get('model')) }}</option>
                     @else
                         <option disabled selected>Select Model</option>
                     @endif
@@ -143,7 +143,7 @@
                 models.forEach(function(model) {
                     var option = document.createElement('option');
                     option.value = model;
-                    option.text = model;
+                    option.text = model.toUpperCase();
                     modelDropdown.appendChild(option);
                 });
             }
