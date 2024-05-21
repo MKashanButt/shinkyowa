@@ -252,20 +252,16 @@
 }
 
 .mySwiper1 .swiper-slide {
-    width: 25%;
+    width: 22.5% !important;
     height: 100%;
     opacity: 0.4;
+    user-select: none;
 }
 
 .mySwiper1 .swiper-wrapper {
     overflow: initial;
     flex-wrap: wrap;
     gap: 10px;
-}
-
-.mySwiper1 .swiper-wrapper .swiper-slide {
-    width: 22.5% !important;
-    user-select: none;
 }
 
 .mySwiper1 .swiper-slide-thumb-active {
