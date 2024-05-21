@@ -99,6 +99,7 @@ dialog {
     position: fixed;
     top: 0;
     display: none;
+    z-index: 80;
 }
 
 dialog .message {
