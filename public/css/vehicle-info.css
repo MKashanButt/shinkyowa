@@ -244,6 +244,10 @@
     height: 420px;
 }
 
+.mySwiper2 .swiper-slide {
+    user-select: none;
+}
+
 .mySwiper1 {
     overflow: initial !important;
     height: fit-content;
