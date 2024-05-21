@@ -98,13 +98,13 @@
             spaceBetween: 10,
             slidesPerView: 4,
             watchSlidesProgress: true,
+            simulateTouch: false,
         });
         var swiper2 = new Swiper(".mySwiper2", {
             loop: true,
             thumbs: {
                 swiper: swiper,
             },
-            autoplay: true,
         });
     </script>
 </body>
