@@ -105,6 +105,7 @@
             thumbs: {
                 swiper: swiper,
             },
+            autoplay: true
         });
     </script>
 </body>
