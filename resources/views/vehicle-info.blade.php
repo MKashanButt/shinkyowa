@@ -61,10 +61,10 @@
                         </div>
                         <div class="col flex">
                             <div class="row">
-                                <p>Driving Type</p>
+                                <p>Body Type</p>
                             </div>
                             <div class="row">
-                                <p>{{ $vehicle->type }}</p>
+                                <p>{{ $vehicle->body_type }}</p>
                             </div>
                         </div>
                         <div class="col flex">
