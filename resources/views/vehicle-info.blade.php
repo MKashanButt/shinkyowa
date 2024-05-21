@@ -8,22 +8,22 @@
         <div class="item">
             <div class="swiper mySwiper2">
                 <div class="swiper-wrapper">
-                    {{-- @foreach (explode(',', $vehicle->stock_images) as $image)
+                    @foreach (explode(',', $vehicle->stock_images) as $image)
                         <div class="swiper-slide">
                             <img src="{{ env('STOCK_IMG_LINK') . trim($image, '[]""') }}" alt="vehicle-image"
                                 class="main-image">
                         </div>
-                    @endforeach --}}
+                    @endforeach
                 </div>
             </div>
             <div thumbsSlider="" class="swiper mySwiper">
                 <div class="swiper-wrapper">
-                    {{-- @foreach (explode(',', $vehicle->stock_images) as $image)
+                    @foreach (explode(',', $vehicle->stock_images) as $image)
                         <div class="swiper-slide">
                             <img src="{{ env('STOCK_IMG_LINK') . trim($image, '[]""') }}" alt="vehicle-image"
                                 class="main-image">
                         </div>
-                    @endforeach --}}
+                    @endforeach
                 </div>
             </div>
         </div>
