@@ -264,7 +264,7 @@
 }
 
 .mySwiper1 .swiper-wrapper .swiper-slide {
-    width: 22.5%;
+    width: 22.5% !important;
 }
 
 .mySwiper1 .swiper-slide-thumb-active {
