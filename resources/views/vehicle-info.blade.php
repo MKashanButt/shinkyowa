@@ -6,9 +6,26 @@
         {{ $vehicle->fuel }} for Sale</h2>
     <div class="stage flex">
         <div class="item">
-            @foreach (explode(',', $vehicle->stock_images) as $image)
-                <img src="{{ env('STOCK_IMG_LINK') . trim($image, '[]""') }}" alt="vehicle-image" class="main-image">
-            @endforeach
+            <div class="swiper mySwiper2">
+                <div class="swiper-wrapper">
+                    @foreach (explode(',', $vehicle->stock_images) as $image)
+                        <div class="swiper-slide">
+                            <img src="{{ env('STOCK_IMG_LINK') . trim($image, '[]""') }}" alt="vehicle-image"
+                                class="main-image">
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+            <div thumbsSlider="" class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    @foreach (explode(',', $vehicle->stock_images) as $image)
+                        <div class="swiper-slide">
+                            <img src="{{ env('STOCK_IMG_LINK') . trim($image, '[]""') }}" alt="vehicle-image"
+                                class="main-image">
+                        </div>
+                    @endforeach
+                </div>
+            </div>
         </div>
         <div class="item">
             <div class="tabs">
@@ -23,7 +40,7 @@
                                 <p>S.No</p>
                             </div>
                             <div class="row">
-                                <p>{{ number_format($vehicle->stock_id) }}</p>
+                                <p>{{ $vehicle->stock_id }}</p>
                             </div>
                         </div>
                         <div class="col flex">
@@ -102,11 +119,15 @@
                             <h3>Step 1: Select Vehicle Destination</h3>
                             <select name="destination" id="destination">
                                 <option value="" disabled selected>Select Destination</option>
-                                <option value="New Zealand">New Zealand</option>
-                                <option value="New Zealand">Madagascar</option>
-                                <option value="New Zealand">New Caledonia</option>
-                                <option value="New Zealand">Nepal</option>
-                                <option value="New Zealand">Nauru</option>
+                                <option value="Jamaica">Jamaica</option>
+                                <option value="Bahamas">Bahamas</option>
+                                <option value="Guyana">Guyana</option>
+                                <option value="Barbados">Barbados</option>
+                                <option value="Kenya">Kenya</option>
+                                <option value="Tanzania">Tanzania</option>
+                                <option value="Ireland">Ireland</option>
+                                <option value="UK">UK</option>
+                                <option value="Pakistan">Pakistan</option>
                             </select>
                         </div>
                         <div class="destination">
@@ -117,11 +138,15 @@
                             <input type="number" name="phone" id="phone" placeholder="Phone No">
                             <select name="destination" id="destination" required>
                                 <option value="" disabled selected>Select Country</option>
-                                <option value="New Zealand">New Zealand</option>
-                                <option value="Madagascar">Madagascar</option>
-                                <option value="New Caledonia">New Caledonia</option>
-                                <option value="Nepal">Nepal</option>
-                                <option value="Nauru">Nauru</option>
+                                <option value="Jamaica">Jamaica</option>
+                                <option value="Bahamas">Bahamas</option>
+                                <option value="Guyana">Guyana</option>
+                                <option value="Barbados">Barbados</option>
+                                <option value="Kenya">Kenya</option>
+                                <option value="Tanzania">Tanzania</option>
+                                <option value="Ireland">Ireland</option>
+                                <option value="UK">UK</option>
+                                <option value="Pakistan">Pakistan</option>
                             </select>
                             <textarea name="comment" id="comment" cols="30" rows="10"
                                 placeholder="Enter Comment any other details you want to provide" required></textarea>
