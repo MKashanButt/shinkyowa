@@ -16,7 +16,7 @@
                     @endforeach
                 </div>
             </div>
-            <div thumbsSlider="" class="swiper mySwiper">
+            <div thumbsSlider="" class="swiper mySwiper1">
                 <div class="swiper-wrapper">
                     @foreach (explode(',', $vehicle->stock_images) as $image)
                         <div class="swiper-slide">

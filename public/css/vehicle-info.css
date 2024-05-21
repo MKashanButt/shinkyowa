@@ -244,7 +244,7 @@
     height: 420px;
 }
 
-.mySwiper {
+.mySwiper1 {
     overflow: initial !important;
     height: 20%;
     box-sizing: border-box;
@@ -252,23 +252,23 @@
     margin-top: -100px;
 }
 
-.mySwiper .swiper-slide {
+.mySwiper1 .swiper-slide {
     width: 25%;
     height: 100%;
     opacity: 0.4;
 }
 
-.mySwiper .swiper-wrapper {
+.mySwiper1 .swiper-wrapper {
     overflow: initial;
     flex-wrap: wrap;
     gap: 10px;
 }
 
-.mySwiper .swiper-wrapper .swiper-slide {
+.mySwiper1 .swiper-wrapper .swiper-slide {
     width: 23.5%;
 }
 
-.mySwiper .swiper-slide-thumb-active {
+.mySwiper1 .swiper-slide-thumb-active {
     opacity: 1;
 }
 
