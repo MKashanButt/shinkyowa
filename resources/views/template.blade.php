@@ -98,6 +98,7 @@
             slidesPerView: 4,
             watchSlidesProgress: true,
             simulateTouch: false,
+            clickable: true,
         });
         var swiper2 = new Swiper(".mySwiper2", {
             loop: true,
