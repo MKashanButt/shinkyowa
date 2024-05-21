@@ -94,6 +94,7 @@
     <script>
         var swiper = new Swiper(".mySwiper1", {
             loop: true,
+            autoplay: true,
             spaceBetween: 10,
             slidesPerView: 4,
             watchSlidesProgress: true,
@@ -103,6 +104,7 @@
             thumbs: {
                 swiper: swiper,
             },
+            autoplay: true,
         });
     </script>
 </body>
