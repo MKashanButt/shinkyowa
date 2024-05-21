@@ -246,10 +246,9 @@
 
 .mySwiper1 {
     overflow: initial !important;
-    height: 20%;
+    height: fit-content;
     box-sizing: border-box;
     padding: 10px 0;
-    margin-top: -100px;
 }
 
 .mySwiper1 .swiper-slide {
