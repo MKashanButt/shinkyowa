@@ -110,7 +110,7 @@
                     </div>
                     <div class="extras">
                         <h4>Extras</h4>
-                        <p>{{ $vehicle->extras }}</p>
+                        <p>{!! $vehicle->extras !!}</p>
                     </div>
                 </div>
                 <div class="action">
