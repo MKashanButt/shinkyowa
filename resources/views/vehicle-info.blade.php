@@ -8,6 +8,9 @@
         <div class="item">
             <div class="swiper mySwiper2">
                 <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="{{ env('STOCK_IMG_LINK') . $vehicle->thumbnail }}" alt="vehicle-image" class="main-image">
+                    </div>
                     @foreach (explode(',', $vehicle->stock_images) as $image)
                         <div class="swiper-slide">
                             <img src="{{ env('STOCK_IMG_LINK') . trim($image, '[]""') }}" alt="vehicle-image"
@@ -18,6 +21,9 @@
             </div>
             <div thumbsSlider="" class="swiper mySwiper1">
                 <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="{{ env('STOCK_IMG_LINK') . $vehicle->thumbnail }}" alt="vehicle-image" class="main-image">
+                    </div>
                     @foreach (explode(',', $vehicle->stock_images) as $image)
                         <div class="swiper-slide">
                             <img src="{{ env('STOCK_IMG_LINK') . trim($image, '[]""') }}" alt="vehicle-image"
