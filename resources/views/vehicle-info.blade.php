@@ -166,7 +166,7 @@
         </div>
     </div>
     </div>
-    <div class="customer-testimonials">
+    {{-- <div class="customer-testimonials">
         <h3>Customer Testimonials</h3>
         <div class="stage flex">
             <div class="item">
@@ -195,5 +195,5 @@
                 <span>ALISTER HATIPEDZI (ZIMBABWE)</span>
             </div>
         </div>
-    </div>
+    </div> --}}
 @endsection

@@ -26,7 +26,7 @@
         <img src="{{ env('IMAGE_API_URL') . 'images/offers/offer-three.gif' }}" alt="">
     </div>
     <hr>
-    <div class="testimonials">
+    {{-- <div class="testimonials">
         <h2>Testimonials</h2>
         <div class="stage">
             <div class="item">
@@ -51,7 +51,7 @@
                     vehicle from Car Junction....</p>
             </div>
         </div>
-    </div>
+    </div> --}}
 </aside>
 <script>
     var vehicleSwiper = new Swiper(".vehicleSwiper", {
