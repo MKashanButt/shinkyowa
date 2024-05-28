@@ -37,7 +37,6 @@
                     @else
                         <option value="" disabled selected>Select Fuel Type</option>
                         <option value="petrol">PETROL</option>
-                        <option value="gasoline">GASOLINE</option>
                         <option value="diesel">DIESEL</option>
                     @endif
                 </select>
@@ -48,6 +47,7 @@
                         <option value="" disabled selected>Select Transmission</option>
                         <option value="manual">MANUAL</option>
                         <option value="automatic">AUTOMATIC</option>
+                        <option value="automatic">HYBRID</option>
                     @endif
                 </select>
                 <select name="yearfrom" id="yearfrom">
