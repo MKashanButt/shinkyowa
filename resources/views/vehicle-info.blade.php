@@ -116,7 +116,7 @@
                     </div>
                     <div class="extras">
                         <h4>Features</h4>
-                        <p>{!! $vehicle->extras !!}</p>
+                        <p>{!! $vehicle->features !!}</p>
                     </div>
                 </div>
                 <div class="action">

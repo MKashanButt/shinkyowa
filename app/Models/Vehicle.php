@@ -29,7 +29,7 @@ class Vehicle extends Model
         'type',
         'fuel',
         'category',
-        'extras',
+        'features',
         'buy_link',
     ];
     public function searchableUsing(): Engine
