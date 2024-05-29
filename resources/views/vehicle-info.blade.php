@@ -35,8 +35,7 @@
         </div>
         <div class="item">
             <div class="tabs">
-                <button><i class='bx bxs-car-garage'></i> Vehicle Details</button>
-                <button><i class='bx bx-exit'></i> Extra</button>
+                <button disabled><i class='bx bxs-car-garage'></i> Vehicle Details</button>
             </div>
             <div class="stage">
                 <div class="vehicle-details">
@@ -111,6 +110,14 @@
                             </div>
                             <div class="row">
                                 <p>{{ $vehicle->doors }}</p>
+                            </div>
+                        </div>
+                        <div class="col flex">
+                            <div class="row">
+                                <p>FOB Price</p>
+                            </div>
+                            <div class="row">
+                                <p>{{ $vehicle->currency . number_format($vehicle->fob) }}</p>
                             </div>
                         </div>
                     </div>
