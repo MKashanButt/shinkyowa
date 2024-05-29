@@ -117,7 +117,7 @@
                                 <p>FOB Price</p>
                             </div>
                             <div class="row">
-                                <p>{{ $vehicle->currency . number_format($vehicle->fob) }}</p>
+                                <p>{{ $vehicle->currency . $vehicle->fob }}</p>
                             </div>
                         </div>
                     </div>
