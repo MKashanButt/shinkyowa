@@ -85,8 +85,6 @@
                     <span>SUV({{ $count['suv'] }})</span></a></li>
             <li><a href="/type/van"><img src="{{ env('IMAGE_API_URL') . 'images/type/van.png' }}" alt="">
                     <span>Van({{ $count['van'] }})</span></a></li>
-            <li><a href="/type/suv"><img src="{{ env('IMAGE_API_URL') . 'images/type/suv.png' }}" alt="">
-                    <span>Suv({{ $count['suv'] }})</span></a></li>
             <li><a href="/type/pickup"><img src="{{ env('IMAGE_API_URL') . 'images/type/pickup.png' }}" alt="">
                     <span>Pickup({{ $count['pickup'] }})</span></a></li>
             <li><a href="/type/wagon"><img src="{{ env('IMAGE_API_URL') . 'images/type/wagon.png' }}" alt="">
