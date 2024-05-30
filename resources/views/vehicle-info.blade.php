@@ -50,6 +50,14 @@
                         </div>
                         <div class="col flex">
                             <div class="row">
+                                <p>Chassis</p>
+                            </div>
+                            <div class="row">
+                                <p>{{ $vehicle->chassis }}</p>
+                            </div>
+                        </div>
+                        <div class="col flex">
+                            <div class="row">
                                 <p>Make / Model</p>
                             </div>
                             <div class="row">
@@ -70,14 +78,6 @@
                             </div>
                             <div class="row">
                                 <p>{{ strtoupper($vehicle->body_type) }}</p>
-                            </div>
-                        </div>
-                        <div class="col flex">
-                            <div class="row">
-                                <p>Engine</p>
-                            </div>
-                            <div class="row">
-                                <p>{{ $vehicle->engine }}</p>
                             </div>
                         </div>
                         <div class="col flex">
@@ -117,7 +117,7 @@
                                 <p>FOB Price</p>
                             </div>
                             <div class="row">
-                                <p>{{ $vehicle->currency . strpos($vehicle->fob) ? $vehicle->fob : number_format($vehicle->fob) }}
+                                <p>{{ $vehicle->currency . strpos($vehicle->fob, ',') ? $vehicle->fob : number_format($vehicle->fob) }}
                                 </p>
                             </div>
                         </div>
