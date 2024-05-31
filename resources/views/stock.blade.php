@@ -32,7 +32,7 @@
                     @endif
                 </select>
                 <select name="fueltype" id="filterfueltype">
-                    @if (Request::get('category'))
+                    @if (Request::get('fueltype'))
                         <option disabled selected>{{ strtoupper(Request::get('fueltype')) }}</option>
                     @else
                         <option value="" disabled selected>Select Fuel Type</option>
@@ -55,6 +55,9 @@
                         <option disabled selected>{{ Request::get('yearfrom') }}</option>
                     @else
                         <option value="" disabled selected>Year From</option>
+                        @foreach ($years as $item)
+                            <option value="{{ $item->year }}">{{ $item->year }}</option>
+                        @endforeach
                     @endif
                 </select>
                 <select name="yearto" id="yearto">
@@ -62,6 +65,9 @@
                         <option disabled selected>{{ Request::get('yearto') }}</option>
                     @else
                         <option value="" disabled selected>Year To</option>
+                        @foreach ($years as $item)
+                            <option value="{{ $item->year }}">{{ $item->year }}</option>
+                        @endforeach
                     @endif
                 </select>
             </div>

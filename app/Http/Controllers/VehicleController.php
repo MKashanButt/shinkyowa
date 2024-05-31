@@ -69,6 +69,7 @@ class VehicleController extends Controller
             'totalvehicles' => Vehicle::count(),
             'msg' => Vehicle::count() == 0 && 'No Vehicles Found',
             'sidebar' => true,
+            'years' => Vehicle::select('year')->distinct()->get(),
             'title' => 'Japanese Used Car Exporter'
         ]);
     }
@@ -157,6 +158,7 @@ class VehicleController extends Controller
             'msg' => $totalcount == 0 ?? 'No Vehicles Found',
             'stylesheet' => 'stock.css',
             'sidebar' => true,
+            'years' => Vehicle::select('year')->distinct()->get(),
             'vehicles' => $vehicles
         ]);
     }
