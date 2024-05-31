@@ -89,7 +89,7 @@
         @endif
         @foreach ($vehicles as $item)
             <x-vehicle-listing-card :img="$item->thumbnail" :id="$item->id" :make="$item->make" :model="$item->model"
-                :year="$item->year" :mileage="$item->mileage" :engine="$item->engine" :doors="$item->doors" :transmission="$item->transmission" />
+                :year="$item->year" :mileage="$item->mileage" :chassis="$item->chassis" :doors="$item->doors" :transmission="$item->transmission" />
         @endforeach
     </div>
     <div class="pagination">
