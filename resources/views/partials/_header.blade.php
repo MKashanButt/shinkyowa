@@ -67,7 +67,7 @@
                     </ul>
                 </li>
                 <li><a href="/sales-and-bank-details">Sales & Bank Details</a></li>
-                <li><a href="/blogs">Blogs</a></li>
+                {{-- <li><a href="/blogs">Blogs</a></li> --}}
                 <li id="contact-us" onclick="toggleDisplay()">Contact Us</li>
             </ul>
         </div>
