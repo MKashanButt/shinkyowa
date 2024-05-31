@@ -158,7 +158,7 @@ class VehicleController extends Controller
             'msg' => $totalcount == 0 ?? 'No Vehicles Found',
             'stylesheet' => 'stock.css',
             'sidebar' => true,
-            'years' => Vehicle::select('year')->distinct()->get()->order('year', 'DESC'),
+            'years' => Vehicle::select('year')->distinct()->get()->orderBy('year', 'DESC'),
             'vehicles' => $vehicles
         ]);
     }
