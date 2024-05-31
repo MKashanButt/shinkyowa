@@ -117,7 +117,7 @@
                                 <p>FOB Price</p>
                             </div>
                             <div class="row">
-                                <p>{{ $vehicle->currency . strpos($vehicle->fob, ',') ? $vehicle->fob : number_format($vehicle->fob) }}
+                                <p>{{ $vehicle->currency . $vehicle->fob }}
                                 </p>
                             </div>
                         </div>
