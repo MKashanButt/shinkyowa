@@ -78,15 +78,15 @@ class VehicleController extends Controller
     public function limited()
     {
         $discounted = Vehicle::where('category', 'discounted')
-            ->take(12)
+            ->take(8)
             ->orderBy('id', 'desc')
             ->get();
         $newarival = Vehicle::where('category', 'new arrival')
-            ->take(12)
+            ->take(8)
             ->orderBy('id', 'desc')
             ->get();
         $commercial = Vehicle::where('category', 'commercial')
-            ->take(12)
+            ->take(8)
             ->orderBy('id', 'desc')
             ->get();
 
@@ -108,7 +108,7 @@ class VehicleController extends Controller
             'vehicle' => $vehicle,
             'stylesheet' => 'vehicle-info.css',
             'sidebar' => false,
-            'title' => 'Vehicle Info'
+            'title' => strtoupper($vehicle["make"]) . " " . strtoupper($vehicle["model"]) . " " . strtoupper($vehicle["year"])
         ]);
     }
 
