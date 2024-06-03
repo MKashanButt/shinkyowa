@@ -28,6 +28,8 @@ class VehicleController extends Controller
                 'mazda' => Vehicle::where('make', 'mazda')->count(),
                 'suzuki' => Vehicle::where('make', 'suzuki')->count(),
                 'BMW' => Vehicle::where('make', 'BMW')->count(),
+                'mercedes' => Vehicle::where('make', 'mercedes')->count(),
+                'audi' => Vehicle::where('make', 'audi')->count(),
                 'isuzu' => Vehicle::where('make', 'isuzu')->count(),
                 'hino' => Vehicle::where('make', 'hino')->count(),
                 'mitsubishi' => Vehicle::where('make', 'mitsubishi')->count(),

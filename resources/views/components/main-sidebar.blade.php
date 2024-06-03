@@ -64,6 +64,11 @@
                     <span>Lexus({{ $count['lexus'] }})</span></a></li>
             <li><a href="/make/BMW"><img src="{{ env('IMAGE_API_URL') . 'images/makes/BMW.png' }}" alt="">
                     <span>BMW({{ $count['BMW'] }})</span></a></li>
+            <li><a href="/make/mercedes"><img src="{{ env('IMAGE_API_URL') . 'images/makes/mercedes.png' }}"
+                        alt="">
+                    <span>Mercedes({{ $count['mercedes'] }})</span></a></li>
+            <li><a href="/make/audi"><img src="{{ env('IMAGE_API_URL') . 'images/makes/audi.png' }}" alt="">
+                    <span>Audi({{ $count['audi'] }})</span></a></li>
             <li><a href="/make/hino"><img src="{{ env('IMAGE_API_URL') . 'images/makes/hino.png' }}" alt="">
                     <span>Hino({{ $count['hino'] }})</span></a></li>
             <li><a href="/make/volkswagen"><img src="{{ env('IMAGE_API_URL') . 'images/makes/volkswagon.png' }}"
