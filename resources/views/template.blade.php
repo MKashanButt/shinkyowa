@@ -7,7 +7,7 @@
     <title>Shinkyowa International | {{ $title }} </title>
     <link rel="stylesheet" href="{{ asset('css/root.css') }}">
     <link rel="stylesheet" href="{{ asset('css/' . $stylesheet) }}">
-    <link rel="icon" href="">
+    <link rel="icon" href="{{ asset('favicon.ico') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     {{-- Box Icons --}}
