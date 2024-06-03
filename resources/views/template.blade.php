@@ -3,11 +3,12 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="{{ asset('favicon.ico') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Shinkyowa International | {{ $title }} </title>
     <link rel="stylesheet" href="{{ asset('css/root.css') }}">
     <link rel="stylesheet" href="{{ asset('css/' . $stylesheet) }}">
-    <link rel="icon" href="{{ asset('favicon.ico') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     {{-- Box Icons --}}
