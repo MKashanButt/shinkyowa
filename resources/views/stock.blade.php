@@ -55,9 +55,11 @@
                         <option disabled selected>{{ Request::get('yearfrom') }}</option>
                     @else
                         <option value="" disabled selected>Year From</option>
-                        @foreach ($years as $item)
-                            <option value="{{ $item->year }}">{{ $item->year }}</option>
-                        @endforeach
+                        @if ($years)
+                            @foreach ($years as $item)
+                                <option value="{{ $item->year }}">{{ $item->year }}</option>
+                            @endforeach
+                        @endif
                     @endif
                 </select>
                 <select name="yearto" id="yearto">
@@ -65,9 +67,11 @@
                         <option disabled selected>{{ Request::get('yearto') }}</option>
                     @else
                         <option value="" disabled selected>Year To</option>
-                        @foreach ($years as $item)
-                            <option value="{{ $item->year }}">{{ $item->year }}</option>
-                        @endforeach
+                        @if ($years)
+                            @foreach ($years as $item)
+                                <option value="{{ $item->year }}">{{ $item->year }}</option>
+                            @endforeach
+                        @endif
                     @endif
                 </select>
             </div>
