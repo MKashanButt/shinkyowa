@@ -97,9 +97,9 @@
             loop: true,
             spaceBetween: 10,
             slidesPerView: 4,
-            watchSlidesProgress: true,
-            simulateTouch: false,
             clickable: true,
+            freemode: true,
+            watchSlidesProgress: true,
         });
         var swiper2 = new Swiper(".mySwiper2", {
             loop: true,
