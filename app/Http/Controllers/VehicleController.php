@@ -66,7 +66,7 @@ class VehicleController extends Controller
     public function index()
     {
         return $this->load_view('stock', [
-            'vehicles' => DB::table('stocks')->paginate(6),
+            'vehicles' => DB::table('stocks')->orderBy('id', 'desc')->paginate(6),
             'stylesheet' => 'stock.css',
             'totalvehicles' => Vehicle::count(),
             'msg' => Vehicle::count() == 0 && 'No Vehicles Found',
