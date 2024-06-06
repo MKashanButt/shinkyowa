@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <link rel="icon" href="{{ asset('favicon.ico') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Shinkyowa International exports high-quality used cars from Japan to Kenya, Tanzania, Jamaica, Bahamas, Guyana, Barbados, UK, Ireland, and Pakistan. Trustworthy service, competitive prices">
+    <meta name="keywords"
+        content="Japanese used cars for sale in Kenya, Used cars exported from Japan to Tanzania, Japanese car exporters in Jamaica, Second-hand Japanese cars for sale in UK, Used Japanese vehicles imported from Japan in Ireland, Japanese used cars for sale in Pakistan, Japanese vehicle exporters in the Bahamas, Japanese car imports in Guyana, Japanese auto exporters in Barbados, Used Japanese cars for sale in Kenya">
 
     <title>Shinkyowa International | {{ $title }} </title>
     <link rel="stylesheet" href="{{ asset('css/root.css') }}">
