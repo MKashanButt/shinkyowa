@@ -38,7 +38,7 @@
             </div>
             <div class="options flex">
                 <div class="item flex">
-                    <a href="crm.shinkyowa.com">
+                    <a href="https://shinkyowa.com/" target="__blank">
                         <p><i class='bx bxs-user'></i> <span>Login/Register</span></p>
                     </a>
                 </div>
