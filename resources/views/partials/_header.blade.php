@@ -38,7 +38,9 @@
             </div>
             <div class="options flex">
                 <div class="item flex">
-                    <p><i class='bx bxs-user'></i> <span>Login/Register</span></p>
+                    <a href="crm.shinkyowa.com">
+                        <p><i class='bx bxs-user'></i> <span>Login/Register</span></p>
+                    </a>
                 </div>
             </div>
         </div>
