@@ -36,4 +36,16 @@
         @endforeach
         <a href="/filter?category=commercial"><button>View All</button></a>
     </div>
+    <div class="tabs flex">
+        <div class="option">
+            <p>All Stock</p>
+        </div>
+    </div>
+    <div class="budget-vehicle">
+        @foreach ($allStock as $item)
+            <x-home-vehicle-card :img="$item->thumbnail" :id="$item->id" :make="$item->make" :model="$item->model"
+                :fob="$item->fob" :currency="$item->currency" />
+        @endforeach
+        <a href="/stock"><button>View All</button></a>
+    </div>
 @endsection

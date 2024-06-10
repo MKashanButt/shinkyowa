@@ -78,15 +78,18 @@ class VehicleController extends Controller
     public function limited()
     {
         $discounted = Vehicle::where('category', 'discounted')
-            ->take(8)
+            ->take(4)
             ->orderBy('id', 'desc')
             ->get();
         $newarival = Vehicle::where('category', 'new arrival')
-            ->take(8)
+            ->take(4)
             ->orderBy('id', 'desc')
             ->get();
         $commercial = Vehicle::where('category', 'commercial')
-            ->take(8)
+            ->take(4)
+            ->orderBy('id', 'desc')
+            ->get();
+        $allStock = Vehicle::take(12)
             ->orderBy('id', 'desc')
             ->get();
 
@@ -94,6 +97,7 @@ class VehicleController extends Controller
             'discounted' => $discounted,
             'newarival' => $newarival,
             'commercial' => $commercial,
+            'allStock' => $allStock,
             'stylesheet' => 'home.css',
             'sidebar' => true,
             'title' => 'Japanese Used Car Exporter'
@@ -150,7 +154,7 @@ class VehicleController extends Controller
         if ($yearto) {
             $query->where('year', $yearto);
         }
-        $vehicles = $query->paginate(5);
+        $vehicles = $query->orderBy('id', 'desc')->paginate(5);
         $totalcount = $query->count();
 
         return $this->load_view('stock', [
