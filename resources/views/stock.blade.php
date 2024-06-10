@@ -7,8 +7,14 @@
                 <select name="make" id="filtermake">
                     @if (Request::get('make'))
                         <option disabled selected>{{ strtoupper(Request::get('make')) }}</option>
+                        @foreach ($filteroptions['make'] as $item)
+                            <option value="{{ $item->make }}">{{ strtoupper($item->make) }}</option>
+                        @endforeach
                     @else
                         <option disabled selected>Select Make</option>
+                        @foreach ($filteroptions['make'] as $item)
+                            <option value="{{ $item->make }}">{{ strtoupper($item->make) }}</option>
+                        @endforeach
                     @endif
                     @foreach ($filteroptions['make'] as $item)
                         <option value="{{ $item->make }}">{{ strtoupper($item->make) }}</option>
@@ -24,6 +30,9 @@
                 <select name="category" id="filtercategory">
                     @if (Request::get('category'))
                         <option disabled selected>{{ strtoupper(Request::get('category')) }}</option>
+                        <option value="new arrival">NEW ARRIVAL</option>
+                        <option value="discounted">DISCOUNTED</option>
+                        <option value="commercial">COMMERCIAL</option>
                     @else
                         <option value="" disabled selected>Select Category</option>
                         <option value="new arrival">NEW ARRIVAL</option>
@@ -34,6 +43,9 @@
                 <select name="fueltype" id="filterfueltype">
                     @if (Request::get('fueltype'))
                         <option disabled selected>{{ strtoupper(Request::get('fueltype')) }}</option>
+                        <option value="petrol">PETROL</option>
+                        <option value="diesel">DIESEL</option>
+                        <option value="hybrid">HYBRID</option>
                     @else
                         <option value="" disabled selected>Select Fuel Type</option>
                         <option value="petrol">PETROL</option>
@@ -44,6 +56,8 @@
                 <select name="transmission" id="transmission">
                     @if (Request::get('transmission'))
                         <option disabled selected>{{ strtoupper(Request::get('transmission')) }}</option>
+                        <option value="manual">MANUAL</option>
+                        <option value="automatic">AUTOMATIC</option>
                     @else
                         <option value="" disabled selected>Select Transmission</option>
                         <option value="manual">MANUAL</option>

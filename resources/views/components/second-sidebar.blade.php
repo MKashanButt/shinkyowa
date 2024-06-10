@@ -11,7 +11,7 @@
                                 <p>{{ strtoupper($item['make']) . ' / ' . strtoupper($item['model']) . ' ' . $item['year'] }}
                                 </p>
                                 <span>Stock No. {{ $item['stock_id'] }}</span>
-                                <button>Details</button>
+                                <a href="/vehicle-info/{{ $item['id'] }}"><button>Details</button></a>
                             </div>
                         @endforeach
                     </div>
@@ -21,9 +21,9 @@
     </div>
     <hr>
     <div class="offers">
-        <img src="{{ env('IMAGE_API_URL') . 'images/offers/offer-one.gif' }}" alt="">
-        <img src="{{ env('IMAGE_API_URL') . 'images/offers/offer-two.gif' }}" alt="">
-        <img src="{{ env('IMAGE_API_URL') . 'images/offers/offer-three.gif' }}" alt="">
+        <a href="/stock"><img src="{{ env('IMAGE_API_URL') . 'images/offers/offer-one.gif' }}" alt=""></a>
+        <a href="/stock"><img src="{{ env('IMAGE_API_URL') . 'images/offers/offer-two.gif' }}" alt=""></a>
+        <a href="/stock"><img src="{{ env('IMAGE_API_URL') . 'images/offers/offer-three.gif' }}" alt=""></a>
     </div>
     <hr>
     {{-- <div class="testimonials">

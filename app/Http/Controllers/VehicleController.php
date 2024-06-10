@@ -53,7 +53,7 @@ class VehicleController extends Controller
                 "make" => Vehicle::select('make')->distinct()->get(),
             ],
             "total" => Vehicle::select('vehicles')->count(),
-            "vehicleOfDay" => Vehicle::select('thumbnail', 'make', 'model', 'year', 'stock_id')->orderBy('id', 'desc')->limit(3)->get(),
+            "vehicleOfDay" => Vehicle::select('id', 'thumbnail', 'make', 'model', 'year', 'stock_id')->orderBy('id', 'desc')->limit(3)->get(),
         ];
     }
 
