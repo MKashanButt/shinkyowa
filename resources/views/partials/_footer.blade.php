@@ -103,6 +103,12 @@
                 <a href="/make/volkswagen">
                     <li>Volkswagen</li>
                 </a>
+                <a href="/make/mercedes">
+                    <li>Mercedes</li>
+                </a>
+                <a href="/make/audi">
+                    <li>Audi</li>
+                </a>
             </ul>
         </div>
         <div class="item">
