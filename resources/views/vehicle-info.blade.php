@@ -114,6 +114,14 @@
                         </div>
                         <div class="col flex">
                             <div class="row">
+                                <p>Country</p>
+                            </div>
+                            <div class="row">
+                                <p>{{ $vehicle->country }}</p>
+                            </div>
+                        </div>
+                        <div class="col flex">
+                            <div class="row">
                                 <p>FOB Price</p>
                             </div>
                             <div class="row">

@@ -51,6 +51,7 @@ class VehicleController extends Controller
             ],
             "filteroptions" => [
                 "make" => Vehicle::select('make')->distinct()->get(),
+                "model" => Vehicle::select('model')->distinct()->get(),
             ],
             "total" => Vehicle::select('vehicles')->count(),
             "vehicleOfDay" => Vehicle::select('id', 'thumbnail', 'make', 'model', 'year', 'stock_id')->orderBy('id', 'desc')->limit(3)->get(),
