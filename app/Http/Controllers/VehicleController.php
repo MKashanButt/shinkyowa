@@ -64,6 +64,7 @@ class VehicleController extends Controller
                 'tanzania' => Vehicle::where('country', 'tanzania')->count(),
                 'ireland' => Vehicle::where('country', 'ireland')->count(),
                 'UK' => Vehicle::where('country', 'UK')->count(),
+                'mauritius' => Vehicle::where('country', 'mauritius')->count(),
                 'pakistan' => Vehicle::where('country', 'pakistan')->count(),
             ]
         ];
