@@ -127,6 +127,9 @@
             </li>
             <li><a href="/country/uk"><img src="{{ env('IMAGE_API_URL') . 'images/flags/uk.png' }}"
                         alt="country">UK({{ $country['UK'] }})</a></li>
+            <li><a href="/country/mauritius"><img src="{{ env('IMAGE_API_URL') . 'images/flags/mauritius.png' }}"
+                        alt="country">Mauritius({{ $country['mauritius'] }})</a>
+            </li>
             <li><a href="/country/pakistan"><img src="{{ env('IMAGE_API_URL') . 'images/flags/pakistan.png' }}"
                         alt="country">Pakistan({{ $country['pakistan'] }})</a>
             </li>
