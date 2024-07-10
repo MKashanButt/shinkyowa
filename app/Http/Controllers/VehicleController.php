@@ -54,6 +54,17 @@ class VehicleController extends Controller
             ],
             "total" => Vehicle::select('vehicles')->count(),
             "vehicleOfDay" => Vehicle::select('id', 'thumbnail', 'make', 'model', 'year', 'stock_id')->orderBy('id', 'desc')->limit(3)->get(),
+            "country" => [
+                'jamaica' => Vehicle::where('country', 'jamaica')->count(),
+                'bahamas' => Vehicle::where('country', 'bahamas')->count(),
+                'guyana' => Vehicle::where('country', 'guyana')->count(),
+                'barbados' => Vehicle::where('country', 'barbados')->count(),
+                'kenya' => Vehicle::where('country', 'kenya')->count(),
+                'tanzania' => Vehicle::where('country', 'tanzania')->count(),
+                'ireland' => Vehicle::where('country', 'ireland')->count(),
+                'UK' => Vehicle::where('country', 'UK')->count(),
+                'pakistan' => Vehicle::where('country', 'pakistan')->count(),
+            ]
         ];
     }
 

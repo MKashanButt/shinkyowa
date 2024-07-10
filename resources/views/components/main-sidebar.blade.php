@@ -106,29 +106,29 @@
         <h2 class="heading">Search By Country</h2>
         <ul>
             <li><a href="/country/jamaica"><img src="{{ env('IMAGE_API_URL') . 'images/flags/jamaica.png' }}"
-                        alt="country">Jamaica</a></li>
+                        alt="country">Jamaica({{ $country['jamaica'] }})</a></li>
             <li><a href="/country/Bahamas"><img src="{{ env('IMAGE_API_URL') . 'images/flags/bahamas.png' }}"
-                        alt="country">Bahamas</a>
+                        alt="country">Bahamas({{ $country['bahamas'] }})</a>
             </li>
             <li><a href="/country/guyana"><img src="{{ env('IMAGE_API_URL') . 'images/flags/guyana.png' }}"
-                        alt="country">Guyana</a>
+                        alt="country">Guyana({{ $country['guyana'] }})</a>
             </li>
             <li><a href="/country/barbados"><img src="{{ env('IMAGE_API_URL') . 'images/flags/barbados.png' }}"
-                        alt="country">Barbados</a>
+                        alt="country">Barbados({{ $country['barbados'] }})</a>
             </li>
             <li><a href="/country/kenya"><img src="{{ env('IMAGE_API_URL') . 'images/flags/kenya.png' }}"
-                        alt="country">Kenya</a>
+                        alt="country">Kenya({{ $country['kenya'] }})</a>
             </li>
             <li><a href="/country/tanzania"><img src="{{ env('IMAGE_API_URL') . 'images/flags/tanzania.png' }}"
-                        alt="country">Tanzania</a>
+                        alt="country">Tanzania({{ $country['tanzania'] }})</a>
             </li>
             <li><a href="/country/ireland"><img src="{{ env('IMAGE_API_URL') . 'images/flags/ireland.png' }}"
-                        alt="country">Ireland</a>
+                        alt="country">Ireland({{ $country['ireland'] }})</a>
             </li>
             <li><a href="/country/uk"><img src="{{ env('IMAGE_API_URL') . 'images/flags/uk.png' }}"
-                        alt="country">UK</a></li>
+                        alt="country">UK({{ $country['UK'] }})</a></li>
             <li><a href="/country/pakistan"><img src="{{ env('IMAGE_API_URL') . 'images/flags/pakistan.png' }}"
-                        alt="country">Pakistan</a>
+                        alt="country">Pakistan({{ $country['pakistan'] }})</a>
             </li>
         </ul>
     </div>
