@@ -125,8 +125,11 @@
                                 <p>FOB Price</p>
                             </div>
                             <div class="row">
-                                <p>{{ $vehicle->currency . $vehicle->fob }}
-                                </p>
+                                @if ($vehicle->fob == 'Inquiry')
+                                    <p>{{ $vehicle->fob }}</p>
+                                @else
+                                    <p>{{ $vehicle->currency . $vehicle->fob }}</p>
+                                @endif
                             </div>
                         </div>
                     </div>
