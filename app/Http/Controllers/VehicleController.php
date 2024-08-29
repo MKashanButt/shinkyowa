@@ -91,18 +91,18 @@ class VehicleController extends Controller
     public function limited()
     {
         $discounted = Vehicle::where('category', 'discounted')
-            ->take(4)
+            ->take(8)
             ->orderBy('id', 'desc')
             ->get();
         $newarival = Vehicle::where('category', 'new arrival')
-            ->take(4)
+            ->take(8)
             ->orderBy('id', 'desc')
             ->get();
         $commercial = Vehicle::where('category', 'commercial')
-            ->take(4)
+            ->take(8)
             ->orderBy('id', 'desc')
             ->get();
-        $allStock = Vehicle::take(12)
+        $allStock = Vehicle::take(8)
             ->orderBy('id', 'desc')
             ->get();
 
