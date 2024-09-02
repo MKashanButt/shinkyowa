@@ -44,7 +44,6 @@
     display: flex;
     flex-direction: column;
     font-size: 15px;
-    margin: auto;
 }
 
 .pageContent .sub-content .budget-vehicle .item img {
