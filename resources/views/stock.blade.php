@@ -2,7 +2,7 @@
 @section('content')
     <div class="filter">
         <h2>Filter Results</h2>
-        <form action="filter" method="get">
+        <form action="/filter" method="get">
             <div class="row">
                 <select name="make" id="filtermake">
                     @if (Request::get('make'))
