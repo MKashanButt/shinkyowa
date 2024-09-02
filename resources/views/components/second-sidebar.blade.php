@@ -7,11 +7,13 @@
                     <div class="swiper-wrapper">
                         @foreach ($vehicleOfDay as $item)
                             <div class="swiper-slide">
-                                <img src="{{ env('STOCK_IMG_LINK') . $item['thumbnail'] }}" alt="vehicle-of-the-day">
-                                <p>{{ strtoupper($item['make']) . ' / ' . strtoupper($item['model']) . ' ' . $item['year'] }}
-                                </p>
-                                <span>Stock No. {{ $item['stock_id'] }}</span>
-                                <a href="/vehicle-info/{{ $item['id'] }}"><button>Details</button></a>
+                                <a href="/vehicle-info/{{ $item['id'] }}">
+                                    <img src="{{ env('STOCK_IMG_LINK') . $item['thumbnail'] }}" alt="vehicle-of-the-day">
+                                    <p>{{ strtoupper($item['make']) . ' / ' . strtoupper($item['model']) . ' ' . $item['year'] }}
+                                    </p>
+                                    <span>Stock No. {{ $item['stock_id'] }}</span>
+                                    <a href="/vehicle-info/{{ $item['id'] }}"><button>Details</button></a>
+                                </a>
                             </div>
                         @endforeach
                     </div>
