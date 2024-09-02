@@ -85,7 +85,7 @@
 }
 
 .second-sidebar .vehicle-of-day {
-    height: 250px;
+    height: 208px !important;
     position: relative;
     font-size: 12px;
     margin-bottom: 20px;
@@ -181,16 +181,19 @@
 #vehicleOfDay.swiper-wrapper {
     display: flex;
     justify-content: center;
+    margin: 0;
+    padding: 0;
 }
 
 #vehicleOfDay .swiper-slide {
     display: flex;
     flex-direction: column;
     background: transparent;
+
 }
 
 #vehicleOfDay .swiper-slide img {
-    height: 50%;
+    height: 80%;
 }
 
 #vehicleOfDay .swiper-slide>a {
@@ -199,4 +202,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+#vehicleOfDay .swiper-slide {
+    height: 86%;
 }
