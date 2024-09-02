@@ -122,7 +122,11 @@
             thumbs: {
                 swiper: swiper,
             },
-            autoplay: true
+            autoplay: true,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
         });
     </script>
 </body>

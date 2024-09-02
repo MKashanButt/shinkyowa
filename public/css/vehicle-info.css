@@ -22,6 +22,7 @@
 
 .sub-content .stage .item img:nth-of-type(1) {
     width: 100%;
+    height: max-content;
     border: 1px solid var(--black);
     margin: 0;
 }
@@ -258,6 +259,11 @@
     user-select: none;
 }
 
+.mySwiper2 .swiper-slide img {
+    width: 100%;
+    height: 420px !important;
+}
+
 .mySwiper1 {
     overflow: initial !important;
     height: fit-content;
@@ -287,4 +293,42 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.swiper-btn::after {
+    color: white;
+}
+
+.modal {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+    display: none;
+    z-index: 100;
+}
+
+.modal .container {
+    width: auto;
+    position: relative;
+}
+
+.modal .close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: var(--black);
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.modal .stage {
+    width: 50%;
+    height: 80%;
+    background-color: white;
 }

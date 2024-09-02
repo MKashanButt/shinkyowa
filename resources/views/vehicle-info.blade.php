@@ -18,16 +18,19 @@
                         </div>
                     @endforeach
                 </div>
+                <div class="swiper-button-next swiper-btn"></div>
+                <div class="swiper-button-prev swiper-btn"></div>
             </div>
             <div thumbsSlider="" class="swiper mySwiper1">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <img src="{{ env('STOCK_IMG_LINK') . $vehicle->thumbnail }}" alt="vehicle-image" class="main-image">
+                        <img src="{{ env('STOCK_IMG_LINK') . $vehicle->thumbnail }}" alt="vehicle-image"
+                            class="main-image vehicle-image">
                     </div>
                     @foreach (explode(',', $vehicle->stock_images) as $image)
                         <div class="swiper-slide">
                             <img src="{{ env('STOCK_IMG_LINK') . trim($image, '[]""') }}" alt="vehicle-image"
-                                class="main-image">
+                                class="main-image vehicle-image">
                         </div>
                     @endforeach
                 </div>
@@ -185,34 +188,32 @@
         </div>
     </div>
     </div>
-    {{-- <div class="customer-testimonials">
-        <h3>Customer Testimonials</h3>
-        <div class="stage flex">
-            <div class="item">
-                <img src="https://www.carjunction.com/testi_images/926/101599aa-(1).jpg" alt="">
-                <p>Imported our first vehicle from Car Junction, Services were upto the mark, very happy working with this
-                    company, Agent was very professional, Experienced and efficient, Thank you</p>
-                <span>MR. ISAACS (GUYANA)</span>
-            </div>
-            <div class="item">
-                <img src="https://www.carjunction.com/UserFiles/53098-1.jpg" alt="">
-                <p>Finally the wait is over! I have received my vehicle smoothly. Thanks very much for your attention. Now I
-                    know Car Junction Company is the one to Trust. I do promise to guide my best friends to your company in
-                    case they want to import vehicles.</p>
-                <span>CAR JUNCTION (UGANDA)</span>
-            </div>
-            <div class="item">
-                <img src="https://www.carjunction.com/testi_images/379/2.jpg" alt="">
-                <p>Very Happy Dealing with Car Junction and working together with an Agent, Many More Business to Come.
-                    Thanks Car Junction Japan, You are the best company. My Client Loved the vehicle.</p>
-                <span>BARHAM (JAMAICA)</span>
-            </div>
-            <div class="item">
-                <img src="https://www.carjunction.com/UserFiles/IMG-20180819-WA0000.jpg" alt="">
-                <p>Thank you very much I received my car about 3 weeks ago now. Its really a nice car and everything inside
-                    is nice and in good condition.</p>
-                <span>ALISTER HATIPEDZI (ZIMBABWE)</span>
-            </div>
+    <section class="modal">
+        <div class="container">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="modal-image">
         </div>
-    </div> --}}
+    </section>
+    <script>
+        const modal = document.querySelector('.modal');
+        const modalImage = document.getElementById('modal-image');
+        const captionText = document.querySelector('.caption');
+
+        const images = document.querySelectorAll('.vehicle-image');
+
+        images.forEach(image => {
+            image.addEventListener('click', () => {
+                modal.style.display = 'block';
+                modal.style.display = 'flex';
+                modalImage.src = image.src;
+                // Optional: Add caption if available
+                captionText.textContent = image.alt;
+            });
+        });
+
+        const span = document.getElementsByClassName('close')[0];
+        span.onclick = function() {
+            modal.style.display = 'none';
+        }
+    </script>
 @endsection
