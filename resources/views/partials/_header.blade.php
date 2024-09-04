@@ -32,7 +32,7 @@
             </div>
             <div class="search">
                 <form action="/stock-search" method="get" class="flex">
-                    <input type="search" name="search" id="search" placeholder="Search by Name....">
+                    <input type="search" name="search" id="search" placeholder="Search by Make,Mode,Year....">
                     <button><i class='bx bx-search'></i></button>
                 </form>
             </div>
