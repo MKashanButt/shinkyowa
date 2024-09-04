@@ -5,10 +5,15 @@ namespace App\Http\Controllers;
 use App\Mail\InquiryForm;
 use Illuminate\Http\Request;
 use App\Models\Vehicle;
+use ArrayObject;
+use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\DB;
 use LDAP\Result;
 use Illuminate\Support\Facades\Mail;
+use Livewire\Mechanisms\HandleComponents\Synthesizers\StdClassSynth;
+use stdClass;
 
 class VehicleController extends Controller
 {
@@ -182,9 +187,57 @@ class VehicleController extends Controller
 
     public function search(Request $request)
     {
-        $vehicles = '';
+        $query = Vehicle::query();
 
-        $totalcount = $request->count();
+        $search = $request->input('search');
+        $searchArrayConvertable = explode(' ', $search);
+
+        $count = count($searchArrayConvertable);
+
+        if ($count == 1) {
+            $vehicles = $query->where('make', $search)->orWhere('model', $search)->orWhere('year', $search)->paginate(8);
+        } elseif ($count > 1) {
+            $allVehicles = Vehicle::all();
+            $compactArray = array();
+
+            foreach ($allVehicles as $vehicle) {
+                $compactLetter = trim($vehicle->make) . ' ' . trim($vehicle->model) . ' ' . trim($vehicle->year);
+                $compactArray[$vehicle['stock_id']] = $compactLetter;
+            }
+
+            $similarVehicles = [];
+
+            foreach ($compactArray as $stockId => $vehicleName) {
+                if (stripos($vehicleName, $search) !== false) {
+                    $similarVehicles[] = $stockId;
+                }
+            }
+
+            $vehicles = collect();
+
+            foreach ($similarVehicles as $searchVehicles) {
+                $vehicle = Vehicle::where('stock_id', $searchVehicles)->first();
+                if ($vehicle) {
+                    $vehicles->push($vehicle);
+                }
+            }
+        }
+
+        $totalcount = $vehicles->count();
+
+        $perPage = 8;
+
+        $currentPage = request()->get('page', 1);
+        $queryParams = request()->except('page');
+        $currentItems = $vehicles->slice(($currentPage - 1) * $perPage, $perPage)->values()->all();
+
+        $paginatedVehicles = new LengthAwarePaginator(
+            $currentItems,
+            $vehicles->count(),
+            $perPage,
+            $currentPage,
+            ['path' => request()->url(), 'query' => $queryParams, 'pageName' => 'page']
+        );
 
         return $this->load_view('stock', [
             'title' => 'Filter Results',
@@ -192,7 +245,7 @@ class VehicleController extends Controller
             'msg' => $totalcount == 0 ?? 'No Vehicles Found',
             'stylesheet' => 'stock.css',
             'sidebar' => true,
-            'vehicles' => $vehicles
+            'vehicles' => $paginatedVehicles
         ]);
     }
 

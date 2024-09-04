@@ -25,7 +25,7 @@ Route::controller(VehicleController::class)->group(function () {
     Route::get('/country/{country}', 'filterCountry');
     Route::get('/category/{category}', 'filterCategory');
     // Search
-    Route::get('/stock-search', 'searchFilter')->name('filter.search');
+    Route::get('/stock-search', 'search')->name('filter.search');
     // Static Pages
     Route::get('/services/shipping', 'shipping')->name('services.company-profile');
     Route::get('/about-us/company-profile', 'company_profile')->name('about-us.company-profile');
