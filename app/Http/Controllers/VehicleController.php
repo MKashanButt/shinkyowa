@@ -57,6 +57,7 @@ class VehicleController extends Controller
             "filteroptions" => [
                 "make" => Vehicle::select('make')->distinct()->get(),
                 "model" => Vehicle::select('model')->distinct()->get(),
+                "year" => Vehicle::select('year')->distinct()->orderBy('year', 'ASC')->get(),
             ],
             "total" => Vehicle::select('vehicles')->count(),
             "vehicleOfDay" => Vehicle::select('id', 'thumbnail', 'make', 'model', 'year', 'stock_id')->orderBy('id', 'desc')->limit(3)->get(),
@@ -83,8 +84,16 @@ class VehicleController extends Controller
 
     public function index()
     {
+        // dd(request());
+        $queryParams = request()->except('page');
+        $vehicles = DB::table('stocks')
+            ->orderBy('id', 'desc')
+            ->paginate(6)
+            ->appends($queryParams);
+
+        var_dump($queryParams);
         return $this->load_view('stock', [
-            'vehicles' => DB::table('stocks')->orderBy('id', 'desc')->paginate(6),
+            'vehicles' => $vehicles,
             'stylesheet' => 'stock.css',
             'totalvehicles' => Vehicle::count(),
             'msg' => Vehicle::count() == 0 && 'No Vehicles Found',
@@ -136,6 +145,8 @@ class VehicleController extends Controller
 
     public function filter(Request $request)
     {
+        $queryParams = request()->except('page');
+
         $make = $request->input('make');
         $model = $request->input('model');
         $stock = $request->input('stock');
@@ -155,7 +166,7 @@ class VehicleController extends Controller
             $query->where('model', $model);
         }
         if ($stock) {
-            $query->where('id', $stock);
+            $query->where('stock_id', $stock);
         }
         if ($category) {
             $query->where('category', $category);
@@ -167,13 +178,17 @@ class VehicleController extends Controller
             $query->where('transmission', $transmission);
         }
         if ($yearfrom) {
-            $query->where('year', $yearfrom);
+            $query->where('year', '>=', $yearfrom);
         }
         if ($yearto) {
-            $query->where('year', $yearto);
+            $query->where('year', '<=', $yearto);
         }
-        $vehicles = $query->orderBy('id', 'desc')->paginate(5);
+
         $totalcount = $query->count();
+
+        $vehicles = $query->orderBy('id', 'desc')
+            ->paginate(8)
+            ->appends($queryParams);
 
         return $this->load_view('stock', [
             'title' => 'Filter Results',
