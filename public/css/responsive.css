@@ -356,6 +356,11 @@
         flex-direction: column !important;
     }
 
+    .mySwiper2 {
+        width: 100%;
+        height: 200px !important;
+    }
+
     .testimonials .stage {
         display: flex;
         gap: 10px;
