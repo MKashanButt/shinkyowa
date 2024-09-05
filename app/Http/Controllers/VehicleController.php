@@ -84,14 +84,12 @@ class VehicleController extends Controller
 
     public function index()
     {
-        // dd(request());
         $queryParams = request()->except('page');
         $vehicles = DB::table('stocks')
             ->orderBy('id', 'desc')
             ->paginate(6)
             ->appends($queryParams);
 
-        var_dump($queryParams);
         return $this->load_view('stock', [
             'vehicles' => $vehicles,
             'stylesheet' => 'stock.css',
