@@ -142,7 +142,7 @@
                     </div>
                 </div>
                 <div class="action">
-                    <form action="" method="post">
+                    <form action="/send-email" method="post">
                         <div class="destination">
                             <h3>Step 1: Select Vehicle Destination</h3>
                             <select name="destination" id="destination">

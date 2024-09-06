@@ -192,3 +192,15 @@ dialog .message>button {
 .swiper-pagination-bullet {
     background-color: white;
 }
+
+.primary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1px 5px;
+    background-color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    color: white;
+    position: relative;
+    justify-self: first baseline;
+}

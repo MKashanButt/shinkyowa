@@ -31,4 +31,6 @@ Route::controller(VehicleController::class)->group(function () {
     Route::get('/about-us/company-profile', 'company_profile')->name('about-us.company-profile');
     Route::get('/about-us/why-choose-us', 'why_choose_us')->name('about-us.why-choose-us');
     Route::get('/sales-and-bank-details', 'sales_and_bank_details')->name('sales-and-bank-details');
+
+    Route::post('/send-email', 'sendEmail');
 });

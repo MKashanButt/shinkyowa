@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\InquiryEmail;
 use App\Mail\InquiryForm;
 use Illuminate\Http\Request;
 use App\Models\Vehicle;
@@ -435,5 +436,13 @@ class VehicleController extends Controller
             'sidebar' => true,
             'title' => 'Japanese Used Car Exporter'
         ]);
+    }
+    public function sendEmail()
+    {
+        Mail::to('kashanbutt566@gmail.com')->send(new InquiryEmail([
+            'name' => 'Demo',
+        ]));
+
+        return redirect()->back();
     }
 }
