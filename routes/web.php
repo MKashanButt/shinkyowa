@@ -1,9 +1,7 @@
 <?php
 
-use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\VehicleController;
-use Filament\Forms\Get;
 
 Route::controller(VehicleController::class)->group(function () {
     // Main Stock Pages
@@ -24,8 +22,10 @@ Route::controller(VehicleController::class)->group(function () {
     Route::get('/type/{type}', 'filterType');
     Route::get('/country/{country}', 'filterCountry');
     Route::get('/category/{category}', 'filterCategory');
+
     // Search
     Route::get('/stock-search', 'search')->name('filter.search');
+
     // Static Pages
     Route::get('/services/shipping', 'shipping')->name('services.company-profile');
     Route::get('/about-us/company-profile', 'company_profile')->name('about-us.company-profile');
