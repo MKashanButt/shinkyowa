@@ -63,6 +63,6 @@ Route::controller(VehicleController::class)->group(function () {
             $country = $location->countryName;
         }
 
-        return view('map', compact('latitude', 'longitude', 'city', 'country'));
+        return view('locationtest', compact('latitude', 'longitude', 'city', 'country'));
     });
 });
