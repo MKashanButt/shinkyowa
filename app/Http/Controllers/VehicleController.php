@@ -136,7 +136,7 @@ class VehicleController extends Controller
     public function show(int $id)
     {
         $vehicle = Vehicle::findOrFail($id);
-        $inquiries = Inquiries::all()->pluck('stock_id', 'ip');
+        $inquiries = Inquiries::all();
         $ip = false;
 
         foreach ($inquiries as $inquiry) {
