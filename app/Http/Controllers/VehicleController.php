@@ -136,12 +136,20 @@ class VehicleController extends Controller
     public function show(int $id)
     {
         $vehicle = Vehicle::findOrFail($id);
+        $inquiries = Inquiries::all()->pluck('ip');
+
+        foreach ($inquiries as $inquiry) {
+            if ($inquiry == request()->ip()) {
+                $ip = true;
+            }
+        }
 
         return $this->load_view('vehicle-info', [
             'vehicle' => $vehicle,
             'stylesheet' => 'vehicle-info.css',
             'sidebar' => false,
-            'title' => strtoupper($vehicle["make"]) . " " . strtoupper($vehicle["model"]) . " " . strtoupper($vehicle["year"])
+            'title' => strtoupper($vehicle["make"]) . " " . strtoupper($vehicle["model"]) . " " . strtoupper($vehicle["year"]),
+            'ip' => $ip
         ]);
     }
 
@@ -453,13 +461,16 @@ class VehicleController extends Controller
         ]);
 
         Inquiries::create(
-            $request->only(
-                'destination',
-                'full_name',
-                'email_address',
-                'phone_no',
-                'country',
-                'comment',
+            array_merge(
+                $request->only(
+                    'destination',
+                    'full_name',
+                    'email_address',
+                    'phone_no',
+                    'country',
+                    'comment',
+                ),
+                ['ip' => request()->ip()]
             )
         );
 

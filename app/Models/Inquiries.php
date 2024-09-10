@@ -18,5 +18,6 @@ class Inquiries extends Model
         'phone_no',
         'country',
         'comment',
+        'ip',
     ];
 }

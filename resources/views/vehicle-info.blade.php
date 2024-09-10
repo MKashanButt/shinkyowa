@@ -142,48 +142,51 @@
                     </div>
                 </div>
                 <div class="action">
-                    <form action="/send-email" method="post">
-                        @csrf
-                        <div class="destination">
-                            <h3>Step 1: Select Vehicle Destination</h3>
-                            <select name="destination" id="destination">
-                                <option value="" disabled selected>Select Destination</option>
-                                <option value="Jamaica">Jamaica</option>
-                                <option value="Bahamas">Bahamas</option>
-                                <option value="Guyana">Guyana</option>
-                                <option value="Barbados">Barbados</option>
-                                <option value="Kenya">Kenya</option>
-                                <option value="Tanzania">Tanzania</option>
-                                <option value="Ireland">Ireland</option>
-                                <option value="UK">UK</option>
-                                <option value="Pakistan">Pakistan</option>
-                            </select>
-                        </div>
-                        <div class="destination">
-                            <h3>Step 2: Vehicle Enquiry Form</h3>
-                            <p>Enter your details below to send your enquiry for this vehicle</p>
-                            <input type="text" name="full_name" id="full_name" placeholder="Full Name" required>
-                            <input type="email" name="email_address" id="email" placeholder="Email Address" required>
-                            <input type="number" name="phone_no" id="phone_no" placeholder="Phone No">
-                            <select name="country" id="country" required>
-                                <option value="" disabled selected>Select Country</option>
-                                <option value="Jamaica">Jamaica</option>
-                                <option value="Bahamas">Bahamas</option>
-                                <option value="Guyana">Guyana</option>
-                                <option value="Barbados">Barbados</option>
-                                <option value="Kenya">Kenya</option>
-                                <option value="Tanzania">Tanzania</option>
-                                <option value="Ireland">Ireland</option>
-                                <option value="UK">UK</option>
-                                <option value="Pakistan">Pakistan</option>
-                            </select>
-                            <textarea name="comment" id="comment" cols="30" rows="10"
-                                placeholder="Enter Comment or any other details you want to provide" required></textarea>
-                        </div>
-                        <div class="destination">
-                            <button>Send Enquiry</button>
-                        </div>
-                    </form>
+                    @if (!$ip)
+                        <form action="/send-email" method="post">
+                            @csrf
+                            <div class="destination">
+                                <h3>Step 1: Select Vehicle Destination</h3>
+                                <select name="destination" id="destination">
+                                    <option value="" disabled selected>Select Destination</option>
+                                    <option value="Jamaica">Jamaica</option>
+                                    <option value="Bahamas">Bahamas</option>
+                                    <option value="Guyana">Guyana</option>
+                                    <option value="Barbados">Barbados</option>
+                                    <option value="Kenya">Kenya</option>
+                                    <option value="Tanzania">Tanzania</option>
+                                    <option value="Ireland">Ireland</option>
+                                    <option value="UK">UK</option>
+                                    <option value="Pakistan">Pakistan</option>
+                                </select>
+                            </div>
+                            <div class="destination">
+                                <h3>Step 2: Vehicle Enquiry Form</h3>
+                                <p>Enter your details below to send your enquiry for this vehicle</p>
+                                <input type="text" name="full_name" id="full_name" placeholder="Full Name" required>
+                                <input type="email" name="email_address" id="email" placeholder="Email Address"
+                                    required>
+                                <input type="number" name="phone_no" id="phone_no" placeholder="Phone No">
+                                <select name="country" id="country" required>
+                                    <option value="" disabled selected>Select Country</option>
+                                    <option value="Jamaica">Jamaica</option>
+                                    <option value="Bahamas">Bahamas</option>
+                                    <option value="Guyana">Guyana</option>
+                                    <option value="Barbados">Barbados</option>
+                                    <option value="Kenya">Kenya</option>
+                                    <option value="Tanzania">Tanzania</option>
+                                    <option value="Ireland">Ireland</option>
+                                    <option value="UK">UK</option>
+                                    <option value="Pakistan">Pakistan</option>
+                                </select>
+                                <textarea name="comment" id="comment" cols="30" rows="10"
+                                    placeholder="Enter Comment or any other details you want to provide" required></textarea>
+                            </div>
+                            <div class="destination">
+                                <button>Send Enquiry</button>
+                            </div>
+                        </form>
+                    @endif
                 </div>
             </div>
         </div>
