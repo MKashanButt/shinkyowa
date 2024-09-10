@@ -12,6 +12,7 @@
     --primary-color: #11254A;
     --secondary-color: #8C1823;
     --black: #1E1E1E;
+    --success: #5cb85c;
 }
 
 * {
@@ -203,4 +204,22 @@ dialog .message>button {
     color: white;
     position: relative;
     justify-self: first baseline;
+}
+
+.inquiryCompletionMsg,
+.success {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+    background-color: var(--secondary-color);
+    text-transform: uppercase;
+    font-size: 12px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.success {
+    background-color: var(--success);
+    color: var(--black);
 }

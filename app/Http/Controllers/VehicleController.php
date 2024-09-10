@@ -150,7 +150,7 @@ class VehicleController extends Controller
             'stylesheet' => 'vehicle-info.css',
             'sidebar' => false,
             'title' => strtoupper($vehicle["make"]) . " " . strtoupper($vehicle["model"]) . " " . strtoupper($vehicle["year"]),
-            'ip' => $ip
+            'ip' => $ip,
         ];
 
         if ($ip) {
