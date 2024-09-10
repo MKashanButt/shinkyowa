@@ -46,5 +46,9 @@ Route::controller(VehicleController::class)->group(function () {
         //         'comment' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Id facilis commodi excepturi voluptate incidunt. Odio doloribus ullam doloremque, veniam possimus est animi provident cum, sequi totam ipsum nostrum tenetur magni molestiae magnam!',
         //     ]
         // ]);
+
+        return [
+            'user_agent' => request()->header('User-Agent')
+        ];
     });
 });
