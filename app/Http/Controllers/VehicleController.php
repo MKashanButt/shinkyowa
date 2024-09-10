@@ -140,7 +140,7 @@ class VehicleController extends Controller
         $ip = false;
 
         foreach ($inquiries as $inquiry) {
-            if ($inquiry['stock_id'] == $id && $inquiry['ip'] == request()->ip()) {
+            if ($inquiry->stock_id == $id && $inquiry->ip == request()->ip()) {
                 $ip = true;
             }
         }
