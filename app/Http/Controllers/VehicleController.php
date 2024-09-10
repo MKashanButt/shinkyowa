@@ -137,6 +137,7 @@ class VehicleController extends Controller
     {
         $vehicle = Vehicle::findOrFail($id);
         $inquiries = Inquiries::all()->pluck('ip');
+        $ip = false;
 
         foreach ($inquiries as $inquiry) {
             if ($inquiry == request()->ip()) {
