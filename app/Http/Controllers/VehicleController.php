@@ -136,22 +136,28 @@ class VehicleController extends Controller
     public function show(int $id)
     {
         $vehicle = Vehicle::findOrFail($id);
-        $inquiries = Inquiries::all()->pluck('ip');
+        $inquiries = Inquiries::all()->pluck('stock_id', 'ip');
         $ip = false;
 
         foreach ($inquiries as $inquiry) {
-            if ($inquiry == request()->ip()) {
+            if ($inquiry['stock_id'] == $id && $inquiry['ip'] == request()->ip()) {
                 $ip = true;
             }
         }
 
-        return $this->load_view('vehicle-info', [
+        $data = [
             'vehicle' => $vehicle,
             'stylesheet' => 'vehicle-info.css',
             'sidebar' => false,
             'title' => strtoupper($vehicle["make"]) . " " . strtoupper($vehicle["model"]) . " " . strtoupper($vehicle["year"]),
             'ip' => $ip
-        ]);
+        ];
+
+        if ($ip) {
+            $data['msg'] = 'Only One Entry Per Vehicle Is Available.';
+        }
+
+        return $this->load_view('vehicle-info', $data);
     }
 
     public function filter(Request $request)
@@ -453,6 +459,7 @@ class VehicleController extends Controller
     public function sendEmail(Request $request)
     {
         $request->validate([
+            'stock_id' => 'required|string',
             'destination' => 'required|string|max:8',
             'full_name' => 'required|string|max:30',
             'email_address' => 'required|string|max:50',
@@ -464,6 +471,7 @@ class VehicleController extends Controller
         Inquiries::create(
             array_merge(
                 $request->only(
+                    'stock_id',
                     'destination',
                     'full_name',
                     'email_address',
@@ -476,6 +484,7 @@ class VehicleController extends Controller
         );
 
         $data = [
+            'stock_id' => $request->stock_id,
             "destination" => $request->destination,
             "full_name" => $request->full_name,
             "destination" => $request->destination,

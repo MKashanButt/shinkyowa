@@ -46,23 +46,5 @@ Route::controller(VehicleController::class)->group(function () {
         //         'comment' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Id facilis commodi excepturi voluptate incidunt. Odio doloribus ullam doloremque, veniam possimus est animi provident cum, sequi totam ipsum nostrum tenetur magni molestiae magnam!',
         //     ]
         // ]);
-
-        $location = Location::get(request()->ip());
-
-        // Check if location was retrieved, otherwise return a default location or handle error
-        if ($location === false) {
-            // Default to a specific location (e.g., New York)
-            $latitude = '40.7128';
-            $longitude = '-74.0060';
-            $city = 'Default City';
-            $country = 'Default Country';
-        } else {
-            $latitude = $location->latitude; // Accessing properties from the Position object
-            $longitude = $location->longitude;
-            $city = $location->cityName;
-            $country = $location->countryName;
-        }
-
-        return view('locationtest', compact('latitude', 'longitude', 'city', 'country'));
     });
 });

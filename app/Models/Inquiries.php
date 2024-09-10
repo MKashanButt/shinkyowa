@@ -12,6 +12,7 @@ class Inquiries extends Model
     public $timestamps = false;
 
     protected $fillable = [
+        'stock_id',
         'destination',
         'full_name',
         'email_address',

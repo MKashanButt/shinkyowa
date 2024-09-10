@@ -163,6 +163,8 @@
                             <div class="destination">
                                 <h3>Step 2: Vehicle Enquiry Form</h3>
                                 <p>Enter your details below to send your enquiry for this vehicle</p>
+                                <input type="text" name="stock_id" id="stock_id" placeholder="Stock Id" hidden
+                                    value="{{ $vehicle->stock_id }}">
                                 <input type="text" name="full_name" id="full_name" placeholder="Full Name" required>
                                 <input type="email" name="email_address" id="email" placeholder="Email Address"
                                     required>
@@ -186,6 +188,10 @@
                                 <button>Send Enquiry</button>
                             </div>
                         </form>
+                    @elseif($msg)
+                        <div class="inquiryCompletionMsg">
+                            {{ $msg }}
+                        </div>
                     @endif
                 </div>
             </div>
