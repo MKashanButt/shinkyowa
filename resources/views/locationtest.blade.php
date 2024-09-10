@@ -21,7 +21,7 @@
 
     <script>
         // Initialize the map using the latitude and longitude from the backend
-        var map = L.map('map').setView([{{ $latitude }}, {{ $longitude }}], 13);
+        var map = L.map('map').setView([{{ $latitude }}, {{ $longitude }}], 18);
 
         // Load the map tiles from OpenStreetMap
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
