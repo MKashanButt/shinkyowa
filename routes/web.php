@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\VehicleController;
+use Stevebauman\Location\Facades\Location;
 
 Route::controller(VehicleController::class)->group(function () {
     // Main Stock Pages
@@ -33,4 +34,22 @@ Route::controller(VehicleController::class)->group(function () {
     Route::get('/sales-and-bank-details', 'sales_and_bank_details')->name('sales-and-bank-details');
 
     Route::post('/send-email', 'sendEmail');
+
+    Route::get('/test', function () {
+        // return view('emails.inquiry', [
+        //     'data' => [
+        //         'destination' => 'Jamaica',
+        //         'full_name' => 'M.Kashan Butt',
+        //         'email_address' => 'kashan@gmail.com',
+        //         'phone_no' => '+92 123 456 7890',
+        //         'country' => 'Jamaica',
+        //         'comment' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Id facilis commodi excepturi voluptate incidunt. Odio doloribus ullam doloremque, veniam possimus est animi provident cum, sequi totam ipsum nostrum tenetur magni molestiae magnam!',
+        //     ]
+        // ]);
+
+        return [
+            'ip' => request()->ip(),
+            'location' =>  Location::get(request()->ip())
+        ];
+    });
 });

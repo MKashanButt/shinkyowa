@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Log;
 use App\Mail\InquiryEmail;
 use App\Mail\InquiryForm;
+use App\Models\Inquiries;
 use Illuminate\Http\Request;
 use App\Models\Vehicle;
 use ArrayObject;
+use Exception;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Date;
@@ -437,11 +440,45 @@ class VehicleController extends Controller
             'title' => 'Japanese Used Car Exporter'
         ]);
     }
-    public function sendEmail()
+
+    public function sendEmail(Request $request)
     {
-        Mail::to('kashanbutt566@gmail.com')->send(new InquiryEmail([
-            'name' => 'Demo',
-        ]));
+        $request->validate([
+            'destination' => 'required|string|max:8',
+            'full_name' => 'required|string|max:30',
+            'email_address' => 'required|string|max:50',
+            'phone_no' => 'required|string|max:15',
+            'country' => 'required|string|max:8',
+            'comment' => 'nullable|string',
+        ]);
+
+        Inquiries::create(
+            $request->only(
+                'destination',
+                'full_name',
+                'email_address',
+                'phone_no',
+                'country',
+                'comment',
+            )
+        );
+
+        $data = [
+            "destination" => $request->destination,
+            "full_name" => $request->full_name,
+            "destination" => $request->destination,
+            "email_address" => $request->email,
+            "phone_no" => $request->phone_no,
+            "comment" => $request->comment,
+        ];
+
+        try {
+            Mail::to('squadtech2022@gmail.com')->send(new InquiryEmail($data));
+            return redirect()->back()->with('success', 'Inquiry sent successfully!');
+        } catch (Exception $e) {
+            Log::error('Mail sending failed: ' . $e->getMessage());
+            return redirect()->back()->with('error', 'There was an error sending your inquiry. Please try again.');
+        }
 
         return redirect()->back();
     }

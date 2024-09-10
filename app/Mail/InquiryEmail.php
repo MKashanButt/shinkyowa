@@ -30,6 +30,7 @@ class InquiryEmail extends Mailable
     {
         return new Content(
             view: 'emails.inquiry',
+            with: ['data' => $this->data]
         );
     }
 
