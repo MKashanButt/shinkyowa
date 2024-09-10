@@ -47,9 +47,9 @@ Route::controller(VehicleController::class)->group(function () {
         //     ]
         // ]);
 
-        return [
+        return view('locationtest', [
             'ip' => request()->ip(),
             'location' =>  Location::get(request()->ip())
-        ];
+        ]);
     });
 });
