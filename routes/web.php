@@ -47,9 +47,22 @@ Route::controller(VehicleController::class)->group(function () {
         //     ]
         // ]);
 
-        return view('locationtest', [
-            'ip' => request()->ip(),
-            'location' =>  Location::get(request()->ip())
-        ]);
+        $location = Location::get(request()->ip());
+
+        // Check if location was retrieved, otherwise return a default location or handle error
+        if ($location === false) {
+            // Default to a specific location (e.g., New York)
+            $latitude = '40.7128';
+            $longitude = '-74.0060';
+            $city = 'Default City';
+            $country = 'Default Country';
+        } else {
+            $latitude = $location->latitude; // Accessing properties from the Position object
+            $longitude = $location->longitude;
+            $city = $location->cityName;
+            $country = $location->countryName;
+        }
+
+        return view('map', compact('latitude', 'longitude', 'city', 'country'));
     });
 });
