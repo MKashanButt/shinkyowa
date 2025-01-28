@@ -1,3 +1,6 @@
+@php
+    $features = json_decode($vehicle->features, true);
+@endphp
 @extends('template')
 @section('content')
     <h2>{{ strtoupper($vehicle->make) }} {{ strtoupper($vehicle->model) }} {{ strtoupper($vehicle->transmission) }}
@@ -138,7 +141,13 @@
                     </div>
                     <div class="extras">
                         <h4>Features</h4>
-                        <p>{!! $vehicle->features !!}</p>
+                        <p>
+                        <ul>
+                            @foreach ($features as $feature)
+                                <li>{{ strtoupper(str_replace('_', ' ', $feature)) }}</li>
+                            @endforeach
+                        </ul>
+                        </p>
                     </div>
                 </div>
                 <div class="action">
