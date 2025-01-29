@@ -143,9 +143,11 @@
                         <h4>Features</h4>
                         <p>
                         <ul>
-                            @foreach ($features as $feature)
-                                <li>{{ strtoupper(str_replace('_', ' ', $feature)) }}</li>
-                            @endforeach
+                            @if ($features)
+                                @foreach ($features as $feature)
+                                    <li>{{ strtoupper(str_replace('_', ' ', $feature)) }}</li>
+                                @endforeach
+                            @endif
                         </ul>
                         </p>
                     </div>
