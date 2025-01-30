@@ -134,7 +134,7 @@
                                 @if ($vehicle->fob == 'Inquiry')
                                     <p>{{ $vehicle->fob }}</p>
                                 @else
-                                    <p>{{ $vehicle->currency . $vehicle->fob }}</p>
+                                    <p>{{ $vehicle->currency . number_format($vehicle->fob) }}</p>
                                 @endif
                             </div>
                         </div>

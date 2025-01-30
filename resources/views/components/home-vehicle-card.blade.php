@@ -5,7 +5,7 @@
         @if ($fob == 'Inquiry')
             <button class="primary">{{ $fob }}</button>
         @else
-            <p>{{ $currency }} <span>{{ $fob }}</span></p>
+            <p>{{ $currency }} <span>{{ number_format($fob) }}</span></p>
         @endif
     </a>
 </div>
