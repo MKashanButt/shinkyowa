@@ -31,6 +31,7 @@ class VehicleController extends Controller
             'allmake' => $allmake,
             'total' => $total,
             'count' => [
+                'alfa-romeo' => Vehicle::where('make', 'alfa-romeo')->count(),
                 'toyota' => Vehicle::where('make', 'toyota')->count(),
                 'nissan' => Vehicle::where('make', 'nissan')->count(),
                 'honda' => Vehicle::where('make', 'honda')->count(),

@@ -35,6 +35,9 @@
     <div class="make">
         <h2 class="heading">Search By Make</h2>
         <ul>
+            <li><a href="/make/alfa-romeo"><img src="{{ env('IMAGE_API_URL') . 'images/makes/alfa-romeo.png' }}"
+                        alt="">
+                    <span>Alfa Romeo({{ $count['alfa-romeo'] }})</span></a></li>
             <li><a href="/make/toyota"><img src="{{ env('IMAGE_API_URL') . 'images/makes/toyota.png' }}" alt="">
                     <span>Toyota({{ $count['toyota'] }})</span></a></li>
             <li><a href="/make/nissan"><img src="{{ env('IMAGE_API_URL') . 'images/makes/nissan.png' }}" alt="">
